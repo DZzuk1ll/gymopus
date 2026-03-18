@@ -1,0 +1,29 @@
+# Config with secrets
+config.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+.next/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Environment
+.env
+.env.local
+
+# Alembic
+alembic/versions/__pycache__/

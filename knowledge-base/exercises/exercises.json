@@ -1,0 +1,688 @@
+[
+  {
+    "name_zh": "平板杠铃卧推",
+    "name_en": "Barbell Bench Press",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders",
+      "arms"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "push",
+    "difficulty": "intermediate",
+    "description_zh": "经典的上肢推力复合训练动作，目标肌肉为胸大肌胸骨部，协同肌包括胸大肌锁骨部、三角肌前束和肱三头肌。",
+    "instructions_zh": "仰卧于平板凳上，肩胛骨后缩下沉贴紧凳面，双脚踏实地面；杠铃下放至胸骨下部轻触胸部，每次都应完成全程动作；推起时收紧臀部，双脚蹬地提供稳定支撑，全程保持肩胛骨贴凳。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "上斜杠铃卧推",
+    "name_en": "Incline Barbell Bench Press",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders",
+      "arms"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "push",
+    "difficulty": "intermediate",
+    "description_zh": "在30-45度上斜角度进行的卧推变式，目标肌肉为胸大肌锁骨部（上胸），协同肌包括三角肌前束和肱三头肌。",
+    "instructions_zh": "将凳面调至30-45度，仰卧后肩胛骨收紧贴凳；杠铃下放至锁骨下方上胸位置，缓慢下降直至触碰上胸；推起时呼气发力，保持下背自然弧度，避免臀部离凳。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "下斜杠铃卧推",
+    "name_en": "Decline Barbell Bench Press",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders",
+      "arms"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "push",
+    "difficulty": "intermediate",
+    "description_zh": "在下斜角度进行的卧推变式，相比上斜卧推能招募更大比例的胸大肌胸骨部纤维，强调下胸的厚度与轮廓。",
+    "instructions_zh": "将凳面调至15-30度下斜，双脚固定于脚垫保证安全；杠铃下放至胸部下缘，保持肘关节不过度外展；推起时集中感受下胸发力，避免借助惯性弹起。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "哑铃平板卧推",
+    "name_en": "Dumbbell Bench Press",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders",
+      "arms"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "使用哑铃进行的卧推动作，目标肌肉为胸大肌胸骨部，自由运动轨迹允许更大的活动范围，同时增强肩关节稳定性。",
+    "instructions_zh": "仰卧平板凳上，双手各持哑铃于胸部两侧，掌心朝前；推起时哑铃路径略呈弧形在胸部上方靠拢；下放时肘部打开约75度，至胸部水平充分拉伸胸肌后再推起。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "哑铃飞鸟",
+    "name_en": "Dumbbell Flyes",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "胸肌孤立训练动作，通过肩关节水平内收模式强调胸肌的拉伸与收缩，肱二头肌在离心阶段起稳定作用。",
+    "instructions_zh": "仰卧平板凳上，挺胸并将肩胛骨后缩靠拢，双手持哑铃于胸部上方；保持手肘微弯角度固定不变，缓慢向两侧展开至胸部水平感受充分拉伸；收回时想象胸肌互相靠拢，哑铃不要在顶端碰撞。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "龙门架夹胸",
+    "name_en": "Cable Crossover",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders"
+    ],
+    "equipment": "cable",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "利用龙门架绳索进行的胸肌孤立动作，绳索提供全程恒定阻力，主要通过肩关节水平内收刺激胸大肌，三角肌前束辅助。",
+    "instructions_zh": "站于龙门架中间，身体微前倾，双手握住高位滑轮把手，掌心朝下；保持手肘微弯，双臂做弧形运动在身前合拢，双手可略微交叉以增加内侧胸肌收缩；缓慢还原控制离心阶段，避免使用惯性。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "俯卧撑",
+    "name_en": "Push-up",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders",
+      "arms",
+      "core"
+    ],
+    "equipment": "bodyweight",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "最基础的自重推力复合训练动作，目标肌肉为胸大肌，协同肌包括三角肌前束、肱三头肌，核心肌群全程参与稳定。",
+    "instructions_zh": "双手撑地略宽于肩，身体从头到脚保持一条直线如平板支撑；屈肘下降至胸部接近地面，肘关节约呈45度角，不要过度外展；推起时收紧核心和臀部，避免塌腰或弓背。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "双杠臂屈伸",
+    "name_en": "Dips",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders",
+      "arms"
+    ],
+    "equipment": "bodyweight",
+    "movement_pattern": "push",
+    "difficulty": "intermediate",
+    "description_zh": "利用双杠进行的复合推力动作，身体前倾时目标肌肉从肱三头肌转移至胸大肌下部和三角肌前束。",
+    "instructions_zh": "双手撑于双杠上，身体前倾约30度以侧重胸肌发力；屈肘下降至上臂与地面平行或肘关节约呈90度角；推起时不完全锁死肘关节，保持胸肌持续紧张。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "上斜哑铃卧推",
+    "name_en": "Incline Dumbbell Press",
+    "primary_muscle_group": "chest",
+    "secondary_muscle_groups": [
+      "shoulders",
+      "arms"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "结合上斜角度和哑铃自由轨迹的卧推变式，目标肌肉为胸大肌锁骨部，哑铃允许更大的运动范围和更自然的关节运动轨迹。",
+    "instructions_zh": "将凳面调至30-45度，双手各持哑铃于肩部两侧，掌心朝前；推起时哑铃在上胸上方靠拢但不碰撞；下放时手肘自然展开，充分拉伸上胸肌纤维后再推起。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "传统硬拉",
+    "name_en": "Deadlift",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "legs",
+      "core"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "hinge",
+    "difficulty": "intermediate",
+    "description_zh": "全身复合力量训练动作，主要锻炼整个后链肌群。协同肌包括腘绳肌、臀大肌、竖脊肌、股四头肌、斜方肌、背阔肌和前臂肌群。",
+    "instructions_zh": "杠铃位于脚背鞋带上方，双脚与髋同宽站立；屈髋屈膝俯身握杠，想象腋窝夹紧橘子以收紧背阔肌，保持杠铃紧贴身体；起身时同时伸髋伸膝，推地面而非拉杠铃，锁定时挺胸收臀不过度后仰。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "杠铃俯身划船",
+    "name_en": "Barbell Bent-Over Row",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "arms",
+      "shoulders"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "pull",
+    "difficulty": "intermediate",
+    "description_zh": "经典的背部复合训练动作，目标肌肉为背阔肌和中背部肌群，协同肌包括肱二头肌、菱形肌和三角肌后束。",
+    "instructions_zh": "屈髋俯身至躯干接近与地面平行，双手正握杠铃略宽于肩，挺胸拱腰大臂外旋；将杠铃拉向下腹部位置，顶峰时挤压肩胛骨收紧背部肌肉；缓慢下放还原，避免身体大幅摆动借力。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "引体向上",
+    "name_en": "Pull-up",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "arms",
+      "shoulders"
+    ],
+    "equipment": "bodyweight",
+    "movement_pattern": "pull",
+    "difficulty": "intermediate",
+    "description_zh": "最具功能性的自重拉力复合训练动作，目标肌肉为背阔肌，协同肌包括肱二头肌、菱形肌、斜方肌下束和前臂肌群。",
+    "instructions_zh": "双手正握单杠略宽于肩，起始时手臂完全伸直身体悬垂；拉起时先沉肩收紧肩胛骨后屈臂，将下巴拉过杠面；下降时控制速度，充分伸展背阔肌后再进行下一次。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "高位下拉",
+    "name_en": "Lat Pulldown",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "arms",
+      "core"
+    ],
+    "equipment": "cable",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "引体向上的替代动作，目标肌肉为背阔肌，协同肌包括肱二头肌、腹肌、肩部和上背部肌群。使用固定器械可精准控制负荷。",
+    "instructions_zh": "坐于高位下拉器前，双手宽握横杆，大腿卡紧固定垫；保持腹部适度紧张避免脊柱过度拱起，确保肩胛骨在肋骨上自由活动；下拉时先沉肩，将横杆拉至上胸位置，缓慢还原至手臂完全伸展。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "坐姿绳索划船",
+    "name_en": "Seated Cable Row",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "arms",
+      "shoulders"
+    ],
+    "equipment": "cable",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "使用绳索器械进行的坐姿划船动作，目标肌肉为背阔肌中部、菱形肌和斜方肌中下束，竖脊肌根据躯干姿态充当协同肌或稳定肌。",
+    "instructions_zh": "坐于划船器上双脚踩稳脚踏板，微屈膝，握住V型把手；后拉时挺胸收紧肩胛骨，把手拉至腹部位置；缓慢前伸还原，保持下背挺直不要前后大幅摆动躯干。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "单臂哑铃划船",
+    "name_en": "Dumbbell Row",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "arms",
+      "shoulders"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "单侧训练的划船动作，目标肌肉为背阔肌和中背部肌群，协同肌包括肱二头肌和三角肌后束，可有效纠正左右力量不平衡。",
+    "instructions_zh": "一手一膝撑于平凳上，另一手持哑铃自然下垂，躯干保持与地面平行；将哑铃拉向髋部方向，顶峰时肘部高于躯干并挤压肩胛骨收紧背部；缓慢下放至手臂完全伸展，感受背阔肌充分拉伸。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "面拉",
+    "name_en": "Face Pull",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "shoulders"
+    ],
+    "equipment": "cable",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "针对三角肌后束、斜方肌中下束和肩袖肌群的训练动作，菱形肌也参与稳定肩胛骨，对改善肩部健康和矫正圆肩体态非常有效。",
+    "instructions_zh": "面向龙门架，将滑轮设置在面部高度而非最高位，双手握绳索两端掌心相对；向面部方向拉动绳索同时将绳索向两侧拉开，保持双肘高于双手指向两侧；顶峰时充分挤压后三角肌和肩胛骨，不要将头部前伸去迎合绳索。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "T杠划船",
+    "name_en": "T-Bar Row",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "arms",
+      "core"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "pull",
+    "difficulty": "intermediate",
+    "description_zh": "使用T杠或地雷架进行的复合划船动作，目标肌肉为背阔肌、菱形肌、斜方肌和三角肌后束，协同肌包括肱二头肌、前臂和核心肌群。",
+    "instructions_zh": "双脚与肩同宽跨站于T杠两侧，屈髋前倾至躯干约呈45度角，目视地面前方保持脊柱中立；收紧核心将把手拉向腹部，想象用肘部驱动向髋部方向拉动，顶峰时夹紧肩胛骨收缩背部肌肉；控制下放速度，充分伸展。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "直臂下压",
+    "name_en": "Straight Arm Pulldown",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "core"
+    ],
+    "equipment": "cable",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "背阔肌孤立训练动作，目标肌肉为背阔肌，协同肌包括大圆肌、肱三头肌长头和三角肌后束，绳索提供全程恒定张力。",
+    "instructions_zh": "面向高位滑轮站立，将肩胛骨后缩下沉如塞入后裤袋，收紧核心保持骨盆微前倾；手臂锁定微弯角度不弯曲肘部，以肩关节为轴将把手下压至髋部两侧或略靠后；用背阔肌而非手臂驱动动作，缓慢还原至与肩同高。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "杠铃耸肩",
+    "name_en": "Barbell Shrug",
+    "primary_muscle_group": "back",
+    "secondary_muscle_groups": [
+      "shoulders"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "斜方肌上束孤立训练动作，通过肩胛骨上提运动模式集中刺激上斜方肌，对增加颈肩部厚度效果显著。",
+    "instructions_zh": "站立双手持杠铃于大腿前方，双脚与肩同宽，握距与肩同宽手臂自然伸直；用力垂直向上耸肩将肩膀尽可能靠近耳朵，顶峰短暂停顿挤压；缓慢下放还原，不要做前后画圈动作以保护肩关节。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "杠铃深蹲",
+    "name_en": "Barbell Back Squat",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [
+      "core"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "squat",
+    "difficulty": "intermediate",
+    "description_zh": "最重要的下肢复合训练动作，目标肌肉为股四头肌，协同肌包括臀大肌、腘绳肌和小腿肌群，竖脊肌和腹肌全程维持脊柱稳定。",
+    "instructions_zh": "杠铃置于上背部斜方肌上，双脚与肩同宽或略宽，脚尖外展约45度；夹紧背部使其如石板般坚硬，下蹲时始终目视前方身体不前倾；蹲至大腿低于水平位置，通过脚跟发力推地面站起，膝盖方向与脚尖一致不内扣。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "腿举",
+    "name_en": "Leg Press",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [],
+    "equipment": "machine",
+    "movement_pattern": "squat",
+    "difficulty": "beginner",
+    "description_zh": "使用固定器械进行的下肢复合推力动作，目标肌肉为股四头肌，协同肌为臀大肌和腘绳肌，相比自由深蹲大幅降低脊柱负荷。",
+    "instructions_zh": "坐于腿举机上，背部和臀部紧贴靠垫，双脚置于踏板与肩同宽位置；释放安全锁后屈膝下放至约90度角；推起时通过脚跟发力，不要完全锁死膝关节，全程保持下背贴紧靠垫。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "罗马尼亚硬拉",
+    "name_en": "Romanian Deadlift",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [
+      "back",
+      "core"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "hinge",
+    "difficulty": "intermediate",
+    "description_zh": "以髋关节铰链为主导的硬拉变式，目标肌肉为腘绳肌和臀大肌，协同肌包括竖脊肌、内收肌和斜方肌，属于复合动作。",
+    "instructions_zh": "站立持杠铃于大腿前方，双脚与髋同宽；保持膝盖微弯约15度固定不变，从髋关节启动向前铰链俯身，杠铃沿大腿紧贴下滑；感受腘绳肌充分拉伸后伸髋站起，髋膝同时伸展并保持脊柱自然弧度，顶峰挤压臀部。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "哑铃弓步蹲",
+    "name_en": "Dumbbell Lunges",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [
+      "core"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "squat",
+    "difficulty": "beginner",
+    "description_zh": "单腿交替进行的下肢复合功能性训练动作，目标肌肉为股四头肌，协同肌包括臀大肌、腘绳肌和小腿肌群。",
+    "instructions_zh": "双手持哑铃自然垂于身体两侧，向前跨出一大步屈膝下蹲；前腿下蹲至后膝接近地面，前膝不超过脚尖方向与脚尖一致；前脚发力蹬地回到起始位置，保持躯干直立核心收紧。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "俯卧腿弯举",
+    "name_en": "Lying Leg Curl",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [],
+    "equipment": "machine",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "腘绳肌孤立训练动作，目标肌肉为腘绳肌（股二头肌、半腱肌、半膜肌），臀大肌和小腿肌群辅助发力。",
+    "instructions_zh": "俯卧于腿弯举机上，脚踝后方抵住滚垫，膝盖对齐机器旋转轴；发力弯曲膝关节将滚垫向臀部方向拉起；顶峰停顿挤压腘绳肌，缓慢还原不要让重量自由落体。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "腿屈伸",
+    "name_en": "Leg Extension",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [],
+    "equipment": "machine",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "股四头肌孤立训练动作，通过膝关节伸展运动单独刺激股四头肌四个头，特别适合训练前激活或训练后精细雕刻。",
+    "instructions_zh": "坐于腿屈伸机上，背靠紧靠垫，脚踝前方抵住滚垫，膝盖对齐旋转轴；发力伸直膝关节将滚垫向上推起；顶峰时完全伸展并停顿收缩股四头肌，缓慢下放控制离心阶段。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "站姿提踵",
+    "name_en": "Standing Calf Raise",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [],
+    "equipment": "machine",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "小腿肌肉孤立训练动作，目标肌肉为腓肠肌，协同肌为比目鱼肌，对打造有型的小腿轮廓至关重要。",
+    "instructions_zh": "站于提踵机上，前脚掌踩于踏板边缘，肩部抵住垫子；先充分下放脚跟拉伸小腿肌肉至最低点，然后通过前脚掌用力踮脚将身体向上推至最高点；顶峰停顿感受小腿肌肉强烈收缩，缓慢下放还原。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "杠铃臀推",
+    "name_en": "Barbell Hip Thrust",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [
+      "core"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "hinge",
+    "difficulty": "intermediate",
+    "description_zh": "以臀大肌为主要目标肌肉的复合训练动作，协同肌包括腘绳肌、股四头肌和竖脊肌，是公认最有效的臀部强化训练之一。",
+    "instructions_zh": "上背部靠于平凳边缘，杠铃置于髋部上方并垫好护垫，双脚踩地与肩同宽使顶端时小腿垂直地面；通过脚跟和中足发力伸髋推起至肩到膝呈一条直线；顶峰时收紧臀部和腹部避免下背过度拱起，保持脊柱中立。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "保加利亚分腿蹲",
+    "name_en": "Bulgarian Split Squat",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [
+      "core"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "squat",
+    "difficulty": "intermediate",
+    "description_zh": "高阶单腿复合训练动作，目标肌肉为股四头肌和臀大肌，内收肌辅助发力，核心肌群全程参与维持平衡和稳定。",
+    "instructions_zh": "背对平凳站立，后脚脚背置于凳面上，前脚全掌踩实重量均匀分布；手持哑铃缓慢下蹲至后膝接近地面，想象前脚旋入地面使膝盖略微外旋以增加臀肌激活；前脚发力蹬起，保持躯干直立，膝盖对准脚尖方向。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "哈克深蹲",
+    "name_en": "Hack Squat",
+    "primary_muscle_group": "legs",
+    "secondary_muscle_groups": [],
+    "equipment": "machine",
+    "movement_pattern": "squat",
+    "difficulty": "beginner",
+    "description_zh": "使用哈克深蹲机进行的下肢复合训练动作，目标肌肉为股四头肌，协同肌包括腘绳肌和小腿肌群，固定轨道减少平衡需求。",
+    "instructions_zh": "背靠哈克深蹲机靠垫，双肩抵住肩垫，双脚置于踏板与肩同宽位置；释放安全锁后屈膝下蹲至大腿平行地面或更低；通过脚跟发力推起，不要完全锁死膝关节，保持背部紧贴靠垫。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "杠铃肩上推举",
+    "name_en": "Overhead Press",
+    "primary_muscle_group": "shoulders",
+    "secondary_muscle_groups": [
+      "arms",
+      "core"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "push",
+    "difficulty": "intermediate",
+    "description_zh": "最重要的肩部复合训练动作，目标肌肉为三角肌前束和中束，协同肌包括肱三头肌、斜方肌和腹肌。",
+    "instructions_zh": "站立双脚与肩同宽，杠铃置于锁骨前方握距略宽于肩；收紧臀部和腹部以稳定脊柱，将杠铃沿直线推至头顶锁定，顶端时双耳与肱二头肌对齐如望向窗外；下放时肘部收紧贴近身体两侧，全程避免过度后仰。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "哑铃侧平举",
+    "name_en": "Dumbbell Lateral Raise",
+    "primary_muscle_group": "shoulders",
+    "secondary_muscle_groups": [],
+    "equipment": "dumbbell",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "三角肌中束孤立训练动作，协同肌包括冈上肌、前锯肌和斜方肌上束，上斜方肌、下斜方肌和前锯肌协同完成肩胛骨上旋。",
+    "instructions_zh": "站立双手持轻量哑铃于身体两侧，手肘微弯约10-15度保持固定；以肩关节为轴向两侧抬起至与肩同高，顶端时手臂在胸前方约20度位置以保护肩袖，小指略高于拇指；保持肩膀远离耳朵下沉，缓慢下放3-4秒控制离心阶段。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "哑铃前平举",
+    "name_en": "Dumbbell Front Raise",
+    "primary_muscle_group": "shoulders",
+    "secondary_muscle_groups": [
+      "chest"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "三角肌前束孤立训练动作，协同肌包括胸大肌锁骨部和前锯肌，适合在推举之后作为补充训练。",
+    "instructions_zh": "站立双手持哑铃于大腿前方，掌心朝向身体；交替或同时将哑铃向正前方抬起至与肩同高，手肘保持微弯；缓慢下放还原，不要使用惯性甩起重量，全程核心收紧身体不前后晃动。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "阿诺德推举",
+    "name_en": "Arnold Press",
+    "primary_muscle_group": "shoulders",
+    "secondary_muscle_groups": [
+      "arms"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "push",
+    "difficulty": "intermediate",
+    "description_zh": "由阿诺德推广的复合肩部动作，推举过程中的手腕旋转和肩关节外展使三角肌前束、中束和后束均得到有效刺激，协同肌包括肱三头肌、斜方肌和前臂肌群。",
+    "instructions_zh": "坐姿双手持哑铃于肩前方，起始时掌心朝向自己如弯举顶端位置；推起的同时向外旋转手腕至顶端掌心朝前，顶端手臂完全伸展；下放时反向旋转回到起始位置，动作平稳流畅保持稳定不晃动。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "俯身哑铃反向飞鸟",
+    "name_en": "Reverse Dumbbell Fly",
+    "primary_muscle_group": "shoulders",
+    "secondary_muscle_groups": [
+      "back"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "针对三角肌后束和上背部的孤立训练动作，菱形肌和斜方肌中束协同参与，对改善肩部前后肌力平衡和预防损伤非常重要。",
+    "instructions_zh": "俯身约45度或趴于上斜凳上，双手持轻量哑铃自然下垂掌心相对；以肩关节为轴向两侧展开手臂至与肩同高，手肘微弯保持固定角度；顶峰时挤压后三角肌和肩胛骨，缓慢还原控制全程。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "杠铃直立划船",
+    "name_en": "Upright Row",
+    "primary_muscle_group": "shoulders",
+    "secondary_muscle_groups": [
+      "arms",
+      "back"
+    ],
+    "equipment": "barbell",
+    "movement_pattern": "pull",
+    "difficulty": "intermediate",
+    "description_zh": "同时锻炼三角肌中束和斜方肌上束的复合动作，协同肌包括三角肌前后束、肱二头肌、肱桡肌、菱形肌和前锯肌。",
+    "instructions_zh": "站立双手握杠铃于大腿前方，宽握距可加强三角肌中束刺激减少肩部压迫；以肘部引导向上拉起杠铃至双肘形成T字形，双肘高于双手；缓慢下放还原，使用宽握或绳索版本可降低肩峰撞击风险。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "坐姿哑铃推举",
+    "name_en": "Seated Dumbbell Shoulder Press",
+    "primary_muscle_group": "shoulders",
+    "secondary_muscle_groups": [
+      "arms"
+    ],
+    "equipment": "dumbbell",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "坐姿进行的哑铃肩部复合推举动作，目标肌肉为三角肌前束和中束，协同肌包括肱三头肌和斜方肌上束，靠背支撑减少核心代偿。",
+    "instructions_zh": "坐于有靠背的凳上，双手各持哑铃于肩部两侧掌心朝前，肘部位于手腕正下方；发力将哑铃沿弧线向上推起至头顶上方双臂伸直但不锁死；缓慢下放至哑铃回到肩部高度，保持核心收紧背部贴紧靠垫不过度拱腰。",
+    "is_compound": true
+  },
+  {
+    "name_zh": "杠铃弯举",
+    "name_en": "Barbell Curl",
+    "primary_muscle_group": "arms",
+    "secondary_muscle_groups": [],
+    "equipment": "barbell",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "最经典的肱二头肌孤立训练动作，目标肌肉为肱二头肌长头和短头，前臂肌群辅助稳定。",
+    "instructions_zh": "站立双脚与肩同宽建立稳定基础，双手反握杠铃于大腿前方握距与肩同宽；肘部始终紧贴身体两侧不移动，仅前臂运动弯曲肘关节将杠铃举至肩前方；动作保持缓慢可控，不要前后摆动身体借力。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "哑铃弯举",
+    "name_en": "Dumbbell Curl",
+    "primary_muscle_group": "arms",
+    "secondary_muscle_groups": [],
+    "equipment": "dumbbell",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "使用哑铃进行的二头肌孤立弯举，弯举过程中可加入旋腕动作（旋后），更全面地刺激肱二头肌长头和短头。",
+    "instructions_zh": "站立双手各持一只哑铃于身体两侧，起始时掌心朝向身体；弯举时旋转手腕使掌心朝上以激活二头肌旋后功能，交替或同时进行；顶峰挤压二头肌，缓慢下放至手臂完全伸展，全程上臂固定不前后摆动。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "绳索三头肌下压",
+    "name_en": "Tricep Pushdown",
+    "primary_muscle_group": "arms",
+    "secondary_muscle_groups": [],
+    "equipment": "cable",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "肱三头肌孤立训练动作，绳索提供恒定张力，直杆握法侧重三头肌外侧头，绳索中立握法增加长头参与，反握侧重内侧头。",
+    "instructions_zh": "面向高位滑轮站立，双手握绳索或直杆，上臂紧贴身体两侧固定不动；发力伸直肘关节将把手下压至手臂完全伸展，保持手腕中立；顶端时充分将把手拉回至前臂与地面平行位置即可，肘部始终贴紧身体。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "仰卧杠铃臂屈伸",
+    "name_en": "Skull Crusher",
+    "primary_muscle_group": "arms",
+    "secondary_muscle_groups": [],
+    "equipment": "barbell",
+    "movement_pattern": "push",
+    "difficulty": "intermediate",
+    "description_zh": "经典的肱三头肌孤立训练动作，仰卧位可充分拉伸三头肌长头，协同肌包括三角肌后束和前束、大圆肌和腕屈肌。",
+    "instructions_zh": "仰卧于平板凳上，双手握曲杆杠铃约与肩同宽，手臂垂直向上伸直于胸部上方；保持上臂固定不动且肘部内收不外展，弯曲肘关节将杠铃缓慢下放至前额上方约一寸位置；发力伸直肘关节还原，不要在顶端完全锁死以保持三头肌张力。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "锤式弯举",
+    "name_en": "Hammer Curl",
+    "primary_muscle_group": "arms",
+    "secondary_muscle_groups": [],
+    "equipment": "dumbbell",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "以中立握姿进行的弯举变式，目标肌肉为肱肌和肱桡肌，肱二头肌作为协同肌参与，对增加手臂整体围度和前臂力量非常有效。",
+    "instructions_zh": "站立双脚与肩同宽，双手持哑铃于身体两侧掌心相对保持中立握姿全程不旋转；肘部贴紧身体两侧，弯曲肘关节将哑铃举至肩前方，控制运动速度不借助惯性；顶峰短暂停顿后缓慢下放，交替或同时进行。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "哑铃颈后臂屈伸",
+    "name_en": "Overhead Tricep Extension",
+    "primary_muscle_group": "arms",
+    "secondary_muscle_groups": [],
+    "equipment": "dumbbell",
+    "movement_pattern": "push",
+    "difficulty": "beginner",
+    "description_zh": "过顶位进行的三头肌孤立训练动作，肩关节屈曲位使三头肌长头处于充分拉伸状态，对增加三头肌整体体积非常有效。",
+    "instructions_zh": "站立或坐姿，双手托举一只哑铃于头顶上方手臂伸直；保持上臂贴近耳朵固定不动，弯曲肘关节将哑铃下放至颈后充分拉伸三头肌长头；发力伸直肘关节将哑铃推回顶端，挺胸收紧腰腹部不要前后晃动。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "牧师凳弯举",
+    "name_en": "Preacher Curl",
+    "primary_muscle_group": "arms",
+    "secondary_muscle_groups": [],
+    "equipment": "barbell",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "利用牧师凳斜面固定上臂的弯举变式，目标肌肉为肱二头肌短头，肱肌和肱桡肌作为协同肌，完全杜绝身体借力实现精准孤立。",
+    "instructions_zh": "坐或站于牧师凳后方，胸靠斜板上臂平放于垫面；发力弯曲肘关节将杠铃举至前臂垂直手腕对齐肘部位置，使用适中负荷保持动作平顺；缓慢下放至手臂接近完全伸展但保持微弯不锁死，以维持持续张力并保护肘关节。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "集中弯举",
+    "name_en": "Concentration Curl",
+    "primary_muscle_group": "arms",
+    "secondary_muscle_groups": [],
+    "equipment": "dumbbell",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "高度孤立的肱二头肌训练动作，目标肌肉为肱二头肌长头和短头，肱肌和肱桡肌辅助，通过肘部抵住大腿内侧完全消除借力。",
+    "instructions_zh": "坐于平凳上双腿分开，上身前倾约45度，持哑铃手臂的肘部抵在同侧大腿内侧，另一手放于对侧腿上稳定身体；发力弯举哑铃至前臂接触上臂接近肩部高度，顶峰挤压二头肌停顿1-2秒；缓慢下放至手臂接近完全伸展保持微弯，全程上臂紧贴大腿不移动。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "平板支撑",
+    "name_en": "Plank",
+    "primary_muscle_group": "core",
+    "secondary_muscle_groups": [
+      "shoulders"
+    ],
+    "equipment": "bodyweight",
+    "movement_pattern": "carry",
+    "difficulty": "beginner",
+    "description_zh": "最基础的核心抗伸展稳定性训练动作，目标肌肉为腹横肌和腹直肌，竖脊肌和三角肌协同维持身体姿态。",
+    "instructions_zh": "前臂撑地，肘关节位于肩关节正下方，双脚并拢脚尖着地；身体从头到脚保持一条直线，收紧腹部不塌腰不拱背，臀部收紧不要过高或过低；保持均匀呼吸，持续收紧核心如同即将被击腹部般发力。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "悬垂举腿",
+    "name_en": "Hanging Leg Raise",
+    "primary_muscle_group": "core",
+    "secondary_muscle_groups": [
+      "arms"
+    ],
+    "equipment": "bodyweight",
+    "movement_pattern": "pull",
+    "difficulty": "intermediate",
+    "description_zh": "高阶核心训练动作，目标肌肉为腹直肌和腹横肌，髂腰肌负责抬腿，前臂和股四头肌作为协同肌，竖脊肌维持脊柱稳定。",
+    "instructions_zh": "双手正握单杠悬垂，收紧背阔肌和核心使身体稳定不摇晃；收紧腹部卷起骨盆如做卷腹动作，将双腿伸直抬起至与地面平行或更高，动作不仅仅是屈髋而是要有骨盆后倾；吸气下放呼气抬起，缓慢还原避免利用身体摆荡惯性。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "绳索卷腹",
+    "name_en": "Cable Crunch",
+    "primary_muscle_group": "core",
+    "secondary_muscle_groups": [],
+    "equipment": "cable",
+    "movement_pattern": "pull",
+    "difficulty": "beginner",
+    "description_zh": "使用绳索进行的卷腹动作，目标肌肉为腹直肌，腹内外斜肌和腹横肌作为稳定肌参与，可通过调节重量精确控制训练负荷。",
+    "instructions_zh": "跪于高位滑轮前方，双手握绳索置于头部两侧位置固定不动，脚趾着地保持骨盆稳定臀部抬起；以腹肌卷曲脊柱发力向下做卷腹运动，下巴内收如含住鸡蛋；唯一运动的部位是核心在收缩卷曲脊柱，手臂不要主动拉动重量，动作不经过髋部。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "健腹轮",
+    "name_en": "Ab Wheel Rollout",
+    "primary_muscle_group": "core",
+    "secondary_muscle_groups": [
+      "shoulders"
+    ],
+    "equipment": "bodyweight",
+    "movement_pattern": "push",
+    "difficulty": "intermediate",
+    "description_zh": "高强度核心抗伸展训练动作，目标肌肉为腹直肌和腹横肌，腹斜肌参与稳定，背阔肌、三角肌和胸肌协同支撑上肢。",
+    "instructions_zh": "双膝跪地，双手握住健腹轮手柄与肩同宽，肩部位于手柄正上方，骨盆微后倾收紧核心；缓慢向前推出健腹轮伸展身体，身体保持刚性从头到膝呈一条直线不塌腰；伸展至腹肌紧张但下背不拱起的最远端，吸气推出呼气用核心和背阔肌将身体拉回起始位置。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "俄罗斯转体",
+    "name_en": "Russian Twist",
+    "primary_muscle_group": "core",
+    "secondary_muscle_groups": [],
+    "equipment": "bodyweight",
+    "movement_pattern": "rotation",
+    "difficulty": "beginner",
+    "description_zh": "核心旋转训练动作，目标肌肉为腹内外斜肌群，腹直肌和髂腰肌维持躯干姿态，对提升躯干旋转力量和稳定性有重要作用。",
+    "instructions_zh": "坐于地面上身后倾约45度，下背挺直上背略微弓起，双腿屈膝抬离地面；通过转动双肩带动手臂向左右两侧交替转体，对侧腹部应有收缩挤压感；呼气收缩腰腹转体，左右各停留1-2秒，保持下背挺直不弓背。",
+    "is_compound": false
+  },
+  {
+    "name_zh": "帕洛夫推",
+    "name_en": "Pallof Press",
+    "primary_muscle_group": "core",
+    "secondary_muscle_groups": [
+      "shoulders"
+    ],
+    "equipment": "cable",
+    "movement_pattern": "rotation",
+    "difficulty": "beginner",
+    "description_zh": "核心抗旋转训练动作，目标肌肉为腹直肌、腹横肌和腹内外斜肌，脊柱深层稳定肌（多裂肌、回旋肌）全程参与，臀部和三角肌辅助维持姿态。",
+    "instructions_zh": "将绳索设置在胸部高度，侧向站于龙门架旁，双手握把手置于胸前双脚与肩同宽；收紧核心如即将被击腹，将把手向正前方缓慢推出至手臂完全伸展，抵抗绳索的侧向旋转拉力；保持2-3秒后拉回胸前，全程肩膀正对前方躯干不发生任何旋转。",
+    "is_compound": false
+  }
+]
