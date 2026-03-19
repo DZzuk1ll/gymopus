@@ -82,6 +82,10 @@ frontend/src/lib/api.ts              # API 客户端（自动附加所有认证 
 4. **双 LLM 模式**：用户自带 Key（不限速）或使用默认模型（受 rate limiting 限制）。
 5. **LLM 输出校验**：PydanticAI `output_type` 做结构校验 + LangGraph validator 节点做业务校验（exercise_id 存在性等）。
 
+## 前端设计准则
+
+前端设计相关工作前，**必须先读取 `.impeccable.md`**，其中包含完整的设计上下文（用户画像、品牌个性、视觉方向、设计原则）。
+
 ## 当前进度
 
-Phase 1（训练编排 MVP）已完成。详见 project_spec.md 中的 Phase 2-4 规划。
+Phase 1-4 已全部实现。训练编排、饮食管理、状态追踪、训练记录和流式输出均已完成。对话通过 LangGraph Postgres Checkpointer 持久化。

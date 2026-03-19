@@ -2,9 +2,9 @@ import asyncio
 import json
 
 import structlog
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import StreamingResponse
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import AIMessage, HumanMessage
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
@@ -13,7 +13,6 @@ from app.api.rate_limit import check_rate_limit, increment_rate_limit
 from app.models.user import User
 from app.schemas import ApiResponse
 from app.schemas.chat import ChatRequest, ChatResponse
-from app.graph.workflow import graph
 
 logger = structlog.get_logger()
 
@@ -42,11 +41,14 @@ def _serialize_user_profile(user: User) -> dict:
 @router.post("")
 async def chat(
     body: ChatRequest,
+    request: Request,
     user: User = Depends(get_current_user),
     llm_config: LLMConfig = Depends(get_llm_config),
     db: AsyncSession = Depends(get_db),
     _rate_limit: None = Depends(check_rate_limit),
 ) -> ApiResponse[ChatResponse]:
+    graph = request.app.state.graph
+
     initial_state = {
         "messages": [HumanMessage(content=body.message)],
         "user_id": str(user.id),
@@ -98,12 +100,15 @@ async def chat(
 @router.post("/stream")
 async def chat_stream(
     body: ChatRequest,
+    request: Request,
     user: User = Depends(get_current_user),
     llm_config: LLMConfig = Depends(get_llm_config),
     db: AsyncSession = Depends(get_db),
     _rate_limit: None = Depends(check_rate_limit),
 ):
     """SSE streaming endpoint using LangGraph astream_events."""
+    graph = request.app.state.graph
+
     initial_state = {
         "messages": [HumanMessage(content=body.message)],
         "user_id": str(user.id),
@@ -158,3 +163,34 @@ async def chat_stream(
         media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
     )
+
+
+@router.get("/history")
+async def get_chat_history(
+    request: Request,
+    user: User = Depends(get_current_user),
+) -> ApiResponse[list[dict]]:
+    """Retrieve conversation history from checkpointer."""
+    graph = request.app.state.graph
+    config = {"configurable": {"thread_id": str(user.id)}}
+
+    state = await graph.aget_state(config)
+
+    if state is None or not state.values:
+        return ApiResponse.ok([])
+
+    messages = state.values.get("messages", [])
+    history = []
+    for msg in messages:
+        if isinstance(msg, HumanMessage):
+            role = "user"
+        elif isinstance(msg, AIMessage):
+            role = "assistant"
+        else:
+            continue
+        history.append({
+            "role": role,
+            "content": msg.content if hasattr(msg, "content") else str(msg),
+        })
+
+    return ApiResponse.ok(history)

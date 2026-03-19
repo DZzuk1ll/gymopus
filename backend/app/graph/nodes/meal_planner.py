@@ -87,6 +87,29 @@ async def meal_planner(state: GymOpusState) -> dict:
 
     prompt = _build_meal_prompt(state)
 
+    # Cross-module: estimate training day vs rest day for calorie/macro adjustment
+    profile = state.get("user_profile", {})
+    freq = profile.get("training_frequency_per_week")
+    if freq and isinstance(freq, int):
+        from datetime import date
+        weekday = date.today().weekday()  # 0=Mon, 6=Sun
+        training_days_map = {
+            1: {0},
+            2: {0, 3},
+            3: {0, 2, 4},
+            4: {0, 1, 3, 4},
+            5: {0, 1, 2, 3, 4},
+            6: {0, 1, 2, 3, 4, 5},
+            7: {0, 1, 2, 3, 4, 5, 6},
+        }
+        is_training_day = weekday in training_days_map.get(freq, set())
+        day_type = "训练日" if is_training_day else "休息日"
+        prompt += (
+            f"\n\n今天推测为{day_type}。"
+            f"训练日应增加碳水化合物摄入(+200-300kcal)以支持训练和恢复，"
+            f"蛋白质保持充足；休息日可适当降低碳水，保持蛋白质不变。"
+        )
+
     try:
         result = await meal_agent.run(prompt, model=model, deps=deps)
         plan_dict = result.output.model_dump()

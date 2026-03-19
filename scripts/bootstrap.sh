@@ -23,7 +23,11 @@ echo "Seeding exercises..."
 cd "$PROJECT_ROOT"
 uv run --project backend python scripts/seed_exercises.py
 
-# 4. Ingest methodology documents
+# 4. Seed foods
+echo "Seeding foods..."
+uv run --project backend python scripts/seed_foods.py
+
+# 5. Ingest methodology documents
 echo "Ingesting methodology documents..."
 uv run --project backend python scripts/ingest_documents.py
 

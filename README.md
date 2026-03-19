@@ -5,18 +5,19 @@
 ## 架构
 
 ```
-用户 → Next.js 前端 → FastAPI 后端 → LangGraph 工作流
+用户 → Next.js 前端 → FastAPI 后端 → LangGraph 工作流 (Postgres Checkpointer)
                                          │
-                            ┌─────────────┼─────────────┐
-                            ▼             ▼             ▼
-                      PydanticAI     PydanticAI    PydanticAI
-                      Intent Agent   Workout Agent  QA Agent
-                            │             │             │
-                            │        ┌────┴────┐        │
-                            │        ▼         ▼        ▼
-                            │   Exercise DB  LangChain RAG
-                            │        │         │        │
-                            └────────┴─────────┴────────┘
+                    ┌────────┬───────────┼───────────┬────────┐
+                    ▼        ▼           ▼           ▼        ▼
+              PydanticAI  PydanticAI  PydanticAI  PydanticAI  PydanticAI
+              Intent      Workout     Meal        Diet        QA Agent
+              Agent       Agent       Agent       Agent          │
+                    │        │           │           │        │
+                    │   ┌────┴────┐ ┌────┴────┐     │        ▼
+                    │   ▼         ▼ ▼         ▼     │   LangChain RAG
+                    │ Exercise  Food DB   Nutrition  │        │
+                    │   DB         │      Calc       │        │
+                    └───┴──────────┴────────┴────────┴────────┘
                                          │
                                    PostgreSQL + pgvector
 ```
@@ -114,28 +115,31 @@ gymopus/
 │   │   ├── main.py              # FastAPI 入口
 │   │   ├── config.py            # YAML 配置加载
 │   │   ├── database.py          # SQLAlchemy async session
-│   │   ├── models/              # ORM（User, Exercise, RateLimitCounter）
+│   │   ├── models/              # ORM（User, Exercise, Food, WorkoutLog, MealLog, DailyStatus, RateLimitCounter）
 │   │   ├── schemas/             # Pydantic 请求/响应模型
-│   │   ├── api/                 # 路由（users, knowledge, chat）
+│   │   ├── api/                 # 路由（users, knowledge, chat, workouts, meals, status）
 │   │   ├── graph/               # LangGraph 工作流
 │   │   │   ├── state.py         # GymOpusState 定义
-│   │   │   ├── workflow.py      # StateGraph 编排
-│   │   │   └── nodes/           # 图节点（intent, workout, qa, validator, fallback）
-│   │   ├── agents/              # PydanticAI Agent（intent, workout, qa）
+│   │   │   ├── workflow.py      # StateGraph 编排 + Postgres Checkpointer
+│   │   │   └── nodes/           # 图节点（intent, workout, meal, diet, qa, validator, fallback）
+│   │   ├── agents/              # PydanticAI Agent（intent, workout, meal, diet, qa, report）
 │   │   ├── rag/                 # LangChain RAG（embeddings, splitter, vectorstore, retriever）
-│   │   └── tools/               # Agent 工具（exercise_search, methodology_search）
+│   │   ├── tools/               # Agent 工具（exercise_search, food_lookup, methodology_search, nutrition_calc 等）
+│   │   └── utils/               # 趋势计算（移动平均、周/月汇总）
 │   ├── alembic/                 # 数据库迁移
 │   └── tests/
 ├── frontend/
 │   └── src/
-│       ├── app/                 # Next.js 页面（chat, onboarding, settings, privacy）
-│       ├── components/          # UI 组件（chat, legal, layout）
-│       ├── hooks/               # useUser, useAnonymousId
+│       ├── app/                 # Next.js 页面（chat, onboarding, nutrition, dashboard, settings, privacy）
+│       ├── components/          # UI 组件（chat, workout, nutrition, status, legal, layout）
+│       ├── hooks/               # useUser, useStreamChat, useWorkouts, useMeals, useStatus 等
 │       ├── lib/api.ts           # API 客户端（自动附加认证 headers）
 │       └── types/               # TypeScript 类型
 ├── knowledge-base/
-│   ├── exercises/               # 动作库 JSON（50 个动作）
-│   └── methodology/             # 训练方法论 Markdown（4 篇）
+│   ├── exercises/               # 动作库 JSON
+│   ├── foods/                   # 食物成分表 CSV
+│   ├── methodology/             # 训练方法论 Markdown（4 篇）
+│   └── nutrition-guidelines/    # 营养学指南 Markdown（2 篇）
 └── scripts/                     # seed、ingest、bootstrap
 ```
 
@@ -148,10 +152,28 @@ gymopus/
 | PUT | /api/users/me/profile | 更新画像 |
 | DELETE | /api/users/me | 删除所有数据 |
 | POST | /api/chat | 对话（触发 LangGraph 工作流） |
+| POST | /api/chat/stream | 对话流式输出（SSE） |
+| GET | /api/chat/history | 获取对话历史 |
+| POST | /api/workouts/logs | 批量创建训练日志 |
+| GET | /api/workouts/logs | 查询训练日志 |
+| GET | /api/workouts/logs/exercise/:id/history | 单动作训练历史 |
+| POST | /api/meals/logs | 创建饮食记录 |
+| GET | /api/meals/logs | 查询饮食记录 |
+| POST | /api/meals/analyze | 饮食分析 |
+| POST | /api/status/daily | 记录每日状态 |
+| GET | /api/status/daily | 查询状态记录 |
+| GET | /api/status/report | 状态趋势报告 |
+| GET | /api/status/weekly-report | AI 周报 |
 | GET | /api/knowledge/exercises | 查询动作库（支持筛选） |
 | GET | /api/knowledge/exercises/:id | 单个动作详情 |
+| GET | /api/knowledge/foods | 查询食物库 |
+| GET | /api/knowledge/foods/:id | 单个食物详情 |
 
 所有请求通过 `X-Anonymous-Id` header 进行匿名认证。自带 LLM Key 的用户通过 `X-LLM-*` headers 传递配置。
+
+## 设计决策
+
+**训练计划生成走对话流程**：Spec 中的 `POST /api/workouts/generate` 等独立端点未实现为 REST API。训练计划通过 LangGraph 对话工作流（`POST /api/chat`）生成，因为计划生成依赖意图识别、知识库检索和多轮校验，这些都是图节点。独立端点会重复这些逻辑且失去对话上下文。
 
 ## 开发
 
@@ -171,15 +193,9 @@ cd frontend && pnpm build
 
 ## 当前状态
 
-**Phase 1（训练编排 MVP）已完成：**
-- 匿名用户系统 + Onboarding
-- 50 个动作知识库（来源：ExRx.net、free-exercise-db 等）
-- 4 篇训练方法论 RAG 文档（来源：PubMed、RP Strength、NSCA 等）
-- 意图识别 → 训练编排 / 知识问答 工作流
-- 对话界面 + 训练计划卡片
-- Rate limiting + 免责声明 + 隐私政策
+**Phase 1-4 已全部实现：**
 
-**后续 Phase：**
-- Phase 2：饮食管理（食物成分表、食谱生成、饮食诊断）
-- Phase 3：状态追踪 + 跨模块联动（体重趋势、疲劳度影响训练编排）
-- Phase 4：知识库扩充 + 训练记录 + 流式输出
+- **Phase 1 — 训练编排 MVP**：匿名用户系统、Onboarding 引导流程、动作知识库、训练方法论 RAG、意图识别工作流、对话界面 + 训练计划卡片、Rate limiting、免责声明
+- **Phase 2 — 饮食管理**：食物成分表、食谱生成 Agent、饮食诊断 Agent、营养素图表、饮食记录
+- **Phase 3 — 状态追踪**：每日状态记录（体重/睡眠/疲劳/情绪）、趋势图表、疲劳度影响训练编排、训练日/休息日热量调整、AI 周报
+- **Phase 4 — 打磨完善**：营养学知识库 RAG、训练日志 + 渐进超负荷建议、SSE 流式输出、对话持久化（Postgres Checkpointer）

@@ -22,16 +22,22 @@ async def seed():
         exercises = json.load(f)
 
     async with async_session() as session:
-        # Check if already seeded
-        result = await session.execute(select(Exercise).limit(1))
-        if result.scalar_one_or_none():
-            print("Exercises already seeded, skipping.")
-            return
-
+        added = 0
         for ex in exercises:
-            session.add(Exercise(**ex))
+            # Upsert by name_en to support incremental updates
+            result = await session.execute(
+                select(Exercise).where(Exercise.name_en == ex["name_en"])
+            )
+            existing = result.scalar_one_or_none()
+            if existing:
+                # Update existing fields
+                for key, value in ex.items():
+                    setattr(existing, key, value)
+            else:
+                session.add(Exercise(**ex))
+                added += 1
         await session.commit()
-        print(f"Seeded {len(exercises)} exercises.")
+        print(f"Seeded exercises: {added} new, {len(exercises) - added} updated (total: {len(exercises)}).")
 
 
 if __name__ == "__main__":

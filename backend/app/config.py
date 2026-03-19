@@ -13,6 +13,11 @@ class DatabaseConfig(BaseModel):
         """Connection string for LangChain PGVector (requires psycopg3)."""
         return self.url.replace("postgresql+asyncpg://", "postgresql+psycopg://")
 
+    @property
+    def url_psycopg_raw(self) -> str:
+        """Plain postgresql:// URI for raw psycopg (e.g. LangGraph checkpointer)."""
+        return self.url.replace("postgresql+asyncpg://", "postgresql://")
+
 
 class LLMConfig(BaseModel):
     base_url: str

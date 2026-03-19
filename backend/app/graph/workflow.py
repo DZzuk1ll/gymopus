@@ -77,7 +77,7 @@ def build_graph() -> StateGraph:
     return builder
 
 
-# Compile without checkpointer for now — checkpointer is added at runtime
-# when we have the database connection available
-graph_builder = build_graph()
-graph = graph_builder.compile()
+def compile_graph(checkpointer=None):
+    """Compile the graph with an optional checkpointer."""
+    builder = build_graph()
+    return builder.compile(checkpointer=checkpointer)
