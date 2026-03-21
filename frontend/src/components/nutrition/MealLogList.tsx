@@ -1,5 +1,6 @@
 "use client";
 
+import { UtensilsCrossed } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import type { MealLog } from "@/types";
 
@@ -18,6 +19,7 @@ export function MealLogList({ logs }: MealLogListProps) {
   if (logs.length === 0) {
     return (
       <div className="text-center text-muted-foreground py-8 text-sm">
+        <UtensilsCrossed className="size-8 mx-auto mb-2 text-muted-foreground/40" />
         今日暂无饮食记录
       </div>
     );
@@ -43,7 +45,7 @@ export function MealLogList({ logs }: MealLogListProps) {
 
         return (
           <div key={type}>
-            <h4 className="text-sm font-medium mb-1.5">
+            <h4 className="text-sm font-medium tracking-tight mb-1.5">
               {MEAL_TYPE_LABELS[type] ?? type}
             </h4>
             <div className="space-y-2">

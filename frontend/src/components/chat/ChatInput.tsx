@@ -33,7 +33,7 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="描述你的训练需求，或提问健身知识..."
-        className="min-h-[44px] max-h-[120px] resize-none"
+        className="min-h-[44px] max-h-[120px] resize-none rounded-xl"
         rows={1}
         disabled={disabled}
       />

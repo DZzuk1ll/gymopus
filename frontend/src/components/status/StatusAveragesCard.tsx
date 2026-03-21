@@ -30,10 +30,13 @@ export function StatusAveragesCard({ averages, period }: StatusAveragesCardProps
           {items.map((item) => (
             <div key={item.label} className="text-center">
               <div className="text-xs text-muted-foreground">{item.label}</div>
-              <div className="font-mono text-sm font-medium">
-                {item.value != null
-                  ? `${item.value.toFixed(item.decimals)}${item.unit}`
-                  : "-"}
+              <div className="font-mono text-base font-semibold text-foreground">
+                {item.value != null ? (
+                  <>
+                    {item.value.toFixed(item.decimals)}
+                    <span className="text-xs text-muted-foreground ml-0.5">{item.unit}</span>
+                  </>
+                ) : "-"}
               </div>
             </div>
           ))}

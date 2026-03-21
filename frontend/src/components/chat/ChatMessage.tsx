@@ -20,10 +20,10 @@ export function ChatMessage({ message }: ChatMessageProps) {
     >
       <div
         className={cn(
-          "max-w-[85%] rounded-lg px-4 py-3",
+          "max-w-[85%] px-4 py-3",
           isUser
-            ? "bg-primary text-primary-foreground"
-            : "bg-muted"
+            ? "bg-primary text-primary-foreground rounded-2xl rounded-br-md"
+            : "bg-card ring-1 ring-border/50 rounded-2xl rounded-bl-md"
         )}
       >
         {!isUser && (

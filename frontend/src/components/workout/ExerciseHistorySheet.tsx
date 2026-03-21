@@ -60,7 +60,7 @@ export function ExerciseHistorySheet({
                     <XAxis dataKey="date" tick={{ fontSize: 11 }} />
                     <YAxis tick={{ fontSize: 11 }} width={40} />
                     <Tooltip
-                      contentStyle={{ fontSize: 12, borderRadius: 8 }}
+                      contentStyle={{ fontSize: 12, borderRadius: 8, background: "var(--card)", borderColor: "var(--border)", color: "var(--foreground)" }}
                     />
                     <Line
                       type="monotone"
@@ -77,7 +77,7 @@ export function ExerciseHistorySheet({
             )}
 
             {progression && Object.keys(progression).length > 0 && (
-              <div className="border rounded-md p-3 text-sm space-y-1">
+              <div className="border border-primary/15 bg-primary/[0.03] rounded-lg p-3 text-sm space-y-1">
                 <h4 className="font-medium text-xs text-muted-foreground">
                   渐进超负荷建议
                 </h4>
@@ -98,7 +98,7 @@ export function ExerciseHistorySheet({
                     key={log.id}
                     className="flex justify-between text-xs py-1.5 border-b last:border-0"
                   >
-                    <span className="text-muted-foreground">{log.logged_date}</span>
+                    <span className="text-muted-foreground font-mono">{log.logged_date}</span>
                     <span className="font-mono">
                       {log.sets_completed}x{log.reps_completed}
                       {log.weight_kg != null && ` @${log.weight_kg}kg`}

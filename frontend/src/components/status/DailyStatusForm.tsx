@@ -97,7 +97,7 @@ export function DailyStatusForm() {
           <div key={field.key} className="space-y-1.5">
             <div className="flex justify-between items-center">
               <Label className="text-xs">{field.label}</Label>
-              <span className="text-xs font-mono text-muted-foreground">
+              <span className="text-xs font-mono text-foreground">
                 {sliders[field.key]}/5
               </span>
             </div>

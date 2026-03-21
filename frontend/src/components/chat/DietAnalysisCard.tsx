@@ -28,7 +28,7 @@ export function DietAnalysisCard({ analysis }: DietAnalysisCardProps) {
       <div className="space-y-1">
         <div className="flex justify-between text-xs">
           <span>{label}</span>
-          <span className="font-mono">
+          <span className="font-mono font-semibold text-foreground">
             {actual.toFixed(0)}{unit}
             {t > 0 && ` / ${t.toFixed(0)}${unit} (${pct}%)`}
           </span>

@@ -16,7 +16,7 @@ export function NavBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 border-t bg-background z-50">
+    <nav className="fixed bottom-0 left-0 right-0 border-t border-border/50 bg-background/80 backdrop-blur-md z-50 pb-[env(safe-area-inset-bottom)]">
       <div className="flex justify-around max-w-lg mx-auto">
         {NAV_ITEMS.map((item) => {
           const isActive =
@@ -28,11 +28,18 @@ export function NavBar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex flex-col items-center py-2 px-4 text-xs",
-                isActive ? "text-foreground" : "text-muted-foreground"
+                "relative flex flex-col items-center py-2 px-4 text-xs transition-colors duration-200",
+                isActive
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <item.icon className="size-5 mb-0.5" />
+              {isActive && (
+                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full" />
+              )}
+              <item.icon
+                className={cn("size-5 mb-0.5", isActive && "stroke-[1.75]")}
+              />
               <span>{item.label}</span>
             </Link>
           );

@@ -59,8 +59,8 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-8 pb-24 space-y-6">
-      <h1 className="text-2xl font-bold">仪表盘</h1>
+    <div className="max-w-lg mx-auto px-4 py-8 pb-24 space-y-8">
+      <h1 className="text-2xl font-bold tracking-tight">仪表盘</h1>
 
       <DailyStatusForm />
 
@@ -99,7 +99,7 @@ export default function DashboardPage() {
 
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">AI 周报</h2>
+          <h2 className="text-lg font-semibold tracking-tight">AI 周报</h2>
           <Button
             variant="outline"
             size="sm"

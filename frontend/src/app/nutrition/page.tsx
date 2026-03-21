@@ -87,8 +87,8 @@ export default function NutritionPage() {
   const isPending = createLog.isPending || analyzeDiet.isPending;
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-8 pb-24 space-y-6">
-      <h1 className="text-2xl font-bold">饮食记录</h1>
+    <div className="max-w-lg mx-auto px-4 py-8 pb-24 space-y-8">
+      <h1 className="text-2xl font-bold tracking-tight">饮食记录</h1>
 
       <Card>
         <CardHeader className="pb-2">

@@ -115,7 +115,7 @@ export default function OnboardingPage() {
   return (
     <div className="max-w-lg mx-auto px-4 py-8 min-h-screen flex flex-col">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-1">GymOpus</h1>
+        <h1 className="text-2xl font-bold tracking-tight mb-1">GymOpus</h1>
         <div className="flex items-center justify-between">
           <p className="text-sm text-muted-foreground">
             填写你的训练画像，获取更精准的推荐
@@ -133,7 +133,7 @@ export default function OnboardingPage() {
           value={((step + 1) / TOTAL_STEPS) * 100}
           className="mt-4 h-1"
         />
-        <p className="text-xs text-muted-foreground mt-1 text-right">
+        <p className="text-xs text-muted-foreground mt-1 text-right font-mono">
           {step + 1} / {TOTAL_STEPS}
         </p>
       </div>

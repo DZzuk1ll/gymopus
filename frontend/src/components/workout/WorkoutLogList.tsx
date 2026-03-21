@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Dumbbell } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExerciseHistorySheet } from "@/components/workout/ExerciseHistorySheet";
 import type { WorkoutLog } from "@/types";
@@ -15,6 +16,7 @@ export function WorkoutLogList({ logs }: WorkoutLogListProps) {
   if (logs.length === 0) {
     return (
       <div className="text-center text-muted-foreground py-8 text-sm">
+        <Dumbbell className="size-8 mx-auto mb-2 text-muted-foreground/40" />
         暂无训练记录
       </div>
     );
@@ -39,7 +41,7 @@ export function WorkoutLogList({ logs }: WorkoutLogListProps) {
       <div className="space-y-4">
         {sortedDates.map((date) => (
           <div key={date}>
-            <h4 className="text-sm font-medium mb-2 text-muted-foreground">
+            <h4 className="text-sm font-medium font-mono mb-2 text-muted-foreground">
               {date}
             </h4>
             <Card>

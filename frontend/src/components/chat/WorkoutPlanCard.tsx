@@ -42,7 +42,7 @@ export function WorkoutPlanCard({ plan }: WorkoutPlanCardProps) {
           {plan.days.map((day, i) => (
             <div key={i} className="border rounded-md">
               <button
-                className="w-full px-3 py-2 text-left text-sm font-medium flex justify-between items-center hover:bg-muted/50"
+                className="w-full px-3 py-2 text-left text-sm font-medium flex justify-between items-center hover:bg-muted/50 transition-colors"
                 onClick={() => setExpandedDay(expandedDay === i ? null : i)}
               >
                 <span className="flex items-center gap-1">
@@ -86,7 +86,7 @@ export function WorkoutPlanCard({ plan }: WorkoutPlanCardProps) {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full mt-2"
+                    className="w-full mt-2 border-primary/20 text-primary hover:bg-primary/5"
                     onClick={() => setLoggerDay(i)}
                   >
                     <ClipboardList className="size-3.5 mr-1" />

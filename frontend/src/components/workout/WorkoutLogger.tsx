@@ -115,7 +115,7 @@ export function WorkoutLogger({ prefillExercises, date, onDone }: WorkoutLoggerP
       </div>
 
       {entries.map((entry, i) => (
-        <div key={i} className="border rounded-md p-3 space-y-2">
+        <div key={i} className="border border-border/70 rounded-lg p-3 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-muted-foreground">
               动作 {i + 1}
@@ -187,7 +187,7 @@ export function WorkoutLogger({ prefillExercises, date, onDone }: WorkoutLoggerP
 
       <Button
         variant="outline"
-        className="w-full"
+        className="w-full border-dashed"
         onClick={addEntry}
       >
         <Plus className="size-4 mr-1" />

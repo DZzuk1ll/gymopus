@@ -39,13 +39,13 @@ export function WeeklyReportCard({ report }: WeeklyReportCardProps) {
 
         {report.achievements.length > 0 && (
           <div>
-            <h4 className="font-medium text-xs text-green-600 dark:text-green-400 mb-1">
+            <h4 className="font-medium text-xs text-[oklch(0.52_0.17_155)] dark:text-[oklch(0.68_0.15_155)] mb-1">
               成就
             </h4>
             <ul className="space-y-0.5 text-xs">
               {report.achievements.map((a, i) => (
                 <li key={i} className="flex gap-1">
-                  <span className="text-green-600 dark:text-green-400 shrink-0">+</span>
+                  <span className="text-[oklch(0.52_0.17_155)] dark:text-[oklch(0.68_0.15_155)] shrink-0">+</span>
                   <span>{a}</span>
                 </li>
               ))}
@@ -55,13 +55,13 @@ export function WeeklyReportCard({ report }: WeeklyReportCardProps) {
 
         {report.concerns.length > 0 && (
           <div>
-            <h4 className="font-medium text-xs text-orange-600 dark:text-orange-400 mb-1">
+            <h4 className="font-medium text-xs text-[oklch(0.65_0.17_75)] dark:text-[oklch(0.75_0.14_75)] mb-1">
               关注
             </h4>
             <ul className="space-y-0.5 text-xs">
               {report.concerns.map((c, i) => (
                 <li key={i} className="flex gap-1">
-                  <span className="text-orange-600 dark:text-orange-400 shrink-0">!</span>
+                  <span className="text-[oklch(0.65_0.17_75)] dark:text-[oklch(0.75_0.14_75)] shrink-0">!</span>
                   <span>{c}</span>
                 </li>
               ))}

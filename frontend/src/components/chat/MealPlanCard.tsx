@@ -35,20 +35,20 @@ export function MealPlanCard({ plan }: MealPlanCardProps) {
         </div>
         <div className="grid grid-cols-3 gap-2 mt-2 text-xs">
           <div className="text-center">
-            <div className="text-muted-foreground">蛋白质</div>
-            <div className="font-mono font-medium">
+            <div className="text-muted-foreground text-[11px]">蛋白质</div>
+            <div className="text-foreground font-mono font-semibold">
               {plan.total.protein_g.toFixed(0)}g / {plan.target.protein_g.toFixed(0)}g
             </div>
           </div>
           <div className="text-center">
-            <div className="text-muted-foreground">脂肪</div>
-            <div className="font-mono font-medium">
+            <div className="text-muted-foreground text-[11px]">脂肪</div>
+            <div className="text-foreground font-mono font-semibold">
               {plan.total.fat_g.toFixed(0)}g / {plan.target.fat_g.toFixed(0)}g
             </div>
           </div>
           <div className="text-center">
-            <div className="text-muted-foreground">碳水</div>
-            <div className="font-mono font-medium">
+            <div className="text-muted-foreground text-[11px]">碳水</div>
+            <div className="text-foreground font-mono font-semibold">
               {plan.total.carbs_g.toFixed(0)}g / {plan.target.carbs_g.toFixed(0)}g
             </div>
           </div>

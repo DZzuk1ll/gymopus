@@ -47,9 +47,9 @@ export function WeightTrendChart({ data, weightChange }: WeightTrendChartProps) 
             <span
               className={`text-xs font-mono ${
                 weightChange > 0
-                  ? "text-red-500"
+                  ? "text-[oklch(0.55_0.22_25)] dark:text-[oklch(0.68_0.19_22)]"
                   : weightChange < 0
-                    ? "text-green-500"
+                    ? "text-[oklch(0.52_0.17_155)] dark:text-[oklch(0.68_0.15_155)]"
                     : "text-muted-foreground"
               }`}
             >
@@ -68,7 +68,7 @@ export function WeightTrendChart({ data, weightChange }: WeightTrendChartProps) 
               tick={{ fontSize: 11 }}
               width={40}
             />
-            <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+            <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, background: "var(--card)", borderColor: "var(--border)", color: "var(--foreground)" }} />
             <Legend iconSize={10} wrapperStyle={{ fontSize: 12 }} />
             <Line
               type="monotone"

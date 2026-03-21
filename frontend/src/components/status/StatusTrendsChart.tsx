@@ -39,7 +39,7 @@ export function StatusTrendsChart({ data }: StatusTrendsChartProps) {
           <LineChart data={formatted}>
             <XAxis dataKey="date" tick={{ fontSize: 11 }} />
             <YAxis domain={[1, 5]} tick={{ fontSize: 11 }} width={30} />
-            <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+            <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, background: "var(--card)", borderColor: "var(--border)", color: "var(--foreground)" }} />
             <Legend iconSize={10} wrapperStyle={{ fontSize: 12 }} />
             <Line
               type="monotone"

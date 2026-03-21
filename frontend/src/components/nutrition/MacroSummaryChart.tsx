@@ -81,6 +81,9 @@ export function MacroSummaryChart({
                 contentStyle={{
                   fontSize: 12,
                   borderRadius: 8,
+                  background: "var(--card)",
+                  borderColor: "var(--border)",
+                  color: "var(--foreground)",
                 }}
               />
               <Legend iconSize={10} wrapperStyle={{ fontSize: 12 }} />
