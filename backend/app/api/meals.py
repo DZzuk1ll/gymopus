@@ -113,6 +113,53 @@ async def list_meal_logs(
     return ApiResponse.ok([MealLogResponse.model_validate(log) for log in logs])
 
 
+@router.get("/daily-summary")
+async def daily_summary(
+    date: date = Query(default=None),
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> ApiResponse[dict]:
+    if date is None:
+        from datetime import date as date_cls
+        date = date_cls.today()
+    stmt = (
+        select(MealLog)
+        .where(MealLog.user_id == user.id)
+        .where(MealLog.logged_date == date)
+    )
+    result = await db.execute(stmt)
+    logs = result.scalars().all()
+
+    total_calories = sum(log.total_calories or 0 for log in logs)
+    total_protein = sum(log.total_protein or 0 for log in logs)
+    total_fat = sum(log.total_fat or 0 for log in logs)
+    total_carbs = sum(log.total_carbs or 0 for log in logs)
+
+    # Calculate targets from user profile
+    targets = None
+    if user.weight_kg and user.training_goal:
+        from app.tools.nutrition_calc import calc_user_targets
+        profile = {
+            "gender": user.gender,
+            "age": user.age,
+            "height_cm": user.height_cm,
+            "weight_kg": user.weight_kg,
+            "training_goal": user.training_goal,
+            "training_frequency_per_week": user.training_frequency_per_week,
+        }
+        targets = calc_user_targets(profile)
+
+    return ApiResponse.ok({
+        "date": str(date),
+        "total_calories": total_calories,
+        "total_protein": total_protein,
+        "total_fat": total_fat,
+        "total_carbs": total_carbs,
+        "meal_count": len(logs),
+        "targets": targets,
+    })
+
+
 @router.post("/analyze")
 async def analyze_diet(
     body: MealLogCreate,

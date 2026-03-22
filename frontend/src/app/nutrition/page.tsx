@@ -17,6 +17,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "sonner";
 import { MealLogList } from "@/components/nutrition/MealLogList";
 import { MacroSummaryChart } from "@/components/nutrition/MacroSummaryChart";
+import { NutritionTargetGap } from "@/components/nutrition/NutritionTargetGap";
 import { DietAnalysisCard } from "@/components/chat/DietAnalysisCard";
 import { useMealLogs, useCreateMealLog, useAnalyzeDiet } from "@/hooks/useMeals";
 import { useUser } from "@/hooks/useUser";
@@ -87,7 +88,7 @@ export default function NutritionPage() {
   const isPending = createLog.isPending || analyzeDiet.isPending;
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-8 pb-24 space-y-8">
+    <div className="max-w-2xl mx-auto px-4 py-6 lg:py-8 space-y-6">
       <h1 className="text-2xl font-bold tracking-tight">饮食记录</h1>
 
       <Card>
@@ -149,6 +150,8 @@ export default function NutritionPage() {
       </Card>
 
       {analysisResult && <DietAnalysisCard analysis={analysisResult} />}
+
+      <NutritionTargetGap />
 
       {isLoading ? (
         <div className="space-y-3">

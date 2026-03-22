@@ -7,10 +7,14 @@ import { Textarea } from "@/components/ui/textarea";
 interface ChatInputProps {
   onSend: (message: string) => void;
   disabled?: boolean;
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
-export function ChatInput({ onSend, disabled }: ChatInputProps) {
-  const [input, setInput] = useState("");
+export function ChatInput({ onSend, disabled, value, onChange }: ChatInputProps) {
+  const [internalInput, setInternalInput] = useState("");
+  const input = value ?? internalInput;
+  const setInput = onChange ?? setInternalInput;
 
   const handleSend = () => {
     const trimmed = input.trim();

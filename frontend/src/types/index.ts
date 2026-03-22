@@ -268,3 +268,30 @@ export interface SSEErrorEvent {
 }
 
 export type SSEEvent = SSETokenEvent | SSEFinalEvent | SSEErrorEvent;
+
+// --- Training Plan ---
+
+export interface TrainingPlan {
+  id: string;
+  plan_name: string;
+  description: string;
+  days_per_week: number;
+  days: WorkoutDay[];
+  methodology_notes: string | null;
+  warnings: string[];
+  constraints: string | null;
+  source: "chat" | "training_page";
+  status: "draft" | "active" | "archived";
+  parent_plan_id: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+// --- Insights ---
+
+export interface AnalysisResult {
+  summary: string;
+  insights: string[];
+  concerns: string[];
+  recommendations: string[];
+}

@@ -12,18 +12,47 @@ import {
 } from "@/components/ui/sheet";
 import { AIGeneratedBadge } from "@/components/legal/AIGeneratedBadge";
 import { WorkoutLogger } from "@/components/workout/WorkoutLogger";
-import { ChevronDown, ChevronRight, ClipboardList } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, Download } from "lucide-react";
+import { toast } from "sonner";
+import { useSavePlan, useActivatePlan } from "@/hooks/useTrainingPlans";
 import type { WorkoutPlan } from "@/types";
 
 interface WorkoutPlanCardProps {
   plan: WorkoutPlan;
+  onImport?: (plan: WorkoutPlan) => void;
 }
 
-export function WorkoutPlanCard({ plan }: WorkoutPlanCardProps) {
+export function WorkoutPlanCard({ plan, onImport }: WorkoutPlanCardProps) {
   const [expandedDay, setExpandedDay] = useState<number | null>(null);
   const [loggerDay, setLoggerDay] = useState<number | null>(null);
 
+  const savePlan = useSavePlan();
+  const activatePlan = useActivatePlan();
+  const [importing, setImporting] = useState(false);
+
   const selectedDay = loggerDay !== null ? plan.days[loggerDay] : null;
+
+  const handleImport = async () => {
+    setImporting(true);
+    try {
+      const saved = await savePlan.mutateAsync({
+        plan_name: plan.plan_name,
+        description: plan.description,
+        days_per_week: plan.days_per_week,
+        days: plan.days,
+        methodology_notes: plan.methodology_notes,
+        warnings: plan.warnings,
+        source: "chat",
+      });
+      await activatePlan.mutateAsync(saved.id);
+      toast.success("计划已导入到训练页");
+      onImport?.(plan);
+    } catch (e) {
+      toast.error(`导入失败：${e instanceof Error ? e.message : "未知错误"}`);
+    } finally {
+      setImporting(false);
+    }
+  };
 
   return (
     <>
@@ -31,7 +60,18 @@ export function WorkoutPlanCard({ plan }: WorkoutPlanCardProps) {
         <CardHeader className="pb-2">
           <div className="flex items-center justify-between">
             <CardTitle className="text-base">{plan.plan_name}</CardTitle>
-            <AIGeneratedBadge />
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleImport}
+                disabled={importing}
+              >
+                <Download className="size-3 mr-1" />
+                {importing ? "导入中..." : "导入计划"}
+              </Button>
+              <AIGeneratedBadge />
+            </div>
           </div>
           <p className="text-xs text-muted-foreground">{plan.description}</p>
           <Badge variant="outline" className="w-fit text-xs">

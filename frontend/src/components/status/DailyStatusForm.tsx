@@ -23,7 +23,7 @@ const SLIDER_FIELDS = [
 
 type SliderKey = (typeof SLIDER_FIELDS)[number]["key"];
 
-export function DailyStatusForm() {
+export function DailyStatusForm({ onSuccess }: { onSuccess?: () => void } = {}) {
   const upsert = useUpsertDailyStatus();
   const [date, setDate] = useState(todayStr());
   const [weightKg, setWeightKg] = useState("");
@@ -49,6 +49,7 @@ export function DailyStatusForm() {
         notes: notes || null,
       });
       toast.success("状态已记录");
+      onSuccess?.();
     } catch (e) {
       toast.error(`提交失败：${e instanceof Error ? e.message : "未知错误"}`);
     }

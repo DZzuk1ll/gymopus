@@ -12,6 +12,7 @@ class GymOpusState(TypedDict):
     meal_plan: dict | None
     diet_analysis: dict | None
     qa_answer: str | None
+    analysis_response: dict | None
     validation_result: dict | None
     retry_count: int
     response: str

@@ -11,6 +11,8 @@ def include_routers():
     from app.api.meals import router as meals_router
     from app.api.status import router as status_router
     from app.api.workouts import router as workouts_router
+    from app.api.training_plans import router as training_plans_router
+    from app.api.insights import router as insights_router
 
     router.include_router(users_router)
     router.include_router(knowledge_router)
@@ -18,3 +20,5 @@ def include_routers():
     router.include_router(meals_router)
     router.include_router(status_router)
     router.include_router(workouts_router)
+    router.include_router(training_plans_router)
+    router.include_router(insights_router)

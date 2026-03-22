@@ -8,6 +8,7 @@ from app.graph.nodes.validator import validator
 from app.graph.nodes.fallback import fallback
 from app.graph.nodes.meal_planner import meal_planner
 from app.graph.nodes.diet_analyzer import diet_analyzer
+from app.graph.nodes.data_analyzer import data_analyzer as data_analyzer_node
 
 
 def route_by_intent(state: GymOpusState) -> str:
@@ -18,6 +19,8 @@ def route_by_intent(state: GymOpusState) -> str:
         return "meal_planner"
     elif intent == "diet_analysis":
         return "diet_analyzer"
+    elif intent == "analysis":
+        return "data_analyzer"
     elif intent == "qa":
         return "knowledge_qa"
     else:
@@ -42,6 +45,7 @@ def build_graph() -> StateGraph:
     builder.add_node("workout_planner", workout_planner)
     builder.add_node("meal_planner", meal_planner)
     builder.add_node("diet_analyzer", diet_analyzer)
+    builder.add_node("data_analyzer", data_analyzer_node)
     builder.add_node("knowledge_qa", knowledge_qa)
     builder.add_node("validator", validator)
     builder.add_node("fallback", fallback)
@@ -55,6 +59,7 @@ def build_graph() -> StateGraph:
             "workout_planner": "workout_planner",
             "meal_planner": "meal_planner",
             "diet_analyzer": "diet_analyzer",
+            "data_analyzer": "data_analyzer",
             "knowledge_qa": "knowledge_qa",
             "fallback": "fallback",
         },
@@ -71,6 +76,7 @@ def build_graph() -> StateGraph:
     )
     builder.add_edge("meal_planner", END)
     builder.add_edge("diet_analyzer", END)
+    builder.add_edge("data_analyzer", END)
     builder.add_edge("knowledge_qa", END)
     builder.add_edge("fallback", END)
 

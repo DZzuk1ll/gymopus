@@ -6,6 +6,7 @@ from app.models.food import Food
 from app.models.meal import MealLog
 from app.models.daily_status import DailyStatus
 from app.models.workout_log import WorkoutLog
+from app.models.training_plan import TrainingPlan
 
 __all__ = [
     "Base",
@@ -16,4 +17,5 @@ __all__ = [
     "MealLog",
     "DailyStatus",
     "WorkoutLog",
+    "TrainingPlan",
 ]

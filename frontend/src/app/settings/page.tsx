@@ -149,7 +149,7 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-8 pb-24 space-y-8">
+    <div className="max-w-2xl mx-auto px-4 py-6 lg:py-8 space-y-6">
       <h1 className="text-2xl font-bold tracking-tight">设置</h1>
 
       {/* Profile Section */}
