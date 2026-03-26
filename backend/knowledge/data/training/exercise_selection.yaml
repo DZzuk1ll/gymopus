@@ -1,0 +1,154 @@
+entries:
+  - id: "train_exsel_001"
+    source: "NSCA Essentials of Strength Training and Conditioning"
+    section: "Exercise Classification"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "动作分类：核心动作与辅助动作"
+    content: |
+      NSCA将抗阻训练动作分为核心动作（Core Exercises）和辅助动作（Assistance Exercises）两大类。核心动作涉及一个或多个大肌群，需要两个及以上主要关节参与，例如深蹲、硬拉、卧推、划船和推举等多关节复合动作。辅助动作则主要涉及小肌群，通常仅有一个关节运动，如弯举、臂屈伸、飞鸟和侧平举等孤立动作。在训练计划设计中，核心动作应获得优先地位，因为它们能够同时刺激多个肌群、产生更大的激素反应、更高效地发展整体力量，并且更好地模拟日常活动和运动中的多关节协调模式。辅助动作用于补充核心动作的不足，针对性地强化薄弱环节或为特定肌群提供额外的训练量。
+    tags:
+      - "exercise-classification"
+      - "core-exercises"
+      - "assistance-exercises"
+      - "compound"
+      - "isolation"
+      - "NSCA"
+
+  - id: "train_exsel_002"
+    source: "NSCA; ACSM Guidelines"
+    section: "Compound vs Isolation Hierarchy"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "复合动作与孤立动作的优先级层次"
+    content: |
+      在训练计划设计中，动作选择应遵循明确的优先级层次。第一优先级为大型多关节复合动作（如深蹲、硬拉、卧推、划船、推举），这些动作构成训练计划的基础，占总训练量的60-70%。第二优先级为辅助性复合动作（如弓步蹲、罗马尼亚硬拉、上斜卧推、引体向上），用于补充主要复合动作并提供不同角度的刺激，占总训练量的20-30%。第三优先级为孤立动作（如飞鸟、弯举、臂屈伸、侧平举、腿弯举），用于针对性地增加特定肌群的训练量或弥补复合动作的刺激不足，占总训练量的10-20%。初学者应将大部分训练时间投入复合动作以建立基础力量和运动模式；随着训练经验的增加，可逐步增加孤立动作的比例以满足更精细的训练需求。
+    tags:
+      - "compound-hierarchy"
+      - "exercise-priority"
+      - "program-design"
+      - "training-foundation"
+
+  - id: "train_exsel_003"
+    source: "NSCA CSCS Chapter 17; Program Design"
+    section: "Exercise Order Recommendations"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "训练课内的动作顺序安排"
+    content: |
+      NSCA明确建议在训练课中遵循特定的动作顺序以最大化训练效果并降低受伤风险。推荐的动作顺序为：(1)爆发力动作（如抓举、翻站、壶铃摆荡），因其对技术要求最高且在疲劳状态下受伤风险最大；(2)其他核心多关节动作（如深蹲、硬拉、卧推），趁身体尚未疲劳时完成技术复杂度较高的重负荷动作；(3)辅助性多关节动作（如弓步蹲、引体向上）；(4)单关节孤立动作（如弯举、侧平举）。研究表明，在训练课前期完成的动作能够产生更高的力量输出、更多的重复次数和更大的负荷承受能力。如果将多关节动作放在训练课后半段进行，其表现会显著下降，因此应优先安排这些高价值动作。
+    tags:
+      - "exercise-order"
+      - "training-session"
+      - "power-first"
+      - "compound-before-isolation"
+      - "NSCA"
+
+  - id: "train_exsel_004"
+    source: "NSCA; Strength Training Research"
+    section: "Primary Exercises for Chest"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "胸部训练的主要动作选择"
+    content: |
+      胸部（胸大肌）训练的动作选择应涵盖不同角度以全面刺激上胸、中胸和下胸纤维。核心复合动作包括：平板杠铃卧推（中胸为主，是评估上肢水平推力量的标准动作）、上斜杠铃/哑铃卧推（上胸为主，上斜角度建议30-45度）、以及双杠臂屈伸（下胸和整体胸肌，同时强烈刺激三头肌）。辅助动作包括：平板/上斜哑铃卧推（提供更大的运动范围和单侧稳定性需求）、器械推胸（适合力竭训练和初学者建立运动模式）。孤立动作包括：哑铃飞鸟和绳索夹胸（提供胸肌的充分拉伸和顶峰收缩）。建议每次胸部训练选择2-3个复合动作和1-2个孤立动作，确保涵盖至少两个不同角度。
+    tags:
+      - "chest-exercises"
+      - "bench-press"
+      - "incline-press"
+      - "dips"
+      - "flyes"
+
+  - id: "train_exsel_005"
+    source: "NSCA; Strength Training Research"
+    section: "Primary Exercises for Back"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "背部训练的主要动作选择"
+    content: |
+      背部训练应涵盖垂直拉和水平拉两种运动模式以全面刺激背阔肌、斜方肌、菱形肌和后三角肌。垂直拉核心动作包括：引体向上/辅助引体（背阔肌宽度发展的首选动作，可使用不同握距和握法变化刺激角度）、高位下拉（适合无法完成引体向上的训练者，提供可精确调节的负荷）。水平拉核心动作包括：杠铃划船（背部整体厚度发展的首选，俯身角度影响目标肌群的侧重）、哑铃单臂划船（提供更大的运动范围和单侧训练优势）、坐姿绳索划船（恒定张力且对脊柱负荷较低）。辅助动作包括：面拉（后三角肌和中斜方肌/菱形肌）、直臂下压（背阔肌孤立训练）。每次背部训练建议至少包含1个垂直拉和1个水平拉动作。
+    tags:
+      - "back-exercises"
+      - "pull-ups"
+      - "rows"
+      - "lat-pulldown"
+      - "vertical-pull"
+      - "horizontal-pull"
+
+  - id: "train_exsel_006"
+    source: "NSCA; Strength Training Research"
+    section: "Primary Exercises for Legs"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "下肢训练的主要动作选择"
+    content: |
+      下肢训练动作应涵盖膝主导（股四头肌为主）和髋主导（臀部和腘绳肌为主）两大运动模式。膝主导核心动作包括：杠铃深蹲（下肢力量发展的金标准，高杠位偏重股四头肌，低杠位偏重臀部和腘绳肌）、前蹲（更强调股四头肌且对脊柱剪切力较小）、腿举（高负荷下对脊柱负荷较低的替代选择）、箭步蹲（兼具力量和稳定性挑战）。髋主导核心动作包括：传统硬拉（全身性后链发展）、罗马尼亚硬拉（腘绳肌和臀部的拉伸和离心刺激）、髋外推（臀大肌在髋伸展末端的峰值收缩）。孤立动作包括：腿屈伸（股四头肌孤立）、俯卧腿弯举（腘绳肌孤立）、坐姿提踵和站姿提踵（小腿肌群）。完整的下肢训练计划应在一周内涵盖两种运动模式。
+    tags:
+      - "leg-exercises"
+      - "squat"
+      - "deadlift"
+      - "hip-hinge"
+      - "knee-dominant"
+      - "hip-dominant"
+
+  - id: "train_exsel_007"
+    source: "NSCA; ACSM Guidelines"
+    section: "Primary Exercises for Shoulders and Arms"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "肩部与手臂训练的主要动作选择"
+    content: |
+      肩部训练的核心复合动作为站姿/坐姿杠铃推举（三角肌前束和侧束为主，同时刺激上胸和三头肌）和哑铃肩推（允许更自然的肩关节运动轨迹）。三角肌侧束和后束主要依靠孤立动作训练：侧平举（侧束首选）、面拉和反向飞鸟（后束首选）。肱二头肌训练以弯举变式为主：杠铃弯举（最大负荷，二头肌整体发展）、哑铃交替弯举（允许旋前旋后运动）、锤式弯举（肱桡肌和二头肌长头）。肱三头肌训练包括：窄距卧推（三头肌为主的复合动作）、绳索下压（外侧头和内侧头）、头顶臂屈伸（长头的充分拉伸，如法式弯举和上斜哑铃臂屈伸）。手臂训练作为辅助动作，通常安排在大肌群复合动作之后进行。
+    tags:
+      - "shoulder-exercises"
+      - "overhead-press"
+      - "lateral-raise"
+      - "bicep-curl"
+      - "tricep-extension"
+
+  - id: "train_exsel_008"
+    source: "NSCA; Equipment-Based Training Guidelines"
+    section: "Exercise Selection by Available Equipment"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "按可用器材选择动作"
+    content: |
+      训练动作的选择应根据可用器材进行灵活调整。全器材健身房环境下应优先使用自由重量（杠铃和哑铃），因其能够提供多平面的不稳定性挑战，促进稳定肌群的发展和神经肌肉协调能力的提升。有限器材环境下的替代方案：杠铃深蹲可替换为哑铃高脚杯深蹲或保加利亚分腿蹲；杠铃卧推可替换为哑铃卧推或俯卧撑变式；杠铃划船可替换为哑铃划船或弹力带划船；引体向上可替换为弹力带辅助引体或哑铃划船。器械训练（固定轨迹）适合以下场景：初学者建立基础运动模式、力竭组训练的安全保障、以及受伤恢复期的控制性训练。绳索器械提供了恒定张力的优势，特别适合孤立训练和峰值收缩训练。无论何种器材条件，训练计划都应确保涵盖推、拉、蹲、铰链四种基本运动模式。
+    tags:
+      - "equipment-selection"
+      - "free-weights"
+      - "machines"
+      - "cables"
+      - "bodyweight"
+      - "alternatives"
+
+  - id: "train_exsel_009"
+    source: "NSCA; Strength and Conditioning Research"
+    section: "Exercise Selection for Balanced Development"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "均衡发展的动作选择原则"
+    content: |
+      均衡的训练计划应确保对抗肌群之间的训练量平衡，以预防肌力不平衡和相关伤病。关键的对抗肌群配对包括：胸部与背部（水平推与水平拉）、股四头肌与腘绳肌（膝伸展与膝屈曲/髋伸展）、三角肌前束与后束（垂直推与垂直拉/面拉）、肱二头肌与肱三头肌。推荐的训练量比例为：拉类动作与推类动作的比例至少为1:1，许多专家建议拉类动作应略多于推类动作（约1.5:1至2:1），因为现代久坐生活方式导致前侧肌群普遍紧张而后侧肌群偏弱。股四头肌与腘绳肌的力量比例应维持在约3:2（腘绳肌力量约为股四头肌的60-70%）。忽视对抗肌群平衡可能导致肩关节撞击（推拉失衡）、膝关节损伤（股四/腘绳失衡）等问题。
+    tags:
+      - "balanced-development"
+      - "push-pull-ratio"
+      - "antagonist-balance"
+      - "injury-prevention"
+      - "muscle-imbalance"
+
+  - id: "train_exsel_010"
+    source: "NSCA; Exercise Science Research"
+    section: "Exercise Variation and Rotation"
+    category: "training"
+    subcategory: "exercise-selection"
+    title: "动作变化与轮换策略"
+    content: |
+      动作变化是维持长期训练进步和避免适应停滞的重要策略，但变化应在保持训练计划核心稳定性的基础上进行。NSCA建议主要复合动作（深蹲、硬拉、卧推等）应作为训练计划的长期基础，保持相对稳定以便追踪力量进步，变化周期通常为每4-8周调整辅助和孤立动作。动作变化可通过以下方式实现：改变握距或站距（如宽距/窄距卧推）、改变动作角度（如上斜/平板/下斜）、改变器材类型（如杠铃/哑铃/绳索）、以及改变速度或节奏（如离心强调训练）。过于频繁的动作更换（每周更换）会妨碍运动技能的习得和力量的系统发展；而长期不变的训练动作可能导致适应停滞和过度使用伤病。最佳策略是在每个中周期（4-8周）结束时对辅助动作进行有针对性的轮换，同时保持1-2个核心动作的长期稳定。
+    tags:
+      - "exercise-variation"
+      - "rotation"
+      - "adaptation"
+      - "plateau-prevention"
+      - "grip-variation"
+      - "angle-variation"

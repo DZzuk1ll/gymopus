@@ -1,29 +1,57 @@
-import uuid
+from __future__ import annotations
+
+import asyncio
+import sys
+from pathlib import Path
 
 import pytest
 import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-from app.main import app
+# Add project root to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from models import Base  # noqa: E402
+from database import get_db  # noqa: E402
 
 
-TEST_USER_ID = str(uuid.uuid4())
+# In-memory SQLite for tests
+TEST_DB_URL = "sqlite+aiosqlite:///:memory:"
+test_engine = create_async_engine(TEST_DB_URL, echo=False)
+test_session = async_sessionmaker(test_engine, class_=AsyncSession, expire_on_commit=False)
 
 
-@pytest.fixture
-def anyio_backend():
-    return "asyncio"
+@pytest.fixture(scope="session")
+def event_loop():
+    loop = asyncio.new_event_loop()
+    yield loop
+    loop.close()
 
 
 @pytest_asyncio.fixture
-async def client():
+async def db():
+    async with test_engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+
+    async with test_session() as session:
+        yield session
+
+    async with test_engine.begin() as conn:
+        await conn.run_sync(Base.metadata.drop_all)
+
+
+@pytest_asyncio.fixture
+async def client(db):
+    from main import app
+
+    async def override_get_db():
+        yield db
+
+    app.dependency_overrides[get_db] = override_get_db
+
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as ac:
         yield ac
 
-
-@pytest_asyncio.fixture
-async def auth_client(client: AsyncClient):
-    """Client with X-Anonymous-Id header set."""
-    client.headers["X-Anonymous-Id"] = TEST_USER_ID
-    yield client
+    app.dependency_overrides.clear()

@@ -1,0 +1,184 @@
+entries:
+  - id: "train_vol_001"
+    source: "Renaissance Periodization; Dr. Mike Israetel"
+    section: "Volume Landmarks Framework"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "训练量地标体系概述"
+    content: |
+      训练量地标（Volume Landmarks）是由Renaissance Periodization的Dr. Mike Israetel提出的基于研究的框架，用于确定每个肌群每周的最佳训练组数。该体系定义了四个关键阈值：维持训练量（MV，Maintenance Volume）指维持现有肌肉量所需的最低训练量，通常为每周每肌群约6组；最小有效训练量（MEV，Minimum Effective Volume）指能够产生可测量肌肉增长的最低训练量；最大适应训练量（MAV，Maximum Adaptive Volume）指产生最佳肌肉增长效果的训练量范围；最大可恢复训练量（MRV，Maximum Recoverable Volume）指训练者能够完成并恢复的最大训练量上限。实际训练中的推荐策略是从MEV开始，在4-8周的中周期内逐步递增至接近MRV，然后在减载周降至MV水平，循环反复。
+    tags:
+      - "volume-landmarks"
+      - "MV"
+      - "MEV"
+      - "MAV"
+      - "MRV"
+      - "Renaissance-Periodization"
+
+  - id: "train_vol_002"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Chest Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "胸部训练量地标"
+    content: |
+      根据Renaissance Periodization的建议，胸部肌群的训练量地标为：维持训练量（MV）约为每周6组，最小有效训练量（MEV）约为每周8-10组，最大适应训练量（MAV）约为每周12-20组，最大可恢复训练量（MRV）约为每周22组以上。建议训练频率为每周2-3次。胸部训练应以复合动作为主（如卧推、上斜卧推），辅以孤立动作（如飞鸟）。大多数训练者在每周14-18组的范围内能获得最佳的胸肌增长效果。新手应从MEV下限开始，随着训练经验的积累和恢复能力的提升逐步增加训练量。需要注意的是，个体差异显著，具体数值应根据个人恢复能力、训练经验、睡眠质量和营养状况进行调整。
+    tags:
+      - "chest"
+      - "pectorals"
+      - "volume"
+      - "sets-per-week"
+      - "hypertrophy"
+
+  - id: "train_vol_003"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Back Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "背部训练量地标"
+    content: |
+      背部肌群（包括背阔肌、斜方肌中下部、菱形肌等）的训练量地标为：维持训练量（MV）约为每周8组，最小有效训练量（MEV）约为每周10组，最大适应训练量（MAV）约为每周14-22组，最大可恢复训练量（MRV）约为每周25组以上。建议训练频率为每周2-4次。背部是人体最大的肌群之一，能够承受较高的训练量且恢复相对较快。训练时应涵盖垂直拉（如引体向上、高位下拉）和水平拉（如划船）两种运动模式，以全面刺激背部不同区域。大多数中级训练者在每周16-20组的范围内效果最佳。由于背部肌群面积大且由多个亚区域组成，其MRV通常高于其他肌群。
+    tags:
+      - "back"
+      - "lats"
+      - "traps"
+      - "rhomboids"
+      - "volume"
+      - "sets-per-week"
+
+  - id: "train_vol_004"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Shoulder Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "肩部训练量地标"
+    content: |
+      肩部训练量需区分前束、侧束和后束。三角肌前束由于在卧推和推举中获得大量间接刺激，其专项训练需求较低：MV为0组（通过推类动作维持），MEV约为每周0-2组直接训练，MAV约为每周4-8组。三角肌侧束和后束需要更多的直接训练：MV约为0组，MEV约为每周8组，MAV约为每周16-22组，MRV约为每周26组以上。建议侧束和后束的训练频率为每周2-6次，因为这些小肌群恢复较快。常用动作包括侧平举、面拉、反向飞鸟等孤立动作。在计算肩部训练量时，需要将推类复合动作中的间接刺激纳入考虑，避免过度训练前束。
+    tags:
+      - "shoulders"
+      - "deltoids"
+      - "front-delt"
+      - "side-delt"
+      - "rear-delt"
+      - "volume"
+
+  - id: "train_vol_005"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Biceps Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "肱二头肌训练量地标"
+    content: |
+      肱二头肌的训练量地标为：维持训练量（MV）约为每周5组，最小有效训练量（MEV）约为每周8组直接训练，最大适应训练量（MAV）约为每周14-20组，最大可恢复训练量（MRV）约为每周26组以上。建议训练频率为每周2-6次，因为肱二头肌作为小肌群恢复相对较快。需要注意的是，背部拉类动作（如引体向上、划船）对肱二头肌提供了大量间接刺激，上述训练量建议仅指直接训练（如弯举类动作），间接刺激已在推荐数值中被考虑和扣除。大多数训练者在每周14-18组直接训练的范围内获得最佳二头肌增长效果。建议采用多种弯举变式（如杠铃弯举、哑铃弯举、锤式弯举）以全面刺激肱二头肌的不同部分。
+    tags:
+      - "biceps"
+      - "arm-training"
+      - "volume"
+      - "sets-per-week"
+      - "curl-variations"
+
+  - id: "train_vol_006"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Triceps Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "肱三头肌训练量地标"
+    content: |
+      肱三头肌的训练量地标为：维持训练量（MV）约为每周4组，最小有效训练量（MEV）约为每周6组直接训练，最大适应训练量（MAV）约为每周10-14组，最大可恢复训练量（MRV）约为每周18组以上。建议训练频率为每周2-4次。肱三头肌在所有推类动作（卧推、肩推、双杠臂屈伸）中都会获得大量间接刺激，因此其直接训练量需求相对较低。上述数值仅指直接训练组数（如绳索下压、头顶臂屈伸、窄距卧推），间接刺激已被纳入考量。由于肱三头肌由三个头组成（长头、外侧头、内侧头），建议选择能够针对不同头的动作进行训练，特别是头顶位的臂屈伸能够更好地拉伸和刺激长头。
+    tags:
+      - "triceps"
+      - "arm-training"
+      - "volume"
+      - "sets-per-week"
+      - "long-head"
+
+  - id: "train_vol_007"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Quad Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "股四头肌训练量地标"
+    content: |
+      股四头肌的训练量地标为：维持训练量（MV）约为每周6组，最小有效训练量（MEV）约为每周8组，最大适应训练量（MAV）约为每周12-18组，最大可恢复训练量（MRV）约为每周20组以上。建议训练频率为每周2-3次。股四头肌是人体最大的肌群之一，训练强度通常较高，因此局部和全身恢复需求较大，这限制了其MRV相对于肌肉体积的比例。主要训练动作包括深蹲（包括高杠和前蹲）、腿举、箭步蹲和腿屈伸。由于深蹲和腿举等复合动作对全身疲劳影响较大，在接近MRV时应密切监测恢复状况。大多数中级训练者在每周14-16组的范围内获得最佳股四头肌增长效果，同时保持良好的恢复。
+    tags:
+      - "quads"
+      - "quadriceps"
+      - "leg-training"
+      - "volume"
+      - "squats"
+
+  - id: "train_vol_008"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Hamstring Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "腘绳肌训练量地标"
+    content: |
+      腘绳肌的训练量地标为：维持训练量（MV）约为每周4组，最小有效训练量（MEV）约为每周6组，最大适应训练量（MAV）约为每周10-16组，最大可恢复训练量（MRV）约为每周20组以上。建议训练频率为每周2-3次。腘绳肌训练应涵盖两种运动模式：髋主导动作（如罗马尼亚硬拉、直腿硬拉、早安式体前屈）和膝主导动作（如俯卧腿弯举、坐姿腿弯举），因为腘绳肌跨越髋关节和膝关节两个关节。需要注意的是，硬拉类动作虽然主要被归类为背部训练，但对腘绳肌也提供了显著的训练刺激。大多数训练者在每周10-14组的范围内获得良好的腘绳肌发展效果。训练编排时应注意腘绳肌训练与深蹲训练之间的恢复间隔，避免下肢过度疲劳。
+    tags:
+      - "hamstrings"
+      - "leg-training"
+      - "hip-hinge"
+      - "knee-flexion"
+      - "volume"
+
+  - id: "train_vol_009"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Glute Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "臀部训练量地标"
+    content: |
+      臀大肌的训练量地标为：维持训练量（MV）约为每周0组专项训练（深蹲和硬拉可提供充分的维持刺激），最小有效训练量（MEV）约为每周0组专项训练（对于已有深蹲和硬拉训练的人群），最大适应训练量（MAV）约为每周4-12组专项训练，最大可恢复训练量（MRV）约为每周16组以上。建议训练频率为每周2-3次。臀部肌群的独特之处在于，它们在深蹲、硬拉、箭步蹲等大型复合动作中已获得大量间接刺激，因此许多训练者即使不进行专项臀部训练也能维持甚至发展臀肌。需要额外臀部增长的训练者可增加髋外推（Hip Thrust）、臀桥、保加利亚分腿蹲等专项动作。对于以臀部发展为重点的训练者，可将专项训练量提升至MAV上限。
+    tags:
+      - "glutes"
+      - "gluteus-maximus"
+      - "hip-thrust"
+      - "compound-overlap"
+      - "volume"
+
+  - id: "train_vol_010"
+    source: "Renaissance Periodization; RP Strength"
+    section: "Calf Volume Landmarks"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "小腿训练量地标"
+    content: |
+      小腿肌群（主要为腓肠肌和比目鱼肌）的训练量地标为：维持训练量（MV）约为每周6组，最小有效训练量（MEV）约为每周8组，最大适应训练量（MAV）约为每周12-16组，最大可恢复训练量（MRV）约为每周20组以上。建议训练频率为每周2-4次，小腿肌群因其日常活动中持续使用而具有较高的恢复能力。训练应包含直膝（站姿提踵，主要刺激腓肠肌）和屈膝（坐姿提踵，主要刺激比目鱼肌）两种姿势。小腿肌群的肌肥大反应个体差异极大，遗传因素（如肌腱长度和快/慢肌纤维比例）在小腿发展中起着重要作用。对于小腿发展困难的训练者，可考虑增加训练频率（每日或隔日训练）并在每次训练中使用较低的组数。
+    tags:
+      - "calves"
+      - "gastrocnemius"
+      - "soleus"
+      - "calf-raises"
+      - "volume"
+
+  - id: "train_vol_011"
+    source: "Renaissance Periodization; Scientific Principles of Hypertrophy Training"
+    section: "Volume Periodization Within Mesocycle"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "中周期内的训练量周期化"
+    content: |
+      在一个典型的肌肥大中周期（4-8周）内，训练量应从MEV水平开始，每周递增约2-3组（每个肌群），逐步推进至接近MRV。第一周从MEV开始以建立训练基线，之后每周在MAV范围内逐步递增。当训练者开始出现过度疲劳的迹象（如训练表现下降、关节酸痛加剧、睡眠质量下降）时，说明已接近或达到MRV，应准备进入减载周。减载周的训练量应降至MV水平（约为峰值训练量的40-50%），持续一周，让身体充分恢复后开始下一个中周期。这种"MEV起步-逐步递增-MRV减载"的循环模式能够在最大化训练刺激的同时有效管理疲劳。
+    tags:
+      - "mesocycle-volume"
+      - "volume-ramp"
+      - "fatigue-management"
+      - "deload"
+      - "progressive-volume"
+
+  - id: "train_vol_012"
+    source: "Renaissance Periodization; Israetel et al."
+    section: "Individual Volume Adjustment"
+    category: "training"
+    subcategory: "volume-landmarks"
+    title: "个体化训练量调整指南"
+    content: |
+      训练量地标的具体数值因人而异，受多种因素影响：训练年限（训练经验越丰富，MEV越高，MRV也可能越高）、遗传因素（肌纤维类型分布、肌腱附着点等）、恢复条件（睡眠7-9小时、营养充足可提升MRV）、训练频率（更高的频率允许更高的周总训练量）以及年龄（随年龄增长MRV可能降低）。判断个人训练量是否适当的关键指标包括：训练表现是否维持或提升、肌肉酸痛是否在48-72小时内消退、睡眠质量是否正常、以及主观精力水平。建议训练者通过系统记录训练数据并定期评估身体反应，逐步找到自己每个肌群的个体化训练量地标。当多个指标显示恢复不足时，应降低训练量；当恢复轻松且进步停滞时，则可适当增加训练量。
+    tags:
+      - "individual-adjustment"
+      - "recovery-indicators"
+      - "genetics"
+      - "sleep"
+      - "nutrition"
+      - "training-age"

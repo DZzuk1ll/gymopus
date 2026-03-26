@@ -1,0 +1,127 @@
+rules:
+  # --- Training ---
+  - id: TRAIN_VOLUME_SPIKE
+    name: "单周容量跳增过大"
+    category: training
+    severity: warning
+    description: "本周训练容量较上周增幅超过阈值"
+    condition:
+      metric: weekly_volume_change_pct
+      operator: ">"
+      threshold: 20
+    recommendation: "建议将容量增幅控制在 10% 以内，避免过度训练"
+    reference:
+      source: "NSCA Essentials of Strength Training and Conditioning"
+      section: "Chapter 22 - Program Design"
+      summary: "渐进超负荷原则建议每周容量增幅不超过 10%"
+
+  - id: TRAIN_MUSCLE_RECOVERY
+    name: "肌群恢复间隔不足"
+    category: training
+    severity: warning
+    description: "同一主要肌群连续训练间隔不足阈值"
+    condition:
+      metric: muscle_group_interval_hours
+      operator: "<"
+      threshold: 48
+    recommendation: "建议同一肌群训练间隔至少 48 小时"
+    reference:
+      source: "ACSM Guidelines for Exercise Testing and Prescription"
+      section: "Chapter 6 - General Principles"
+      summary: "肌肉蛋白合成窗口通常持续 24-48 小时"
+
+  - id: TRAIN_RPE_OVERSHOOT
+    name: "RPE 持续高于计划值"
+    category: training
+    severity: info
+    description: "连续 N 次训练 RPE 实际值高于目标值"
+    condition:
+      metric: rpe_overshoot_streak
+      operator: ">="
+      threshold: 3
+    recommendation: "实际强度持续高于计划，建议下调训练重量或调整 RPE 目标"
+
+  # --- Sleep ---
+  - id: SLEEP_BELOW_THRESHOLD
+    name: "睡眠时长连续低于阈值"
+    category: sleep
+    severity: danger
+    description: "连续 N 天睡眠时长低于最低建议值"
+    condition:
+      metric: sleep_below_6h_streak
+      operator: ">="
+      threshold: 3
+    recommendation: "运动员建议每晚 7-9 小时睡眠，当前严重不足"
+    reference:
+      source: "Sleep Foundation Guidelines"
+      section: "Athletes and Sleep"
+      summary: "睡眠不足会降低力量、耐力和反应速度"
+
+  - id: SLEEP_DECLINING_TREND
+    name: "睡眠质量持续下降"
+    category: sleep
+    severity: warning
+    condition:
+      metric: sleep_quality_7d_trend
+      operator: "<"
+      threshold: -15
+    recommendation: "近期睡眠质量明显下降，建议检查作息规律和压力水平"
+
+  # --- Nutrition ---
+  - id: NUTRITION_PROTEIN_LOW
+    name: "蛋白质摄入持续不足"
+    category: nutrition
+    severity: warning
+    description: "连续 N 天蛋白质摄入低于目标的 80%"
+    condition:
+      metric: protein_below_80pct_streak
+      operator: ">="
+      threshold: 3
+    recommendation: "增肌期蛋白质摄入应保持在 1.6-2.2g/kg 体重"
+    reference:
+      source: "JISSN Position Stand on Protein"
+      section: "Recommendations"
+      summary: "肌肥大目标建议每日蛋白质 1.6-2.2g/kg 体重"
+
+  - id: NUTRITION_PROTEIN_VARIANCE
+    name: "蛋白质摄入波动过大"
+    category: nutrition
+    severity: info
+    condition:
+      metric: protein_7d_cv
+      operator: ">"
+      threshold: 0.25
+    recommendation: "蛋白质摄入变异系数过大，建议保持每日摄入量稳定"
+
+  - id: NUTRITION_CALORIE_DEFICIT_UNPLANNED
+    name: "非减脂期出现热量赤字"
+    category: nutrition
+    severity: warning
+    condition:
+      metric: unplanned_calorie_deficit_streak
+      operator: ">="
+      threshold: 3
+    recommendation: "非减脂期连续热量不足可能影响增肌和恢复"
+
+  # --- Mood / Recovery ---
+  - id: MOOD_LOW_STREAK
+    name: "情绪持续低落"
+    category: mood
+    severity: warning
+    description: "连续 N 天情绪评分低于阈值"
+    condition:
+      metric: mood_below_2_streak
+      operator: ">="
+      threshold: 3
+    recommendation: "持续低情绪可能影响训练动力和恢复，建议关注整体恢复状态"
+
+  - id: CHECKIN_ABSENT
+    name: "连续缺勤"
+    category: general
+    severity: info
+    description: "连续 N 天未提交打卡记录"
+    condition:
+      metric: absent_streak
+      operator: ">="
+      threshold: 3
+    recommendation: "检测到连续缺勤，如果是计划内休息请忽略"

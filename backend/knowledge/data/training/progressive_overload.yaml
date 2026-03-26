@@ -1,0 +1,120 @@
+entries:
+  - id: "train_po_001"
+    source: "ACSM Position Stand 2009"
+    section: "Progressive Overload Principles"
+    category: "training"
+    subcategory: "progressive-overload"
+    title: "渐进超负荷原则概述"
+    content: |
+      渐进超负荷是抗阻训练的基本原则，指通过系统性地增加训练刺激来持续促进肌肉力量和体积的增长。根据ACSM（2009年）立场声明，当训练者能够在当前负荷下完成超出目标次数1-2次时，应增加2-10%的负荷。渐进超负荷可以通过多种方式实现：增加负荷重量、增加每组重复次数、增加训练组数、缩短组间休息时间、提高训练频率或增加动作难度。对于初学者，简单的负荷递增即可有效驱动进步；而对于进阶训练者，可能需要同时操控多个变量才能实现持续适应。渐进超负荷的核心在于确保训练刺激始终略高于身体当前的适应水平。
+    tags:
+      - "progressive-overload"
+      - "ACSM"
+      - "load-progression"
+      - "fundamental-principle"
+
+  - id: "train_po_002"
+    source: "ACSM Position Stand 2009; NSCA Guidelines"
+    section: "Volume Progression"
+    category: "training"
+    subcategory: "progressive-overload"
+    title: "训练量递进策略（10%规则）"
+    content: |
+      训练量的递进应遵循渐进原则，避免过快增加导致过度训练。业界广泛采用的"10%规则"建议每周训练量（总负荷或总组数）的增幅不应超过前一周的10%。例如，如果当前每周胸部训练为12组，下一周最多增加到13-14组。在一个典型的中周期内，训练量通常从最小有效训练量（MEV）开始，每周递增2-3组，直至接近最大可恢复训练量（MRV）。ACSM建议多组训练方案优于单组方案，中级和高级训练者应使用多组方案（每个动作3-6组）以最大化力量和肌肥大适应。训练量递进的速率应根据训练者的恢复能力、睡眠质量和营养状况进行个体化调整。
+    tags:
+      - "volume-progression"
+      - "10-percent-rule"
+      - "training-volume"
+      - "overtraining-prevention"
+
+  - id: "train_po_003"
+    source: "Schoenfeld 2017; ACSM 2009"
+    section: "Repetition Ranges for Different Goals"
+    category: "training"
+    subcategory: "progressive-overload"
+    title: "不同训练目标的重复次数范围"
+    content: |
+      传统的"重复次数连续体"（Repetition Continuum）将不同的重复次数范围与特定训练目标相对应：力量训练主要使用1-5次范围（负荷≥85% 1RM），肌肥大训练主要使用6-12次范围（负荷67-85% 1RM），肌耐力训练使用15次以上（负荷≤60% 1RM）。然而，Schoenfeld等人（2017年）的系统综述和荟萃分析表明，在总训练量相等的前提下，不同负荷范围（≥30% 1RM）均可产生相似的肌肥大效果，但最大力量的提升在高负荷训练中更为显著。因此，力量发展需要高负荷训练，而肌肉增长可以在更广泛的负荷范围内实现。实际训练中，建议在周期化框架内涵盖多种重复次数范围以获得全面的训练适应。
+    tags:
+      - "rep-ranges"
+      - "strength"
+      - "hypertrophy"
+      - "endurance"
+      - "Schoenfeld"
+      - "repetition-continuum"
+
+  - id: "train_po_004"
+    source: "ACSM Position Stand 2009"
+    section: "Set Recommendations by Experience Level"
+    category: "training"
+    subcategory: "progressive-overload"
+    title: "按训练水平划分的组数建议"
+    content: |
+      ACSM（2009年）立场声明根据训练者经验水平提出了差异化的组数建议。初学者（无训练经验或训练少于6个月）建议每个动作1-3组即可有效刺激力量和肌肉增长。中级训练者（持续训练6个月至2年）应使用多组方案，每个动作3-4组，每个肌群每周总计12-16组。高级训练者（持续训练2年以上）可能需要更高的训练量，每个动作3-6组，每个肌群每周总计16-20组以上，并通过周期化安排来管理疲劳。训练频率方面，初学者建议每周2-3天，中级训练者3-4天，高级训练者4-5天。随着训练水平的提升，需要更多的训练量和更精细的训练安排才能持续获得进步。
+    tags:
+      - "sets-per-exercise"
+      - "beginner"
+      - "intermediate"
+      - "advanced"
+      - "ACSM"
+      - "training-frequency"
+
+  - id: "train_po_005"
+    source: "Schoenfeld 2016; Dose-Response Meta-analysis"
+    section: "Volume-Hypertrophy Dose Response"
+    category: "training"
+    subcategory: "progressive-overload"
+    title: "训练量与肌肥大的剂量反应关系"
+    content: |
+      Schoenfeld等人（2016年）发表的系统综述和荟萃分析探究了每周抗阻训练量与肌肉增长之间的剂量反应关系。研究发现，与每周低于5组相比，每周10组以上的训练量能产生显著更大的肌肥大效果，呈现明显的正向剂量反应关系。每个肌群每周至少10组被认为是获得显著肌肉增长的基本阈值，而每周15-20组可能是大多数训练者的最佳范围。然而，超过一定阈值后，额外的训练量带来的收益递减，且过度的训练量会增加过度训练的风险。该研究强调了训练量作为肌肥大关键驱动因素的重要性，建议训练者应在可恢复的范围内追求较高的训练量。
+    tags:
+      - "dose-response"
+      - "hypertrophy"
+      - "weekly-volume"
+      - "meta-analysis"
+      - "Schoenfeld"
+
+  - id: "train_po_006"
+    source: "NSCA Essentials of Strength Training and Conditioning"
+    section: "Load Progression Methods"
+    category: "training"
+    subcategory: "progressive-overload"
+    title: "负荷递进方法"
+    content: |
+      NSCA推荐的负荷递进方法主要有两种：双重递进法（Double Progression）和百分比递增法。双重递进法首先在固定负荷下增加重复次数，当达到目标次数范围的上限时再增加负荷并降低次数回到范围下限。例如，当训练者能以80kg完成3组×12次时，将负荷增加至82.5-85kg并从3组×8次重新开始递进。百分比递增法则根据当前负荷的固定百分比（通常2-10%）定期增加重量，上肢动作建议增幅为2-5%，下肢动作为5-10%。对于初学者，可以每次训练课或每周增加负荷；中级训练者可能每2-4周增加一次；高级训练者的负荷递进则更缓慢，可能需要微负荷（0.5-1kg）来实现渐进。
+    tags:
+      - "load-progression"
+      - "double-progression"
+      - "percentage-increase"
+      - "NSCA"
+      - "microloading"
+
+  - id: "train_po_007"
+    source: "ACSM 2009; NSCA Guidelines"
+    section: "Progression for Strength vs Hypertrophy"
+    category: "training"
+    subcategory: "progressive-overload"
+    title: "力量目标与肌肥大目标的递进差异"
+    content: |
+      力量训练和肌肥大训练在递进策略上存在重要差异。力量训练的递进主要通过增加绝对负荷来实现，建议使用1-6 RM范围的重负荷，组间休息2-5分钟以确保神经系统充分恢复，动作速度为中等（向心1-2秒，离心1-2秒）。力量递进的关键指标是1RM的提升。肌肥大训练的递进则更强调训练量的增加，使用6-12 RM范围的中等负荷，组间休息1-2分钟以维持代谢压力，可采用较慢的离心速度（2-4秒）增加肌肉张力时间。肌肥大递进可通过增加组数、增加每组次数、缩短休息时间或增加训练频率等多种途径实现，而不仅仅依赖负荷增加。
+    tags:
+      - "strength-progression"
+      - "hypertrophy-progression"
+      - "rest-periods"
+      - "tempo"
+      - "training-goals"
+
+  - id: "train_po_008"
+    source: "NSCA; ACSM 2009"
+    section: "Autoregulation in Progressive Overload"
+    category: "training"
+    subcategory: "progressive-overload"
+    title: "自动调节在渐进超负荷中的应用"
+    content: |
+      自动调节（Autoregulation）是一种根据训练者每日状态灵活调整训练负荷的方法，与固定百分比递进相辅相成。常用的自动调节工具包括RPE（自觉用力程度）量表和RIR（储备次数）概念。RPE 10代表力竭，RPE 8意味着还能再完成2次（RIR 2）。建议力量训练的工作组维持在RPE 7-9（RIR 1-3），肌肥大训练维持在RPE 7-10（RIR 0-3）。自动调节能够帮助训练者在状态良好时适当增加负荷以获得更多训练刺激，在疲劳或恢复不足时适当降低负荷以避免过度训练。将自动调节与周期化渐进计划相结合，既能保持训练的系统性和方向性，又能灵活适应个体每日的身体状态变化。
+    tags:
+      - "autoregulation"
+      - "RPE"
+      - "RIR"
+      - "flexible-programming"
+      - "fatigue-management"

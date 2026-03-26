@@ -1,0 +1,84 @@
+entries:
+  - id: "recov_ot_001"
+    source: "Meeusen et al. 2013; ECSS/ACSM Joint Consensus Statement"
+    section: "Overreaching vs Overtraining Spectrum"
+    category: "recovery"
+    subcategory: "overtraining"
+    title: "功能性超量训练、非功能性超量训练与过度训练综合征"
+    content: |
+      根据欧洲运动科学学会(ECSS)和美国运动医学会(ACSM)2013年联合共识声明(Meeusen等人主笔)，训练应激反应存在一个连续谱系。功能性超量训练(FOR)是计划性短期运动表现下降，伴随数天至2周的恢复后可实现超量补偿和表现提升，是周期化训练的正常组成部分。非功能性超量训练(NFOR)是由于训练与恢复失衡导致的持续数周至数月的表现下降，伴随心理和/或内分泌症状，但可通过充分休息恢复。过度训练综合征(OTS)是NFOR的极端延伸，表现为持续数月甚至数年的全身性适应不良，涉及神经内分泌、免疫和心理系统的多重紊乱，恢复期可能长达数月至数年。区分NFOR和OTS的关键在于临床结局和排除性诊断。
+    tags:
+      - "overreaching"
+      - "overtraining-syndrome"
+      - "ECSS"
+      - "ACSM"
+
+  - id: "recov_ot_002"
+    source: "Meeusen et al. 2013; Kreher & Schwartz 2012"
+    section: "Warning Signs and Symptoms"
+    category: "recovery"
+    subcategory: "overtraining"
+    title: "过度训练预警信号与症状"
+    content: |
+      过度训练综合征(OTS)的核心症状是在充分恢复后仍持续的运动表现下降。生理预警信号包括：静息心率持续升高(超过基线5次/分钟以上)、心率变异性(HRV)持续降低(连续3-4周)、睡眠障碍(超过90%的OTS患者报告入睡困难、夜间觉醒或晨起未恢复感)、反复上呼吸道感染、食欲下降和体重非预期下降。心理症状包括：训练动力丧失、竞争欲降低、情绪不稳定(焦虑、易怒)、注意力下降和心境障碍评分(POMS)异常。内分泌变化包括皮质醇基线升高或下降(取决于阶段)、睾酮/皮质醇比值降低、以及对运动应激的激素反应迟钝。目前尚无单一的诊断性生物标志物，OTS本质上是排除性诊断。
+    tags:
+      - "warning-signs"
+      - "symptoms"
+      - "HRV"
+      - "diagnosis"
+
+  - id: "recov_ot_003"
+    source: "ECSS/ACSM 2013; Halson & Jeukendrup 2004"
+    section: "Recovery Protocols"
+    category: "recovery"
+    subcategory: "overtraining"
+    title: "过度训练恢复方案"
+    content: |
+      NFOR的恢复通常需要数周至数月的训练负荷显著降低或完全休息。OTS的恢复可能需要数月至超过一年。恢复方案的核心要素包括：即刻将训练量降低50-70%或完全停训(取决于严重程度)；确保每晚8-10小时高质量睡眠；优化营养摄入(充足热量、蛋白质和碳水化合物)以纠正可能存在的能量可用性不足。心理恢复同样关键——建议寻求运动心理咨询、减少与训练相关的心理压力来源。恢复训练应从低强度有氧活动开始，逐步(每周增加不超过10%)恢复训练量和强度。在整个恢复过程中持续监测主观症状(如疲劳感、睡眠质量、情绪)和客观指标(如HRV、静息心率)。
+    tags:
+      - "recovery-protocol"
+      - "rest"
+      - "return-to-training"
+      - "monitoring"
+
+  - id: "recov_ot_004"
+    source: "Meeusen et al. 2013; Foster 1998"
+    section: "Prevention Strategies"
+    category: "recovery"
+    subcategory: "overtraining"
+    title: "过度训练预防策略"
+    content: |
+      预防过度训练的核心原则是系统化监控训练负荷与恢复状态的平衡。训练负荷管理建议：使用训练冲量(TRIMP)或会话RPE(sRPE x 训练时长)量化内部训练负荷；每周训练量增长不超过10%；每3-4周安排1周减量周(训练量降低40-60%)。恢复监控工具包括：每日晨起HRV和静息心率测量(持续下降趋势为预警信号)；主观问卷如恢复-应激问卷(REST-Q)和心境状态量表(POMS)；训练日志中记录睡眠时长/质量、疲劳和肌肉酸痛主观评分。此外，确保充足的营养摄入(特别是碳水化合物和总热量)、7-9小时睡眠、以及适当的心理恢复策略(如冥想、社交活动)是系统性预防方案的重要组成部分。
+    tags:
+      - "prevention"
+      - "training-load"
+      - "monitoring"
+      - "periodization"
+
+  - id: "recov_ot_005"
+    source: "Halson 2014; Kellmann et al. 2018"
+    section: "Recovery Modalities"
+    category: "recovery"
+    subcategory: "overtraining"
+    title: "主动恢复手段与循证评估"
+    content: |
+      在预防和管理过度训练过程中，各类恢复手段的证据等级不同。强证据支持：充足睡眠(最关键的恢复手段)、合理营养(热量平衡和营养素充足)。中等证据支持：冷水浸泡(10-15°C, 10-15分钟)可减少训练后炎症反应和延迟性肌肉酸痛(DOMS)，但长期使用可能削弱肌肥大适应；对比浴(冷热交替)。有限或混合证据：压缩服装对减少DOMS和加速恢复有轻微积极效果；按摩对减轻主观疲劳感有效但对生理指标影响有限；被动拉伸对恢复的效果不明确。低证据支持：冷冻治疗(全身冷冻舱)、高压氧治疗。关键认知是没有任何恢复手段能替代充足的睡眠和合理的训练负荷管理。
+    tags:
+      - "recovery-modalities"
+      - "cold-water-immersion"
+      - "sleep"
+      - "evidence-based"
+
+  - id: "recov_ot_006"
+    source: "Meeusen et al. 2013; Cadegiani & Kater 2019"
+    section: "Hormonal and Immune Markers"
+    category: "recovery"
+    subcategory: "overtraining"
+    title: "过度训练的激素与免疫标志物"
+    content: |
+      过度训练综合征涉及下丘脑-垂体-肾上腺(HPA)轴和下丘脑-垂体-性腺(HPG)轴的功能紊乱。早期阶段可能表现为皮质醇基线升高(交感过度兴奋型)，而晚期可能出现皮质醇钝化(副交感主导型)。睾酮/皮质醇比值(T/C ratio)下降超过30%被认为是NFOR/OTS的重要指标。免疫系统方面，OTS常伴随谷氨酰胺水平降低、免疫球蛋白A(IgA)分泌减少、自然杀伤(NK)细胞活性下降，导致反复感染(尤其是上呼吸道感染)。Cadegiani和Kater(2019年)提出的"内分泌和代谢反应过度训练检测"(EROS)研究表明，OTS患者对运动和胰岛素低血糖刺激测试的激素反应显著迟钝。然而，目前尚无单一激素或免疫指标可作为OTS的确诊标准，诊断需要综合临床表现和排除其他疾病。
+    tags:
+      - "hormones"
+      - "cortisol"
+      - "testosterone"
+      - "immune-function"

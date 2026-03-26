@@ -1,0 +1,84 @@
+entries:
+  - id: "nutr_energy_001"
+    source: "Mifflin-St Jeor Equation; ACSM Guidelines"
+    section: "TDEE Calculation"
+    category: "nutrition"
+    subcategory: "energy-balance"
+    title: "每日总能量消耗(TDEE)计算方法"
+    content: |
+      TDEE由基础代谢率(BMR)乘以活动系数得出。Mifflin-St Jeor公式被认为是最准确的BMR估算方法：男性BMR = (10 x 体重kg) + (6.25 x 身高cm) - (5 x 年龄) + 5；女性BMR = (10 x 体重kg) + (6.25 x 身高cm) - (5 x 年龄) - 161。活动系数范围从1.2(久坐)至1.9(极度活跃)，常用值包括：轻度活动1.375、中度活动1.55、高度活动1.725。实际TDEE可能因个体代谢差异、非运动性热量消耗(NEAT)和食物热效应(TEF，约占总热量10%)而波动约15%。建议通过2-3周体重监测校准个人TDEE。
+    tags:
+      - "TDEE"
+      - "BMR"
+      - "Mifflin-St-Jeor"
+      - "energy-expenditure"
+
+  - id: "nutr_energy_002"
+    source: "JISSN Position Stand; Iraki et al. 2019"
+    section: "Caloric Surplus for Lean Bulking"
+    category: "nutrition"
+    subcategory: "energy-balance"
+    title: "精益增肌热量盈余"
+    content: |
+      为实现精益增肌(最大化肌肉增长同时最小化脂肪积累)，建议在TDEE基础上增加300-500kcal/天的热量盈余。初学者因具有更大的肌肉增长潜力，可耐受较大的盈余(约500kcal/天)；而进阶训练者应采用更保守的盈余(200-300kcal/天)以减少多余脂肪增长。理想的体重增长速度为每周约0.25-0.5kg(占体重0.25-0.5%)。超过500kcal/天的盈余并不能加速肌肉生长，反而会加速脂肪积累。在增肌阶段，建议将体脂率维持在男性10-15%、女性18-25%的范围内。
+    tags:
+      - "caloric-surplus"
+      - "lean-bulk"
+      - "muscle-gain"
+      - "weight-gain"
+
+  - id: "nutr_energy_003"
+    source: "ACSM Position Stand; Hall et al. 2011"
+    section: "Caloric Deficit for Fat Loss"
+    category: "nutrition"
+    subcategory: "energy-balance"
+    title: "减脂热量赤字策略"
+    content: |
+      安全有效的减脂需要适度的热量赤字，通常建议每日赤字500kcal，理论上对应每周约0.45kg(1磅)的脂肪损失。然而，实际减重速率会因代谢适应而递减。建议减重速度控制在每周0.5-1.0%体重，以最大化瘦体重保留。对于体脂较高的个体，可短期采用较大赤字(每日750-1000kcal)；但对于体脂已经较低的训练者，应使用更温和的赤字(每日300-500kcal)。过大的热量赤字会增加肌肉流失、激素紊乱、运动表现下降和暴食风险。同时应确保赤字主要来源于碳水化合物和脂肪的减少，而非蛋白质。
+    tags:
+      - "caloric-deficit"
+      - "fat-loss"
+      - "weight-loss"
+      - "body-composition"
+
+  - id: "nutr_energy_004"
+    source: "Hall & Guo 2017; Heymsfield et al. 2014"
+    section: "Rate of Weight Change"
+    category: "nutrition"
+    subcategory: "energy-balance"
+    title: "体重变化速率与体成分影响"
+    content: |
+      体重变化速率直接影响体成分变化的质量。增重阶段过快(>每周0.5%体重)会导致脂肪与肌肉比值恶化；减重阶段过快(>每周1.0%体重)则大幅增加瘦体重损失的比例。Garthe等人2011年的研究表明，慢速减重组(每周0.7%体重)比快速减重组(每周1.4%体重)保留了更多瘦体重甚至略有增加。建议增肌期体重增长目标为每月1-2kg，减脂期体重下降目标为每周0.5-1.0%体重。体重应取每日晨起空腹测量的7天移动平均值，以消除水分、食物残渣等引起的日间波动。
+    tags:
+      - "weight-change-rate"
+      - "body-composition"
+      - "lean-mass"
+      - "monitoring"
+
+  - id: "nutr_energy_005"
+    source: "Trexler et al. 2014; Rosenbaum & Leibel 2010"
+    section: "Metabolic Adaptation"
+    category: "nutrition"
+    subcategory: "energy-balance"
+    title: "代谢适应与减重平台期"
+    content: |
+      代谢适应(适应性产热)是指在热量限制期间，能量消耗的下降幅度超出体重和体成分变化所能解释的部分。研究显示约60%的能量消耗下降可归因于体重减轻本身，而剩余约40%属于适应性产热，其中BMR下降约5%、非静息能量消耗下降约20%。代谢适应可在热量限制的第一周即被检测到，且可能在体重恢复后持续存在。应对策略包括：使用饮食间歇策略(如2周赤字/1周维持)、逐步降低热量而非骤减、维持或增加力量训练以保护瘦体重、以及在长期减脂后安排4-8周的"逆向饮食"(reverse diet)逐步恢复热量摄入。约85%的减脂者会经历减重平台期，这是代谢适应的正常表现。
+    tags:
+      - "metabolic-adaptation"
+      - "adaptive-thermogenesis"
+      - "plateau"
+      - "reverse-diet"
+
+  - id: "nutr_energy_006"
+    source: "JISSN Position Stand; Mountjoy et al. 2018 RED-S"
+    section: "Energy Availability"
+    category: "nutrition"
+    subcategory: "energy-balance"
+    title: "能量可用性与相对能量不足"
+    content: |
+      能量可用性(EA)定义为总能量摄入减去运动能量消耗后除以去脂体重(FFM)，单位为kcal/kg FFM/天。EA低于30kcal/kg FFM/天被认为是导致运动中相对能量不足(RED-S)的阈值，可引起代谢率下降、激素功能紊乱(月经失调、睾酮降低)、骨密度减少、免疫功能受损和心理健康问题。建议维持EA不低于45kcal/kg FFM/天以支持正常生理功能和最佳运动表现。在减脂期间，EA不应长期低于30kcal/kg FFM/天。RED-S不仅影响女性运动员，也同样影响男性运动员，尤其是追求低体脂的项目(如体操、摔跤、健美)。
+    tags:
+      - "energy-availability"
+      - "RED-S"
+      - "LEA"
+      - "hormonal-health"

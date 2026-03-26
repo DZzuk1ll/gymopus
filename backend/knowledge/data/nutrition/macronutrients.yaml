@@ -1,0 +1,112 @@
+entries:
+  - id: "nutr_macro_001"
+    source: "JISSN 2017 Position Stand: Protein and Exercise"
+    section: "Protein Requirements for Hypertrophy"
+    category: "nutrition"
+    subcategory: "macronutrients"
+    title: "肌肥大蛋白质需求量"
+    content: |
+      根据国际运动营养学会(ISSN)2017年立场声明，抗阻训练人群为最大化肌肉蛋白质合成和促进肌肥大，每日蛋白质摄入量应达到1.6-2.2g/kg体重。Morton等人2018年的荟萃分析确认了1.6g/kg/天为最大化无脂肪体重增长的下限阈值。对于一般运动人群，1.4-2.0g/kg/天的蛋白质摄入量已足以满足大多数训练需求。在热量限制期间，为保持瘦体重，建议将蛋白质摄入提高至2.3-3.1g/kg去脂体重(FFM)。高蛋白饮食(最高至3.4g/kg/天)在抗阻训练人群中未显示出不良健康效应。
+    tags:
+      - "protein"
+      - "hypertrophy"
+      - "JISSN"
+      - "muscle-protein-synthesis"
+
+  - id: "nutr_macro_002"
+    source: "ISSN Position Stand: Diets and Body Composition"
+    section: "Dietary Fat Minimum"
+    category: "nutrition"
+    subcategory: "macronutrients"
+    title: "脂肪最低摄入量"
+    content: |
+      脂肪是维持激素功能(尤其是睾酮和雌激素合成)、脂溶性维生素吸收(A、D、E、K)及细胞膜完整性的必需营养素。运动员脂肪摄入建议占总热量的20-35%，但不应低于总热量的15%，折算约为0.5-1.0g/kg体重/天。长期过度限制脂肪(低于总热量15%)可能导致激素水平下降、免疫功能受损和必需脂肪酸缺乏。ISSN立场声明指出，在多种饮食模式中(低脂至低碳水/生酮)，只要蛋白质摄入充足且存在热量赤字，均可有效改善体成分。
+    tags:
+      - "fat"
+      - "hormones"
+      - "minimum-intake"
+      - "ISSN"
+
+  - id: "nutr_macro_003"
+    source: "ACSM/AND/DC Joint Position Statement"
+    section: "Carbohydrate Calculation"
+    category: "nutrition"
+    subcategory: "macronutrients"
+    title: "碳水化合物需求计算"
+    content: |
+      碳水化合物是高强度运动的主要能量来源，其需求取决于训练量、强度和类型。低强度或技术训练日建议摄入3-5g/kg/天；中等强度训练(约1小时/天)建议5-7g/kg/天；高强度耐力训练(1-3小时/天)建议6-10g/kg/天；极端训练量(>4-5小时/天)可能需要8-12g/kg/天。碳水化合物摄入量通常在确定蛋白质和脂肪摄入后，利用剩余热量预算计算得出。运动前1-4小时摄入1-4g/kg碳水可优化糖原储备和运动表现。
+    tags:
+      - "carbohydrate"
+      - "glycogen"
+      - "training-volume"
+      - "energy"
+
+  - id: "nutr_macro_004"
+    source: "FAO/WHO DIAAS Report; Herreman et al. 2020"
+    section: "Protein Quality Assessment"
+    category: "nutrition"
+    subcategory: "macronutrients"
+    title: "蛋白质质量评估"
+    content: |
+      蛋白质质量由可消化必需氨基酸评分(DIAAS)衡量，该方法已取代旧的蛋白质消化率校正氨基酸评分(PDCAAS)。DIAAS基于回肠末端各氨基酸的消化率进行评估，允许评分超过1.00。动物源蛋白质质量普遍优于植物源蛋白质：乳清蛋白分离物DIAAS为1.09，酪蛋白约1.0，鸡蛋约1.13，而大豆蛋白分离物为0.90，豌豆蛋白分离物为0.82，大米蛋白浓缩物仅0.37。植物蛋白可通过互补搭配(如谷物+豆类)弥补限制性氨基酸的不足，提高整体蛋白质利用率。
+    tags:
+      - "protein-quality"
+      - "DIAAS"
+      - "PDCAAS"
+      - "bioavailability"
+
+  - id: "nutr_macro_005"
+    source: "JISSN 2017; Norton & Wilson 2009"
+    section: "Leucine Threshold"
+    category: "nutrition"
+    subcategory: "macronutrients"
+    title: "亮氨酸阈值与mTOR信号通路"
+    content: |
+      亮氨酸是唯一可直接激活mTORC1信号通路的必需氨基酸，该通路是启动肌肉蛋白质合成(MPS)的关键开关。研究表明，每餐需摄入约2.5-3.0g亮氨酸才能达到最大化激活MPS的阈值浓度。年轻成人通常可通过摄入25-30g优质蛋白质(乳清、鸡蛋、肉类)达到此阈值。老年人由于存在"合成抵抗"现象，可能需要更高的亮氨酸摄入量(3-4g/餐)。亮氨酸虽然是合成信号的触发器，但完整的MPS过程仍需要所有必需氨基酸作为底物参与蛋白质构建。
+    tags:
+      - "leucine"
+      - "mTOR"
+      - "muscle-protein-synthesis"
+      - "amino-acids"
+
+  - id: "nutr_macro_006"
+    source: "JISSN 2017; Schoenfeld & Aragon 2018"
+    section: "Protein Distribution"
+    category: "nutrition"
+    subcategory: "macronutrients"
+    title: "每日蛋白质分配策略"
+    content: |
+      将每日蛋白质总量均匀分配到3-5餐中，每餐摄入0.25-0.40g/kg体重(约20-40g)的优质蛋白质，每3-4小时进食一次，对最大化24小时肌肉蛋白质合成率最为有效。研究表明，与将大部分蛋白质集中在单餐摄入的模式相比，均匀分配模式可使全天MPS总量提高约25%。这一策略与单纯增加单次蛋白质摄入量相比，对肌肉适应有更显著的促进效果。对于体重80kg的训练者，建议每餐摄入20-32g蛋白质，每日分4-5餐。
+    tags:
+      - "protein-distribution"
+      - "meal-frequency"
+      - "MPS"
+      - "anabolism"
+
+  - id: "nutr_macro_007"
+    source: "ISSN Position Stand 2017; Tipton & Wolfe 2004"
+    section: "Complete vs Incomplete Proteins"
+    category: "nutrition"
+    subcategory: "macronutrients"
+    title: "完全蛋白质与蛋白质互补"
+    content: |
+      完全蛋白质包含所有9种必需氨基酸(EAAs)且比例充足，主要来源包括乳清蛋白、酪蛋白、鸡蛋、肉类、鱼类和大豆。乳清蛋白因其高亮氨酸含量(约10-12%)和快速消化吸收特性，被认为是促进运动后MPS的最优选择。植物蛋白通常存在限制性氨基酸：豆类缺乏蛋氨酸，谷物缺乏赖氨酸，但通过合理搭配可实现氨基酸互补。对于以植物蛋白为主的运动员，建议适当增加总蛋白质摄入量(增加约10-20%)以补偿较低的消化率和氨基酸评分差异。
+    tags:
+      - "complete-protein"
+      - "essential-amino-acids"
+      - "whey"
+      - "plant-protein"
+
+  - id: "nutr_macro_008"
+    source: "ISSN 2017; Helms et al. 2014"
+    section: "Protein During Caloric Deficit"
+    category: "nutrition"
+    subcategory: "macronutrients"
+    title: "热量赤字期间的蛋白质需求"
+    content: |
+      在减脂期间(热量赤字状态)，蛋白质需求量显著高于维持期或增肌期。Helms等人的系统综述建议，低体脂抗阻训练者在热量赤字期间应摄入2.3-3.1g/kg去脂体重(FFM)的蛋白质以最大化瘦体重保留。较大幅度的热量赤字和较低的体脂率均会增加肌肉流失风险，因此需要更高的蛋白质摄入。高蛋白饮食在减脂期还有助于增加饱腹感、维持基础代谢率和保持运动表现。建议减脂速度控制在每周0.5-1.0%体重，以减少瘦体重损失的风险。
+    tags:
+      - "protein"
+      - "caloric-deficit"
+      - "lean-mass-retention"
+      - "dieting"

@@ -1,0 +1,40 @@
+{# prompts/suggestion_analysis.j2 #}
+
+你是一个专业的运动科学分析师。请基于以下检测到的信号和知识库参考，进行综合分析并给出建议。
+
+## 检测到的信号
+{% for signal in signals %}
+- **{{ signal.description }}**: {{ signal.value }} (趋势: {{ signal.trend }})
+{% endfor %}
+
+## 最近数据摘要
+{{ recent_metrics }}
+
+## 用户画像
+- 训练目标: {{ user_context.training_goal or '未设置' }}
+- 训练经验: {{ user_context.experience or '未设置' }}
+- 体重: {{ user_context.weight_kg or '未设置' }}kg
+
+## 知识库参考
+{% for entry in knowledge_entries %}
+---
+[KB-{{ entry.id[:8] }}] {{ entry.source }} — {{ entry.section }}
+{{ entry.content }}
+---
+{% endfor %}
+
+## 输出要求
+
+请严格按照以下 JSON 格式输出，不要输出任何其他内容：
+
+```json
+{
+  "title": "建议标题（简洁概括）",
+  "severity": "info 或 warning 或 danger",
+  "analysis": "综合分析文本（必须引用知识库条目，使用 [KB-xxx] 格式）",
+  "recommendations": ["主要建议1", "主要建议2"],
+  "alternatives": ["替代方案1"],
+  "confidence": 0.8,
+  "evidence_sufficient": true
+}
+```

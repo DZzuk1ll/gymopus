@@ -1,0 +1,227 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* GymOps - Dark Mode Theme System */
+/* 精密工具感配色，类似 Linear / Vercel 的设计语言 */
+
+:root {
+  /* 使用深色模式作为默认 */
+  --background: oklch(0.13 0.005 260);
+  --foreground: oklch(0.95 0 0);
+  
+  /* 表面层级 - 四级 */
+  --surface-1: oklch(0.16 0.005 260);
+  --surface-2: oklch(0.19 0.005 260);
+  --surface-3: oklch(0.22 0.005 260);
+  --surface-4: oklch(0.25 0.005 260);
+  
+  /* 文字层级 - 三级 */
+  --text-primary: oklch(0.95 0 0);
+  --text-secondary: oklch(0.7 0 0);
+  --text-muted: oklch(0.5 0 0);
+  
+  /* 边框 */
+  --border-default: oklch(0.25 0.005 260);
+  --border-hover: oklch(0.35 0.005 260);
+  
+  /* 主色调 Accent - 青蓝色，专业克制 */
+  --accent: oklch(0.65 0.15 220);
+  --accent-hover: oklch(0.7 0.16 220);
+  --accent-foreground: oklch(0.98 0 0);
+  --accent-muted: oklch(0.65 0.15 220 / 0.15);
+  
+  /* 成功色 Success - 翠绿 */
+  --success: oklch(0.65 0.17 155);
+  --success-hover: oklch(0.7 0.18 155);
+  --success-foreground: oklch(0.98 0 0);
+  --success-muted: oklch(0.65 0.17 155 / 0.15);
+  
+  /* 警告色 Warning - 琥珀 */
+  --warning: oklch(0.75 0.15 75);
+  --warning-hover: oklch(0.8 0.16 75);
+  --warning-foreground: oklch(0.15 0 0);
+  --warning-muted: oklch(0.75 0.15 75 / 0.15);
+  
+  /* 危险色 Danger - 珊瑚红 */
+  --danger: oklch(0.6 0.2 25);
+  --danger-hover: oklch(0.65 0.21 25);
+  --danger-foreground: oklch(0.98 0 0);
+  --danger-muted: oklch(0.6 0.2 25 / 0.15);
+  
+  /* 信息色 Info */
+  --info: oklch(0.6 0.15 250);
+  --info-muted: oklch(0.6 0.15 250 / 0.15);
+  
+  /* 保留 shadcn 兼容 */
+  --card: var(--surface-1);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-2);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent);
+  --primary-foreground: var(--accent-foreground);
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--surface-2);
+  --muted-foreground: var(--text-secondary);
+  --destructive: var(--danger);
+  --destructive-foreground: var(--danger-foreground);
+  --border: var(--border-default);
+  --input: var(--surface-2);
+  --ring: var(--accent);
+  
+  /* 图表颜色 */
+  --chart-1: var(--accent);
+  --chart-2: var(--success);
+  --chart-3: var(--warning);
+  --chart-4: var(--info);
+  --chart-5: var(--danger);
+  
+  --radius: 0.5rem;
+  
+  /* 侧边栏 */
+  --sidebar: var(--surface-1);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: var(--accent-foreground);
+  --sidebar-accent: var(--surface-2);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-default);
+  --sidebar-ring: var(--accent);
+}
+
+.dark {
+  --background: oklch(0.13 0.005 260);
+  --foreground: oklch(0.95 0 0);
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Geist', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Geist Mono', monospace;
+  --font-display: 'Inter', 'Geist', system-ui, sans-serif;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  /* 自定义颜色 */
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-surface-4: var(--surface-4);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border-default: var(--border-default);
+  --color-border-hover: var(--border-hover);
+  --color-accent-muted: var(--accent-muted);
+  --color-success: var(--success);
+  --color-success-hover: var(--success-hover);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-muted: var(--success-muted);
+  --color-warning: var(--warning);
+  --color-warning-hover: var(--warning-hover);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-muted: var(--warning-muted);
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-danger-muted: var(--danger-muted);
+  --color-info: var(--info);
+  --color-info-muted: var(--info-muted);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border-default outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* 呼吸动画 - 用于告警指示灯 */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 var(--warning);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 8px 4px var(--warning);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* 数字输入框隐藏箭头 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

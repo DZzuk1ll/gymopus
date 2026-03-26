@@ -1,0 +1,145 @@
+entries:
+  - id: "train_period_001"
+    source: "NSCA Essentials of Strength Training and Conditioning"
+    section: "Chapter 21: Periodization"
+    category: "training"
+    subcategory: "periodization"
+    title: "周期化训练的定义与核心原则"
+    content: |
+      周期化训练是指通过有计划地变化训练的专项性、强度和训练量，将训练组织为不同的时间段或周期，以促进长期的训练适应和运动表现提升。根据NSCA的定义，周期化的核心在于系统性地操控训练变量，避免单调训练带来的适应停滞和过度训练风险。周期化模型通常将训练划分为大周期（macrocycle）、中周期（mesocycle）和小周期（microcycle）三个层次，其中大周期涵盖整个训练计划（通常为数月至一年），中周期为2-6周的训练阶段，小周期通常为一周的训练安排。合理的周期化设计能够确保训练者在适当的时间达到体能峰值，同时充分恢复以避免伤病。
+    tags:
+      - "periodization"
+      - "NSCA"
+      - "training-design"
+      - "macrocycle"
+      - "mesocycle"
+
+  - id: "train_period_002"
+    source: "NSCA Essentials of Strength Training and Conditioning"
+    section: "Chapter 21: Linear Periodization"
+    category: "training"
+    subcategory: "periodization"
+    title: "线性周期化模型"
+    content: |
+      线性周期化（Linear Periodization）是最传统的周期化模型，其特点是训练强度随时间逐步递增，同时训练量相应递减。典型的线性周期化方案从高容量低强度阶段开始（例如3-4组×12-15次，负荷为60-70% 1RM），逐步过渡到低容量高强度阶段（例如3-5组×1-5次，负荷为85-100% 1RM）。这一模型最适合初学者和中级训练者，因为其渐进式的负荷递增符合新手快速适应的特点。研究表明，线性周期化对于建立力量基础和增加肌肉量均有良好效果，但对于高级运动员，由于长时间只强调单一训练品质，可能导致其他体能要素退化。
+    tags:
+      - "linear-periodization"
+      - "beginner"
+      - "intermediate"
+      - "progressive-loading"
+
+  - id: "train_period_003"
+    source: "Rhea & Alderman 2004; NSCA CSCS Guidelines"
+    section: "Undulating Periodization Models"
+    category: "training"
+    subcategory: "periodization"
+    title: "波动周期化模型（每日/每周波动）"
+    content: |
+      波动周期化（Undulating Periodization，也称非线性周期化）通过在每日或每周基础上频繁变化训练负荷和训练量来实现训练刺激的多样化。每日波动周期化（DUP）可能在一周内安排力量日（4-6次×85% 1RM）、肌肥大日（8-12次×70% 1RM）和力量耐力日（12-15次×60% 1RM）交替进行。Rhea与Alderman（2004年）的研究表明，波动周期化在力量增长方面优于线性周期化，可能是因为频繁的负荷变化能够避免神经疲劳并促进多元化的训练适应。这一模型特别适合中级至高级训练者，以及需要在较长时间内保持竞技状态的运动员。
+    tags:
+      - "undulating-periodization"
+      - "DUP"
+      - "nonlinear"
+      - "advanced"
+      - "strength-gains"
+
+  - id: "train_period_004"
+    source: "Issurin 2010; NSCA Periodization Guidelines"
+    section: "Block Periodization"
+    category: "training"
+    subcategory: "periodization"
+    title: "板块周期化模型"
+    content: |
+      板块周期化（Block Periodization）将训练划分为三个连续的中周期板块：积累期（Accumulation）、转化期（Transmutation）和实现期（Realization）。积累期以较高的训练量和较低的强度（50-75% 1RM）为主，持续2-4周，旨在建立基础体能和肌肉工作能力。转化期将积累的基础能力转化为更专项的运动品质，强度提升至75-90% 1RM，持续2-4周。实现期大幅降低训练量并将强度提升至最高水平（90%+ 1RM），持续1-2周，使运动员在比赛或测试时达到最佳状态。板块周期化特别适合高级运动员和需要在特定时间点达到竞技峰值的训练场景。
+    tags:
+      - "block-periodization"
+      - "accumulation"
+      - "transmutation"
+      - "realization"
+      - "advanced-athletes"
+
+  - id: "train_period_005"
+    source: "NSCA Essentials of Strength Training and Conditioning"
+    section: "Mesocycle Design"
+    category: "training"
+    subcategory: "periodization"
+    title: "中周期设计原则"
+    content: |
+      中周期（Mesocycle）是周期化训练中最核心的计划单元，通常持续2-6周，每个中周期围绕一个主要训练目标设计。常见的中周期类型包括：解剖适应期（高次数低负荷，为后续训练做准备）、肌肥大期（中等负荷高容量，促进肌肉增长）、力量期（较高负荷中等容量，发展最大力量）和爆发力期（高强度低容量，发展功率输出）。每个中周期内的训练负荷通常采用渐进递增的方式，并在中周期末安排减载周以促进恢复和超量恢复。合理的中周期设计应确保相邻中周期之间存在逻辑递进关系，前一个中周期的训练适应为下一个中周期的训练奠定基础。
+    tags:
+      - "mesocycle"
+      - "training-design"
+      - "hypertrophy-phase"
+      - "strength-phase"
+      - "power-phase"
+
+  - id: "train_period_006"
+    source: "ACSM Position Stand 2009"
+    section: "Periodization for Intermediate Lifters"
+    category: "training"
+    subcategory: "periodization"
+    title: "中级训练者的周期化策略"
+    content: |
+      根据ACSM（2009年）的立场声明，中级训练者（持续训练6个月至2年）应采用周期化训练方案以持续获得进步。建议中级训练者使用经典的线性周期化或每周波动周期化，训练频率为每周3-4天，每个肌群每周训练2次。负荷范围应在1-12 RM之间进行周期化变化，重点区间为6-12 RM。中级训练者的中周期长度通常为3-4周训练加1周减载，每个训练阶段持续4-8周后过渡到下一阶段。组间休息时间应根据训练目标调整：力量训练2-3分钟，肌肥大训练1-2分钟。中级训练者相比初学者需要更多的训练变化和更高的训练量才能继续取得进步。
+    tags:
+      - "intermediate"
+      - "ACSM"
+      - "training-frequency"
+      - "load-progression"
+
+  - id: "train_period_007"
+    source: "NSCA CSCS Guidelines"
+    section: "Deload Frequency in Periodization"
+    category: "training"
+    subcategory: "periodization"
+    title: "减载周在周期化中的安排"
+    content: |
+      减载周（Deload Week）是周期化训练中不可或缺的组成部分，其目的是通过有计划地降低训练负荷来消散累积疲劳，促进身体恢复和超量恢复。根据NSCA指南，减载周通常安排在每3-6周的高强度训练之后，具体频率取决于训练者的经验水平和训练强度。初学者可能每6-8周需要一次减载，而高级训练者可能每3-4周就需要减载。减载期间训练量通常降低40-60%，强度可保持不变或略有降低。研究表明，规律的减载安排不仅能预防过度训练综合征，还能通过促进超量恢复使后续训练阶段的表现得到提升。
+    tags:
+      - "deload"
+      - "recovery"
+      - "fatigue-management"
+      - "supercompensation"
+
+  - id: "train_period_008"
+    source: "NSCA; Periodization Research Reviews"
+    section: "Periodization Model Comparison"
+    category: "training"
+    subcategory: "periodization"
+    title: "不同周期化模型的效果比较"
+    content: |
+      多项研究对不同周期化模型的训练效果进行了比较。总体而言，任何形式的周期化训练都优于非周期化（恒定负荷）训练。在力量增长方面，波动周期化（DUP）在多数研究中展现出优于线性周期化的效果，可能归因于更频繁的负荷变化带来的神经适应优势。然而，对于初学者而言，线性周期化的简单递进模式更容易执行且同样有效。板块周期化与每周波动周期化相比，两组均能显著提高力量和爆发力，但在下肢力量增长方面波动组（+27.7%）显著优于板块组（+15.2%）。选择周期化模型时应综合考虑训练者水平、训练目标、赛季时间安排以及个人偏好。
+    tags:
+      - "model-comparison"
+      - "research"
+      - "DUP-vs-linear"
+      - "effectiveness"
+
+  - id: "train_period_009"
+    source: "NSCA Essentials of Strength Training and Conditioning"
+    section: "Microcycle Design"
+    category: "training"
+    subcategory: "periodization"
+    title: "小周期（训练周）的设计原则"
+    content: |
+      小周期（Microcycle）通常为期一周，是周期化训练中最基本的计划单元。小周期设计需要考虑训练频率、训练课之间的恢复时间、以及每次训练课的内容安排。根据NSCA建议，同一肌群的训练间隔应至少48-72小时，以确保充分恢复。一个有效的小周期应在高强度训练日和低强度训练日之间合理交替，避免连续安排高负荷训练课。对于全身训练方案，每周3-4次训练较为合适；对于分化训练方案，每周可安排4-6次训练。小周期内的训练量和强度应服务于当前中周期的整体目标，并在中周期内呈现适当的渐进递增趋势。
+    tags:
+      - "microcycle"
+      - "weekly-planning"
+      - "training-frequency"
+      - "recovery-time"
+
+  - id: "train_period_010"
+    source: "ACSM 2009; NSCA Guidelines"
+    section: "Periodization Variables"
+    category: "training"
+    subcategory: "periodization"
+    title: "周期化训练中的关键变量操控"
+    content: |
+      成功的周期化训练需要系统地操控多个训练变量，包括：训练强度（负荷百分比或RM区间）、训练量（组数×次数）、训练频率（每周训练次数）、动作速度、组间休息时间和动作选择。根据ACSM（2009年）建议，力量训练的负荷应在1-6 RM范围，组间休息2-5分钟；肌肥大训练负荷在6-12 RM范围，组间休息1-2分钟；肌耐力训练负荷在15次以上（40-60% 1RM），组间休息少于90秒。训练者应根据当前中周期的目标优先调整相应变量，同时保持其他变量在维持水平。每个训练阶段结束后应通过测试评估训练效果，并据此调整下一阶段的训练参数。
+    tags:
+      - "training-variables"
+      - "intensity"
+      - "volume"
+      - "rest-periods"
+      - "ACSM"

@@ -1,0 +1,84 @@
+entries:
+  - id: "gen_supp_001"
+    source: "ISSN Position Stand 2017; Kreider et al. 2017"
+    section: "Creatine Monohydrate"
+    category: "general"
+    subcategory: "supplement-basics"
+    title: "肌酸一水合物——最强证据等级补剂"
+    content: |
+      肌酸一水合物是运动营养领域研究最充分、证据最强的膳食补充剂之一，被ISSN分类为"强证据支持有效且安全"的第一等级补剂。其主要机制是增加肌肉内磷酸肌酸(PCr)储备，从而增强ATP的快速再合成能力，对高强度短时间运动(如抗阻训练、冲刺)效果最显著。标准补充方案为：负荷期每天20g(分4次)持续5-7天，然后维持期每天3-5g；或跳过负荷期直接以每天3-5g持续补充(约28天达到饱和)。肌酸已被FDA认定为"一般认为安全"(GRAS)，超过700项人体研究支持其安全性和有效性。肌酸一水合物是所有肌酸形式中研究最充分、性价比最高的选择，其他形式(如盐酸肌酸、缓冲肌酸)并未显示出额外优势。
+    tags:
+      - "creatine"
+      - "ATP"
+      - "strength"
+      - "evidence-tier-1"
+
+  - id: "gen_supp_002"
+    source: "ISSN Position Stand; Goldstein et al. 2010"
+    section: "Caffeine for Performance"
+    category: "general"
+    subcategory: "supplement-basics"
+    title: "咖啡因——运动表现增强剂"
+    content: |
+      咖啡因通过拮抗腺苷受体提高中枢神经兴奋性和神经肌肉驱动力，是证据等级最高的运动表现增强补剂之一。有效剂量为3-6mg/kg体重，在运动前30-60分钟摄入。其效益包括：提升耐力运动表现(平均改善约3-4%)、降低主观疲劳感(RPE)和运动相关的疼痛感知、增强冲刺和力量运动表现、以及改善注意力和反应时间。低剂量咖啡因(约200mg或约3mg/kg)可能更适合减少潜在副作用(焦虑、失眠、胃肠不适)。习惯性咖啡因摄入者可能产生耐受性，但研究表明即使对于习惯性消费者，急性摄入仍有增益效果。摄入时间应避开睡前6小时以上，以免影响睡眠质量。
+    tags:
+      - "caffeine"
+      - "adenosine"
+      - "endurance"
+      - "evidence-tier-1"
+
+  - id: "gen_supp_003"
+    source: "JISSN 2017; Jäger et al. 2017"
+    section: "Protein Supplements"
+    category: "general"
+    subcategory: "supplement-basics"
+    title: "蛋白质补充剂选择指南"
+    content: |
+      蛋白质补充剂是在日常饮食难以满足训练需求时的便捷蛋白质来源，而非必需品——全食物蛋白质来源同样有效。乳清蛋白(Whey)因高亮氨酸含量(约10-12%)和快速消化特性，在训练前后使用效果最优，DIAAS评分为1.09。酪蛋白因其缓释特性(6-8小时持续释放氨基酸)适合睡前使用。大豆蛋白分离物(DIAAS 0.90)是植物蛋白中质量最高的选择。豌豆蛋白(DIAAS 0.82)联合大米蛋白可实现氨基酸互补。蛋白质补充剂的每份用量建议为20-40g(含至少2.5g亮氨酸)，可作为日常蛋白质摄入的补充而非替代。选择产品时应关注第三方检测认证(如NSF Certified for Sport、Informed Sport)以确保质量和安全。
+    tags:
+      - "protein-supplement"
+      - "whey"
+      - "casein"
+      - "plant-protein"
+
+  - id: "gen_supp_004"
+    source: "Owens et al. 2018; de la Puente Yague et al. 2020"
+    section: "Vitamin D"
+    category: "general"
+    subcategory: "supplement-basics"
+    title: "维生素D——运动员常见缺乏营养素"
+    content: |
+      维生素D缺乏在运动员中普遍存在，尤其是室内运动项目、高纬度地区训练、以及穿着覆盖性运动服的运动员。血清25(OH)D水平低于30ng/mL被定义为不足，低于20ng/mL为缺乏。维生素D不足可导致II型肌纤维脂肪变性、肌力下降、骨密度减少(应力性骨折风险增加4.5倍)和免疫功能受损。建议运动员在无法获得充足日光照射时，每日补充1500-2000 IU维生素D3以维持充足水平；基于现有证据，每日2000-4000 IU在欧美安全上限范围内。研究显示补充维生素D可显著降低应力性骨折发生率(从7.5%降至1.65%)，并可能改善有氧能力和下肢肌力。建议通过血液检测确定个人基线水平后制定个性化补充方案。
+    tags:
+      - "vitamin-D"
+      - "bone-health"
+      - "muscle-function"
+      - "deficiency"
+
+  - id: "gen_supp_005"
+    source: "Philpott et al. 2019; Mickleborough 2013"
+    section: "Omega-3 Fatty Acids"
+    category: "general"
+    subcategory: "supplement-basics"
+    title: "Omega-3脂肪酸(EPA/DHA)"
+    content: |
+      Omega-3脂肪酸(主要为EPA和DHA)通过抗炎机制对运动恢复有积极作用。系统综述显示，补充EPA/DHA可减轻运动后肌肉损伤标志物(如CK和LDH)、降低促炎细胞因子(IL-6、TNF-alpha)水平、以及减轻延迟性肌肉酸痛(DOMS)。有效剂量为每日2-3g EPA+DHA组合，持续补充至少4-8周以观察效果，建议EPA比例略高于DHA以发挥其更强的抗炎特性。美国FDA认定每日不超过3000mg EPA+DHA为安全摄入量。除鱼油胶囊外，每周食用2-3次富脂鱼类(三文鱼、沙丁鱼、鲭鱼)也可有效提高omega-3水平。Omega-3补剂属于ISSN分类中"有限/混合证据支持"的第二等级补剂，仍需更多研究确认最优方案。
+    tags:
+      - "omega-3"
+      - "EPA"
+      - "DHA"
+      - "anti-inflammatory"
+
+  - id: "gen_supp_006"
+    source: "ISSN 2018 Review; Kerksick et al. 2018"
+    section: "Evidence Tiers for Supplements"
+    category: "general"
+    subcategory: "supplement-basics"
+    title: "运动营养补剂证据分级体系"
+    content: |
+      ISSN 2018年运动与运动营养综述将膳食补充剂按证据强度分为三个等级。第一等级(强证据支持有效且安全)包括：肌酸一水合物、咖啡因、beta-丙氨酸(缓冲肌肉酸性，剂量3.2-6.4g/天)、以及碳酸氢钠。第二等级(有限/混合证据)包括：HMB(beta-羟基-beta-甲基丁酸盐)、ATP补剂、支链氨基酸(BCAAs)等。第三等级(无证据或证据不足)包括大量市场营销产品。在选择补剂时应遵循"先基础后补充"原则：首先优化整体饮食(热量平衡和宏量营养素分配)，然后确保微量营养素充足(维生素D、铁等)，最后才考虑使用有强证据支持的补剂。运动员应选择经第三方检测(如NSF Certified for Sport、Informed Sport)的产品以避免禁用物质污染风险。
+    tags:
+      - "evidence-tiers"
+      - "beta-alanine"
+      - "HMB"
+      - "supplement-safety"

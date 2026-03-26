@@ -1,0 +1,89 @@
+entries:
+  - id: "train_deload_001"
+    source: "NSCA Guidelines; Bell et al. 2024"
+    section: "Deload Purpose and Timing"
+    category: "training"
+    subcategory: "deload-strategy"
+    title: "减载的目的与时机"
+    content: |
+      减载（Deload）是指有计划地降低整体训练负荷，目的是消散累积疲劳、促进身体恢复并为后续高强度训练做好准备。根据NSCA指南和最新研究（Bell等人，2024年），减载的典型持续时间为6-7天，在训练计划中平均每4-6周安排一次。减载策略可以是预先计划的（proactive），即在固定的训练周期末安排减载周；也可以是自动调节的（reactive），即根据训练者的身体反应信号决定何时减载。研究表明，大多数力量和体型训练运动员采用预先计划与自动调节相结合的策略——在固定的中周期结构中预设减载时间，同时保留根据实际状态提前或推迟减载的灵活性。疲劳和精力管理是实施减载的首要原因。
+    tags:
+      - "deload"
+      - "timing"
+      - "fatigue-dissipation"
+      - "proactive"
+      - "reactive"
+
+  - id: "train_deload_002"
+    source: "NSCA; PMC Research 2024"
+    section: "Volume Reduction Deload"
+    category: "training"
+    subcategory: "deload-strategy"
+    title: "减少训练量的减载方法"
+    content: |
+      训练量减载是最常用的减载方法，通过降低每组重复次数和每周训练组数来减少整体训练量，同时保持训练频率和训练强度（负荷）基本不变。典型的训练量减载将每周总组数降低40-60%，例如正常训练周每个肌群16组降至减载周的8-10组。保持训练强度不变的好处是能够维持神经肌肉系统对重负荷的适应性，避免减载后力量的短期下降。研究表明，运动员在减载期间普遍保持训练频率不变，但通过减少每次训练课的组数和每组的重复次数来降低训练量。增加储备次数（RIR）也是降低有效训练量的手段之一，例如将工作组从RPE 9-10降至RPE 6-7。这种方法被认为是最安全有效的减载策略，适合大多数训练者。
+    tags:
+      - "volume-reduction"
+      - "deload-method"
+      - "maintain-intensity"
+      - "RPE-reduction"
+
+  - id: "train_deload_003"
+    source: "NSCA; Frontiers in Sports and Active Living 2022"
+    section: "Intensity Reduction Deload"
+    category: "training"
+    subcategory: "deload-strategy"
+    title: "减少训练强度的减载方法"
+    content: |
+      强度减载通过降低训练负荷（重量）来减少对身体的整体应激，通常将负荷降低10-20%，同时训练量和频率可保持不变或略有降低。例如，如果正常训练周使用100kg卧推进行5组×5次，强度减载可降至80-85kg进行同样的组数和次数。这种方法对于关节和结缔组织的恢复特别有益，因为绝对负荷的降低直接减少了关节承受的机械应力。然而，部分研究和教练认为，过度降低强度可能导致对重负荷的暂时性去适应，使减载后恢复高强度训练时需要额外的适应时间。因此，强度减载更适用于关节疼痛明显或结缔组织疲劳迹象突出的训练者。实践中，可以将训练量减载和强度减载结合使用，同时适度降低负荷和组数以达到最佳恢复效果。
+    tags:
+      - "intensity-reduction"
+      - "deload-method"
+      - "joint-recovery"
+      - "load-reduction"
+
+  - id: "train_deload_004"
+    source: "NSCA; PMC Research on Overreaching"
+    section: "Signs of Overreaching"
+    category: "training"
+    subcategory: "deload-strategy"
+    title: "过度训练征兆识别"
+    content: |
+      及时识别功能性过度疲劳（Functional Overreaching, FOR）和非功能性过度疲劳（Non-Functional Overreaching, NFOR）的征兆对于合理安排减载至关重要。功能性过度疲劳的典型表现包括：训练表现出现短期下降（如工作重量或重复次数减少）、肌肉酸痛持续时间延长（超过72小时）、主观疲劳感增加、动作技术质量下降。非功能性过度疲劳的更严重警示信号包括：连续多次训练课表现下降、睡眠质量明显恶化（入睡困难或易醒）、安静心率持续升高、情绪低落或训练动力显著下降、食欲减退、以及频繁出现小伤小病。当训练者出现2-3个以上FOR征兆时，应考虑提前安排减载；若出现NFOR征兆，则应立即降低训练负荷并延长恢复时间。忽视过度训练征兆可能导致过度训练综合征（OTS），恢复时间可能长达数月。
+    tags:
+      - "overreaching"
+      - "overtraining"
+      - "warning-signs"
+      - "FOR"
+      - "NFOR"
+      - "recovery"
+
+  - id: "train_deload_005"
+    source: "NSCA; Periodization and Fatigue Management Research"
+    section: "Deload Frequency by Training Level"
+    category: "training"
+    subcategory: "deload-strategy"
+    title: "不同训练水平的减载频率建议"
+    content: |
+      减载频率应根据训练者的经验水平和训练强度进行个体化调整。初学者（训练经验少于1年）由于训练负荷相对较低且适应速度快，通常每6-8周安排一次减载周即可满足恢复需求，部分初学者甚至在早期阶段无需正式减载。中级训练者（训练经验1-3年）训练负荷显著增加，恢复需求更高，建议每4-6周安排一次减载周，常见的安排为3周递增训练+1周减载的中周期结构。高级训练者（训练经验3年以上）由于使用的绝对负荷和训练量均很高，疲劳累积更快，建议每3-4周安排一次减载周，采用2-3周递增+1周减载的模式。此外，在高压生活时期（如工作压力大、睡眠不足）、伤病恢复期或比赛密集期，所有水平的训练者都应适当增加减载频率。
+    tags:
+      - "deload-frequency"
+      - "beginner"
+      - "intermediate"
+      - "advanced"
+      - "individual-adjustment"
+
+  - id: "train_deload_006"
+    source: "NSCA; Sports Medicine Open 2024"
+    section: "Practical Deload Implementation"
+    category: "training"
+    subcategory: "deload-strategy"
+    title: "减载周的实际实施策略"
+    content: |
+      有效的减载周实施应综合考虑训练量、强度和努力程度三个维度的调整。推荐的减载周方案为：训练量降低40-60%（减少每次训练的组数），训练强度降低0-20%（维持或略降负荷），努力程度降至RPE 5-7（增加储备次数至RIR 3-5），训练频率保持不变或略有减少。减载周期间应保持规律训练而非完全休息，因为适度的训练刺激有助于维持神经肌肉协调和运动技术。营养方面，减载周的热量摄入可维持在正常水平或略低于正常训练期，蛋白质摄入应保持每公斤体重1.6-2.2克以支持肌肉修复。减载周还应利用这段恢复期改善睡眠习惯、处理累积的软组织问题（如泡沫轴放松、拉伸）。减载周结束后，下一个中周期应从MEV水平重新开始训练量递增。
+    tags:
+      - "deload-implementation"
+      - "practical-guidelines"
+      - "nutrition-during-deload"
+      - "recovery-strategies"
+      - "RPE"

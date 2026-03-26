@@ -1,0 +1,70 @@
+entries:
+  - id: "nutr_timing_001"
+    source: "JISSN 2017 Position Stand: Nutrient Timing"
+    section: "Protein Distribution Across Meals"
+    category: "nutrition"
+    subcategory: "meal-timing"
+    title: "每餐蛋白质分配"
+    content: |
+      根据ISSN 2017年营养时机立场声明，每餐摄入0.25-0.40g/kg体重(约20-40g)的优质蛋白质，每3-4小时进食一次，可最大化全天肌肉蛋白质合成(MPS)率。部分研究者(如Schoenfeld & Aragon)建议上限可达0.40-0.55g/kg/餐以确保充分刺激MPS，尤其适用于仅分3餐进食的情况。关键原则是保持每日蛋白质均匀分配，而非将大部分集中在单餐。研究表明，将每日总蛋白质摄入均匀分配在4-5餐中(每餐约等量)的模式，相比集中分配模式可显著提高24小时净蛋白质平衡。进食间隔不应超过4-5小时，以避免MPS长时间处于基线水平。
+    tags:
+      - "protein-distribution"
+      - "meal-spacing"
+      - "MPS"
+      - "JISSN"
+
+  - id: "nutr_timing_002"
+    source: "JISSN 2017 Nutrient Timing; Schoenfeld et al. 2013"
+    section: "Post-Workout Nutrition Window"
+    category: "nutrition"
+    subcategory: "meal-timing"
+    title: "运动后营养窗口"
+    content: |
+      传统的"合成代谢窗口"概念认为运动后30-60分钟是营养摄入的最佳时机。然而，ISSN 2017年的立场声明对此进行了更新：抗阻训练后骨骼肌对蛋白质和氨基酸的敏感性可持续长达24小时。Schoenfeld等人2013年的荟萃分析表明，运动后即刻摄入蛋白质的效果很大程度上与总蛋白质摄入量的增加相混淆。真正重要的是训练前后各2小时内(即4小时窗口)摄入含至少20-40g优质蛋白质的一餐。如果训练前1-2小时已进食含充足蛋白质的餐食，则运动后立即进食的紧迫性显著降低。碳水化合物与蛋白质的联合摄入可促进胰岛素分泌，有利于糖原恢复但对MPS的额外促进有限。
+    tags:
+      - "anabolic-window"
+      - "post-workout"
+      - "nutrient-timing"
+      - "recovery"
+
+  - id: "nutr_timing_003"
+    source: "Snijders et al. 2015; Res et al. 2012; Trommelen et al. 2018"
+    section: "Pre-Sleep Casein"
+    category: "nutrition"
+    subcategory: "meal-timing"
+    title: "睡前酪蛋白摄入"
+    content: |
+      睡前30分钟摄入30-40g酪蛋白可在整夜睡眠期间维持血浆氨基酸水平升高，显著促进夜间肌肉蛋白质合成。Res等人(2012年)的研究显示，睡前摄入蛋白质使夜间MPS率提高约22%。Trommelen等人(2018年)的研究表明，至少40g蛋白质才能在整夜睡眠期间可靠地维持MPS的显著升高。Snijders等人(2015年)的长期研究发现，在12周抗阻训练期间配合睡前蛋白质补充的受试者，肌肉纤维横截面积和力量增长均显著优于安慰剂组。酪蛋白因其缓慢消化吸收的特性(在胃中形成凝胶)，特别适合睡前摄入，可持续释放氨基酸长达7-8小时。
+    tags:
+      - "casein"
+      - "pre-sleep"
+      - "overnight-recovery"
+      - "MPS"
+
+  - id: "nutr_timing_004"
+    source: "JISSN 2017; Schoenfeld et al. 2015"
+    section: "Meal Frequency"
+    category: "nutrition"
+    subcategory: "meal-timing"
+    title: "进餐频率与身体成分"
+    content: |
+      关于最优进餐频率，ISSN建议每3-4小时进食一次含蛋白质的餐食，即每日4-5餐(含加餐)。这一建议主要基于蛋白质分配优化的考虑，而非进餐频率本身的代谢优势。在总热量和宏量营养素摄入相同的条件下，进餐频率对基础代谢率的影响可以忽略不计——食物热效应(TEF)与进餐频率无关，仅取决于总摄入量。Schoenfeld等人(2015年)的荟萃分析发现，更高的进餐频率(>3次/天)可能对瘦体重保持有轻微优势，但证据强度有限。实际操作中，进餐频率应以个人生活方式、训练计划和饱腹感管理为导向。
+    tags:
+      - "meal-frequency"
+      - "TEF"
+      - "metabolism"
+      - "body-composition"
+
+  - id: "nutr_timing_005"
+    source: "JISSN 2017 Nutrient Timing; Haff et al. 2003"
+    section: "Pre-Workout Nutrition"
+    category: "nutrition"
+    subcategory: "meal-timing"
+    title: "训练前营养策略"
+    content: |
+      训练前1-3小时摄入含碳水化合物(1-2g/kg)和蛋白质(0.25-0.40g/kg)的餐食可优化运动表现和训练质量。碳水化合物确保肌糖原和血糖充足，蛋白质提前提升血浆氨基酸水平，使训练期间即开始MPS过程。训练前30-60分钟可选择易消化的碳水化合物(如白面包、香蕉)和快吸收蛋白质(如乳清)。空腹训练(特别是抗阻训练)可能导致肌肉蛋白质分解增加和训练容量下降。但对于晨间有氧训练，低强度空腹有氧可能对脂肪氧化有轻微优势，尽管长期体脂减少效果与非空腹训练无显著差异。
+    tags:
+      - "pre-workout"
+      - "carbohydrate-timing"
+      - "performance"
+      - "glycogen"
