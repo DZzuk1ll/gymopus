@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { ChevronDown, ChevronUp, Check, Clock } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface Supplement {
   id: string
@@ -14,11 +14,14 @@ interface Supplement {
 
 interface SupplementsModuleProps {
   supplements: Supplement[]
+  onSupplementsChange?: (supplements: Supplement[]) => void
 }
 
-export function SupplementsModule({ supplements: initialSupplements }: SupplementsModuleProps) {
-  const [isExpanded, setIsExpanded] = useState(true)
+export function SupplementsModule({ supplements: initialSupplements, onSupplementsChange }: SupplementsModuleProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
   const [supplements, setSupplements] = useState(initialSupplements)
+
+  useEffect(() => { onSupplementsChange?.(supplements) }, [supplements])
 
   const toggleSupplement = (id: string) => {
     setSupplements((prev) =>

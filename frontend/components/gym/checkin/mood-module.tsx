@@ -2,11 +2,12 @@
 
 import { cn } from "@/lib/utils"
 import { ChevronDown, ChevronUp, Smile, Meh, Frown, Laugh, Angry } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface MoodModuleProps {
   initialMood?: number
   initialNote?: string
+  onMoodChange?: (data: { level: number; description: string }) => void
 }
 
 const moodOptions = [
@@ -17,10 +18,14 @@ const moodOptions = [
   { level: 5, icon: Laugh, label: "很好", color: "text-accent", bg: "bg-accent/15", border: "border-accent" },
 ]
 
-export function MoodModule({ initialMood, initialNote }: MoodModuleProps) {
-  const [isExpanded, setIsExpanded] = useState(true)
+export function MoodModule({ initialMood, initialNote, onMoodChange }: MoodModuleProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
   const [selectedMood, setSelectedMood] = useState(initialMood || 0)
   const [note, setNote] = useState(initialNote || "")
+
+  useEffect(() => {
+    if (selectedMood > 0) onMoodChange?.({ level: selectedMood, description: note })
+  }, [selectedMood, note])
 
   const selectedMoodInfo = moodOptions.find((m) => m.level === selectedMood)
 

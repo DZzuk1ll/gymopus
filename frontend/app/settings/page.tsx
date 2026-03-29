@@ -5,7 +5,9 @@ import { BottomNav } from "@/components/gym/bottom-nav"
 import { TopBar } from "@/components/gym/top-bar"
 import { cn } from "@/lib/utils"
 import { apiFetch, getStoredUserId, setStoredUserId, clearStoredUserId } from "@/lib/api"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
+
+const SETTINGS_DRAFT_KEY = "gymops_settings_draft"
 import {
   User,
   Scale,
@@ -73,6 +75,7 @@ export default function SettingsPage() {
     model: "gpt-4o",
     apiKey: "",
     baseUrl: "",
+    maxTokens: "",
   })
 
   const [showApiKey, setShowApiKey] = useState(false)
@@ -127,6 +130,7 @@ export default function SettingsPage() {
                 model: active.model,
                 apiKey: "",
                 baseUrl: active.base_url || "",
+                maxTokens: active.max_tokens ? String(active.max_tokens) : "",
               })
               setApiKeySaved(true)
             }
@@ -145,6 +149,26 @@ export default function SettingsPage() {
     }
     loadUser()
   }, [])
+
+  // Persist unsaved edits to sessionStorage
+  useEffect(() => {
+    if (!isEditing && !isNewUser) return
+    sessionStorage.setItem(SETTINGS_DRAFT_KEY, JSON.stringify({ profile, preferences, isEditing }))
+  }, [profile, preferences, isEditing, isNewUser])
+
+  // Restore draft on mount (after API load)
+  useEffect(() => {
+    if (loading || !isEditing) return
+    try {
+      const raw = sessionStorage.getItem(SETTINGS_DRAFT_KEY)
+      if (!raw) return
+      const draft = JSON.parse(raw)
+      if (draft.isEditing) {
+        setProfile((prev: any) => ({ ...prev, ...draft.profile }))
+        setPreferences((prev: any) => ({ ...prev, ...draft.preferences }))
+      }
+    } catch {}
+  }, [loading])
 
   const showSuccess = (msg: string) => {
     setSuccessMsg(msg)
@@ -197,6 +221,7 @@ export default function SettingsPage() {
         showSuccess("保存成功")
       }
       setIsEditing(false)
+      sessionStorage.removeItem(SETTINGS_DRAFT_KEY)
     } catch (e: any) {
       setError(e.message || "保存失败")
     } finally {
@@ -204,22 +229,33 @@ export default function SettingsPage() {
     }
   }
 
-  const handleSaveApiKey = async () => {
-    if (!userId || !aiConfig.apiKey) return
+  const handleSaveAiConfig = async () => {
+    if (!userId) return
+    // Require API key on first save, optional on subsequent saves (changing provider/model)
+    if (!apiKeySaved && !aiConfig.apiKey) return
     setSaving(true)
     try {
+      const normalizedMaxTokens = aiConfig.maxTokens.trim()
+      const maxTokensValue = normalizedMaxTokens ? Number(normalizedMaxTokens) : null
+      const payload: Record<string, any> = {
+        provider: aiConfig.provider,
+        model: aiConfig.model,
+        base_url: aiConfig.baseUrl || undefined,
+        max_tokens: Number.isInteger(maxTokensValue) ? maxTokensValue : null,
+      }
+      // Only send api_key if user entered a new one
+      if (aiConfig.apiKey) {
+        payload.api_key = aiConfig.apiKey
+      }
       await apiFetch(`/api/v1/users/${userId}/ai-config`, {
         method: "PUT",
-        body: JSON.stringify({
-          provider: aiConfig.provider,
-          model: aiConfig.model,
-          api_key: aiConfig.apiKey,
-          base_url: aiConfig.baseUrl || undefined,
-        }),
+        body: JSON.stringify(payload),
       })
       setApiKeySaved(true)
       setAiConfig((prev) => ({ ...prev, apiKey: "" }))
-      showSuccess("AI 配置已保存")
+      showSuccess("AI 配置已保存，正在测试连接...")
+      // Auto-test connection after saving
+      setTimeout(() => handleTestAI(), 500)
     } catch (e: any) {
       setError(e.message || "保存失败")
     } finally {
@@ -276,11 +312,28 @@ export default function SettingsPage() {
         experience: "2-3", level: "intermediate", training_goal: "muscle",
         injuries: "", body_fat_pct: null, parq_has_risk: false,
       })
-      setAiConfig({ provider: "openai", model: "gpt-4o", apiKey: "", baseUrl: "" })
+      setAiConfig({ provider: "openai", model: "gpt-4o", apiKey: "", baseUrl: "", maxTokens: "" })
       setApiKeySaved(false)
       showSuccess("所有数据已清除")
     } catch (e: any) {
       setError(e.message || "清除失败")
+    }
+  }
+
+  const handleSavePreferences = async () => {
+    if (!userId) return
+    try {
+      await apiFetch(`/api/v1/users/${userId}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          unit_system: preferences.unit,
+          reminder_time: preferences.reminderTime,
+          alerts_enabled: preferences.alertsEnabled,
+        }),
+      })
+      showSuccess("偏好设置已保存")
+    } catch (e: any) {
+      setError(e.message || "保存失败")
     }
   }
 
@@ -532,8 +585,19 @@ export default function SettingsPage() {
 
           {/* Preferences Section */}
           <section className="bg-surface-1 rounded-xl border border-border-default overflow-hidden">
-            <div className="px-4 py-3 border-b border-border-default">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border-default">
               <h2 className="text-sm font-medium text-text-primary">偏好设置</h2>
+              {!isNewUser && userId && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleSavePreferences}
+                  className="gap-2 bg-transparent border-border-default hover:bg-surface-3 text-text-secondary"
+                >
+                  <Save className="w-3.5 h-3.5" />
+                  保存
+                </Button>
+              )}
             </div>
 
             <div className="divide-y divide-border-default">
@@ -589,6 +653,14 @@ export default function SettingsPage() {
               <h2 className="text-sm font-medium text-text-primary">AI 模型配置</h2>
             </div>
 
+            {!userId ? (
+              <div className="p-4">
+                <div className="flex items-center gap-2 p-3 bg-warning-muted border border-warning/20 rounded-lg text-warning text-sm">
+                  <AlertTriangle className="w-4 h-4 shrink-0" />
+                  请先填写并保存上方的个人资料，然后才能配置 AI 模型。
+                </div>
+              </div>
+            ) : (
             <div className="p-4 space-y-4">
               <div>
                 <label className="text-xs text-text-muted mb-2 block">AI 服务提供商</label>
@@ -626,6 +698,19 @@ export default function SettingsPage() {
               )}
 
               <div>
+                <label className="text-xs text-text-muted mb-2 block">Max Tokens</label>
+                <input
+                  type="number"
+                  min="1"
+                  value={aiConfig.maxTokens}
+                  onChange={(e) => setAiConfig((prev) => ({ ...prev, maxTokens: e.target.value }))}
+                  placeholder="留空则不限制"
+                  className="w-full px-3 py-2 text-sm font-mono bg-surface-2 border border-border-default rounded-lg focus:border-accent focus:outline-none text-text-primary placeholder:text-text-muted"
+                />
+                <p className="text-xs text-text-muted mt-2">留空时后端不会传 `max_tokens`，由模型或服务商自行决定输出上限。</p>
+              </div>
+
+              <div>
                 <label className="text-xs text-text-muted mb-2 block">API Key</label>
                 <div className="flex gap-2">
                   <div className="flex-1 relative">
@@ -637,7 +722,7 @@ export default function SettingsPage() {
                       {showApiKey ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                     </button>
                   </div>
-                  <Button onClick={handleSaveApiKey} disabled={!aiConfig.apiKey || !userId || saving} className={cn("px-4 transition-colors", "bg-accent hover:bg-accent-hover text-accent-foreground")}>
+                  <Button onClick={handleSaveAiConfig} disabled={(!aiConfig.apiKey && !apiKeySaved) || !userId || saving} className={cn("px-4 transition-colors", "bg-accent hover:bg-accent-hover text-accent-foreground")}>
                     {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : "保存"}
                   </Button>
                 </div>
@@ -659,6 +744,7 @@ export default function SettingsPage() {
                 </div>
               )}
             </div>
+            )}
           </section>
 
           {/* Data Section */}

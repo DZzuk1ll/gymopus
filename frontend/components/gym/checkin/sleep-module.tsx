@@ -2,25 +2,30 @@
 
 import { cn } from "@/lib/utils"
 import { ChevronDown, ChevronUp, Moon, Sunrise } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-interface SleepModuleProps {
-  initialData?: {
-    bedTime: string
-    wakeTime: string
-    quality: number
-    awakenings: number
-  }
+interface SleepData {
+  bedTime: string
+  wakeTime: string
+  quality: number
+  awakenings: number
 }
 
-export function SleepModule({ initialData }: SleepModuleProps) {
-  const [isExpanded, setIsExpanded] = useState(true)
-  const [data, setData] = useState({
+interface SleepModuleProps {
+  initialData?: Partial<SleepData>
+  onSleepChange?: (data: SleepData) => void
+}
+
+export function SleepModule({ initialData, onSleepChange }: SleepModuleProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const [data, setData] = useState<SleepData>({
     bedTime: initialData?.bedTime || "",
     wakeTime: initialData?.wakeTime || "",
     quality: initialData?.quality || 3,
     awakenings: initialData?.awakenings || 0,
   })
+
+  useEffect(() => { onSleepChange?.(data) }, [data])
 
   const calculateDuration = () => {
     if (!data.bedTime || !data.wakeTime) return null

@@ -1,61 +1,55 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { ChevronDown, ChevronUp, Plus, Trash2 } from "lucide-react"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-
-interface ExerciseSet {
-  setNumber: number
-  targetReps: string
-  targetWeight: string
-  actualReps: string
-  actualWeight: string
-  rpe: string
-}
+import { ChevronDown, ChevronUp, CheckCircle2, Circle, Dumbbell } from "lucide-react"
+import { useState, useEffect } from "react"
 
 interface Exercise {
   id: string
   name: string
   nameEn: string
-  sets: ExerciseSet[]
+  planned: string      // e.g. "4×6-8 @100kg"
+  completed: boolean
+}
+
+interface TrainingData {
+  exercises: Exercise[]
+  overallRpe: number
+  durationMin: string
+  notes: string
 }
 
 interface TrainingModuleProps {
   exercises: Exercise[]
-  onExercisesChange?: (exercises: Exercise[]) => void
+  onTrainingChange?: (data: TrainingData) => void
 }
 
-export function TrainingModule({ exercises: initialExercises, onExercisesChange }: TrainingModuleProps) {
+export function TrainingModule({ exercises: initial, onTrainingChange }: TrainingModuleProps) {
   const [isExpanded, setIsExpanded] = useState(true)
-  const [exercises, setExercises] = useState(initialExercises)
+  const [exercises, setExercises] = useState(initial)
+  const [overallRpe, setOverallRpe] = useState(0)
+  const [durationMin, setDurationMin] = useState("")
+  const [notes, setNotes] = useState("")
 
-  const updateSet = (exerciseId: string, setIndex: number, field: keyof ExerciseSet, value: string) => {
-    const updated = exercises.map((ex) => {
-      if (ex.id === exerciseId) {
-        const newSets = [...ex.sets]
-        newSets[setIndex] = { ...newSets[setIndex], [field]: value }
-        return { ...ex, sets: newSets }
-      }
-      return ex
-    })
-    setExercises(updated)
-    onExercisesChange?.(updated)
+  // Sync when initial exercises change (date change / API load)
+  useEffect(() => { setExercises(initial) }, [initial])
+
+  useEffect(() => {
+    onTrainingChange?.({ exercises, overallRpe, durationMin, notes })
+  }, [exercises, overallRpe, durationMin, notes])
+
+  const toggleExercise = (id: string) => {
+    setExercises((prev) =>
+      prev.map((ex) => (ex.id === id ? { ...ex, completed: !ex.completed } : ex))
+    )
   }
 
-  const totalVolume = exercises.reduce((acc, ex) => {
-    return acc + ex.sets.reduce((setAcc, set) => {
-      const reps = parseInt(set.actualReps) || parseInt(set.targetReps) || 0
-      const weight = parseFloat(set.actualWeight) || parseFloat(set.targetWeight) || 0
-      return setAcc + reps * weight
-    }, 0)
-  }, 0)
+  const toggleAll = () => {
+    const allDone = exercises.every((ex) => ex.completed)
+    setExercises((prev) => prev.map((ex) => ({ ...ex, completed: !allDone })))
+  }
 
-  const completedSets = exercises.reduce((acc, ex) => {
-    return acc + ex.sets.filter((set) => set.actualReps && set.actualWeight).length
-  }, 0)
-
-  const totalSets = exercises.reduce((acc, ex) => acc + ex.sets.length, 0)
+  const completedCount = exercises.filter((ex) => ex.completed).length
 
   return (
     <div className="bg-surface-1 rounded-xl border border-border-default overflow-hidden">
@@ -66,12 +60,16 @@ export function TrainingModule({ exercises: initialExercises, onExercisesChange 
       >
         <div className="flex items-center gap-3">
           <h3 className="text-sm font-medium text-text-primary">训练记录</h3>
-          <span className={cn(
-            "px-2 py-0.5 text-xs font-medium rounded",
-            completedSets === totalSets ? "bg-success/15 text-success" : "bg-accent/15 text-accent"
-          )}>
-            {completedSets}/{totalSets} 组
-          </span>
+          {exercises.length > 0 && (
+            <span className={cn(
+              "px-2 py-0.5 text-xs font-medium rounded",
+              completedCount === exercises.length && exercises.length > 0
+                ? "bg-success/15 text-success"
+                : "bg-accent/15 text-accent"
+            )}>
+              {completedCount}/{exercises.length} 个动作
+            </span>
+          )}
         </div>
         {isExpanded ? (
           <ChevronUp className="w-4 h-4 text-text-muted" />
@@ -83,95 +81,113 @@ export function TrainingModule({ exercises: initialExercises, onExercisesChange 
       {/* Content */}
       {isExpanded && (
         <div className="border-t border-border-default">
-          {exercises.map((exercise, exIndex) => (
-            <div key={exercise.id} className="border-b border-border-default last:border-b-0">
-              {/* Exercise Header */}
-              <div className="px-4 py-3 bg-surface-2">
-                <p className="text-sm font-medium text-text-primary whitespace-nowrap">{exercise.name}</p>
-                <p className="text-xs text-text-muted">{exercise.nameEn}</p>
-              </div>
+          {exercises.length === 0 ? (
+            <div className="px-4 py-6 text-center">
+              <Dumbbell className="w-8 h-8 text-text-muted mx-auto mb-2" />
+              <p className="text-sm text-text-muted">今日无计划训练</p>
+            </div>
+          ) : (
+            <>
+              {/* Select all */}
+              <button
+                onClick={toggleAll}
+                className="w-full flex items-center gap-3 px-4 py-2 text-xs text-text-muted hover:bg-surface-2 transition-colors border-b border-border-default"
+              >
+                {exercises.every((ex) => ex.completed) ? (
+                  <CheckCircle2 className="w-4 h-4 text-success" />
+                ) : (
+                  <Circle className="w-4 h-4" />
+                )}
+                全部完成
+              </button>
 
-              {/* Sets - Card layout for mobile */}
+              {/* Exercise checklist */}
               <div className="divide-y divide-border-default">
-                {exercise.sets.map((set, setIndex) => (
-                  <div key={setIndex} className="px-4 py-3">
-                    {/* Set header row */}
-                    <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 mb-2">
-                      <span className="text-xs font-medium text-text-muted">第 {set.setNumber} 组</span>
-                      <span className="text-xs font-mono text-text-muted">
-                        目标 {set.targetReps}x{set.targetWeight}kg
-                      </span>
+                {exercises.map((ex) => (
+                  <button
+                    key={ex.id}
+                    onClick={() => toggleExercise(ex.id)}
+                    className={cn(
+                      "w-full flex items-center gap-3 px-4 py-3 transition-colors text-left",
+                      ex.completed ? "bg-success/5" : "hover:bg-surface-2"
+                    )}
+                  >
+                    {ex.completed ? (
+                      <CheckCircle2 className="w-5 h-5 text-success shrink-0" />
+                    ) : (
+                      <Circle className="w-5 h-5 text-text-muted shrink-0" />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <p className={cn(
+                        "text-sm font-medium",
+                        ex.completed ? "text-text-muted line-through" : "text-text-primary"
+                      )}>
+                        {ex.name}
+                      </p>
+                      <p className="text-xs text-text-muted">{ex.nameEn}</p>
                     </div>
-                    {/* Input row */}
-                    <div className="flex items-end gap-2">
-                      <div className="flex-1 min-w-0">
-                        <label className="text-[10px] text-text-muted mb-1 block">次数</label>
-                        <input
-                          type="number"
-                          value={set.actualReps}
-                          onChange={(e) => updateSet(exercise.id, setIndex, "actualReps", e.target.value)}
-                          placeholder={set.targetReps}
-                          className="w-full px-2 py-1.5 text-sm font-mono bg-surface-2 border border-border-default rounded focus:border-accent focus:outline-none text-text-primary placeholder:text-text-muted"
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <label className="text-[10px] text-text-muted mb-1 block">重量(kg)</label>
-                        <input
-                          type="number"
-                          value={set.actualWeight}
-                          onChange={(e) => updateSet(exercise.id, setIndex, "actualWeight", e.target.value)}
-                          placeholder={set.targetWeight}
-                          className="w-full px-2 py-1.5 text-sm font-mono bg-surface-2 border border-border-default rounded focus:border-accent focus:outline-none text-text-primary placeholder:text-text-muted"
-                        />
-                      </div>
-                      <div className="w-14 shrink-0">
-                        <label className="text-[10px] text-text-muted mb-1 block">RPE</label>
-                        <select
-                          value={set.rpe}
-                          onChange={(e) => updateSet(exercise.id, setIndex, "rpe", e.target.value)}
-                          className="w-full px-1 py-1.5 text-sm font-mono bg-surface-2 border border-border-default rounded focus:border-accent focus:outline-none text-text-primary"
-                        >
-                          <option value="">-</option>
-                          {[5, 6, 7, 8, 9, 10].map((v) => (
-                            <option key={v} value={v}>{v}</option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-                  </div>
+                    <span className="text-xs font-mono text-text-muted shrink-0">
+                      {ex.planned}
+                    </span>
+                  </button>
                 ))}
               </div>
-            </div>
-          ))}
+            </>
+          )}
 
-          {/* Add Exercise & Summary */}
-          <div className="px-4 py-3 bg-surface-2 flex flex-wrap items-center justify-between gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                const newExercise: Exercise = {
-                  id: `ex-${Date.now()}`,
-                  name: "新动作",
-                  nameEn: "New Exercise",
-                  sets: [
-                    { setNumber: 1, targetReps: "", targetWeight: "", actualReps: "", actualWeight: "", rpe: "" },
-                    { setNumber: 2, targetReps: "", targetWeight: "", actualReps: "", actualWeight: "", rpe: "" },
-                    { setNumber: 3, targetReps: "", targetWeight: "", actualReps: "", actualWeight: "", rpe: "" },
-                  ],
-                }
-                const updated = [...exercises, newExercise]
-                setExercises(updated)
-                onExercisesChange?.(updated)
-              }}
-              className="gap-1.5 bg-transparent border-border-default hover:bg-surface-3 text-text-secondary text-xs"
-            >
-              <Plus className="w-3.5 h-3.5" />
-              添加动作
-            </Button>
-            <span className="text-xs text-text-secondary">
-              总容量: <span className="font-mono text-text-primary">{totalVolume.toLocaleString()}kg</span>
-            </span>
+          {/* Overall RPE + Duration + Notes */}
+          <div className="p-4 bg-surface-2 space-y-3 border-t border-border-default">
+            <div className="flex gap-4">
+              {/* Overall RPE */}
+              <div className="flex-1">
+                <label className="text-xs text-text-muted mb-2 block">
+                  整体 RPE {overallRpe > 0 && <span className="text-accent">{overallRpe}</span>}
+                </label>
+                <div className="flex gap-1">
+                  {[5, 6, 7, 8, 9, 10].map((v) => (
+                    <button
+                      key={v}
+                      onClick={() => setOverallRpe(v)}
+                      className={cn(
+                        "flex-1 py-1.5 text-xs font-mono rounded transition-colors",
+                        overallRpe === v
+                          ? "bg-accent text-accent-foreground"
+                          : "bg-surface-3 text-text-muted hover:bg-surface-1"
+                      )}
+                    >
+                      {v}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Duration */}
+              <div className="w-24 shrink-0">
+                <label className="text-xs text-text-muted mb-2 block">时长</label>
+                <div className="flex items-center gap-1">
+                  <input
+                    type="number"
+                    value={durationMin}
+                    onChange={(e) => setDurationMin(e.target.value)}
+                    placeholder="60"
+                    className="w-full px-2 py-1.5 text-sm font-mono bg-surface-3 border border-border-default rounded focus:border-accent focus:outline-none text-text-primary placeholder:text-text-muted"
+                  />
+                  <span className="text-xs text-text-muted">分</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Notes */}
+            <div>
+              <label className="text-xs text-text-muted mb-1 block">备注 (可选)</label>
+              <input
+                type="text"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                placeholder="状态不错 / 左肩有点不舒服 / ..."
+                className="w-full px-3 py-1.5 text-sm bg-surface-3 border border-border-default rounded-lg focus:border-accent focus:outline-none text-text-primary placeholder:text-text-muted"
+              />
+            </div>
           </div>
         </div>
       )}

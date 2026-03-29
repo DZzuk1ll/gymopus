@@ -14,6 +14,7 @@ interface TrainingDay {
 
 interface TrainingPlanCardProps {
   weekDays: TrainingDay[]
+  weekLabel?: string
 }
 
 const statusConfig = {
@@ -51,13 +52,13 @@ const statusConfig = {
   },
 }
 
-export function TrainingPlanCard({ weekDays }: TrainingPlanCardProps) {
+export function TrainingPlanCard({ weekDays, weekLabel }: TrainingPlanCardProps) {
   return (
     <div className="bg-surface-1 rounded-xl border border-border-default overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-border-default">
         <h3 className="text-sm font-medium text-text-primary">本周训练计划</h3>
-        <span className="text-xs text-text-muted">第 3 周 / 共 4 周</span>
+        {weekLabel && <span className="text-xs text-text-muted">{weekLabel}</span>}
       </div>
 
       {/* Training Days */}

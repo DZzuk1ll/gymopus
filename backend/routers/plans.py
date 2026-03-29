@@ -11,6 +11,8 @@ from sqlalchemy.orm import selectinload
 from database import get_db
 from models.plan import Plan, PlanDay, PlanExercise, PlanWeek
 from schemas.plan import (
+    ExerciseCreate,
+    ExerciseUpdate,
     PlanDayDetail,
     PlanDetailResponse,
     PlanExerciseDetail,
@@ -248,3 +250,56 @@ async def get_today_workout(plan_id: str, db: AsyncSession = Depends(get_db)):
         week_number=week.week_number,
         day_of_week=today_dow,
     )
+
+
+# ── Exercise CRUD ──
+
+
+@router.post("/exercises", response_model=PlanExerciseDetail, status_code=201)
+async def create_exercise(body: ExerciseCreate, db: AsyncSession = Depends(get_db)):
+    day = await db.get(PlanDay, body.day_id)
+    if not day:
+        raise HTTPException(status_code=404, detail="Day not found")
+    # determine order_index
+    existing = await db.execute(
+        select(PlanExercise).where(PlanExercise.day_id == body.day_id)
+    )
+    order_index = len(existing.scalars().all())
+    exercise = PlanExercise(
+        day_id=body.day_id,
+        order_index=order_index,
+        exercise_name=body.exercise_name,
+        exercise_name_en=body.exercise_name_en,
+        sets=body.sets,
+        reps_range=body.reps_range,
+        target_weight=body.target_weight,
+        target_rpe=body.target_rpe,
+        rest_seconds=body.rest_seconds,
+        notes=body.notes,
+    )
+    db.add(exercise)
+    await db.commit()
+    await db.refresh(exercise)
+    return _exercise_to_detail(exercise)
+
+
+@router.put("/exercises/{exercise_id}", response_model=PlanExerciseDetail)
+async def update_exercise(exercise_id: str, body: ExerciseUpdate, db: AsyncSession = Depends(get_db)):
+    exercise = await db.get(PlanExercise, exercise_id)
+    if not exercise:
+        raise HTTPException(status_code=404, detail="Exercise not found")
+    for k, v in body.model_dump(exclude_unset=True).items():
+        setattr(exercise, k, v)
+    await db.commit()
+    await db.refresh(exercise)
+    return _exercise_to_detail(exercise)
+
+
+@router.delete("/exercises/{exercise_id}")
+async def delete_exercise(exercise_id: str, db: AsyncSession = Depends(get_db)):
+    exercise = await db.get(PlanExercise, exercise_id)
+    if not exercise:
+        raise HTTPException(status_code=404, detail="Exercise not found")
+    await db.delete(exercise)
+    await db.commit()
+    return {"status": "deleted"}

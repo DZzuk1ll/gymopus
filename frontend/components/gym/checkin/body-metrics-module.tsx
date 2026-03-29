@@ -2,7 +2,15 @@
 
 import { cn } from "@/lib/utils"
 import { ChevronDown, ChevronUp, Scale, Percent, Ruler } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+
+interface MetricsData {
+  weight: string | number
+  bodyFat: string | number
+  chest: string | number
+  waist: string | number
+  arm: string | number
+}
 
 interface BodyMetricsModuleProps {
   initialData?: {
@@ -12,18 +20,21 @@ interface BodyMetricsModuleProps {
     waist?: number
     arm?: number
   }
+  onMetricsChange?: (data: MetricsData) => void
 }
 
-export function BodyMetricsModule({ initialData }: BodyMetricsModuleProps) {
+export function BodyMetricsModule({ initialData, onMetricsChange }: BodyMetricsModuleProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [showMeasurements, setShowMeasurements] = useState(false)
-  const [data, setData] = useState({
+  const [data, setData] = useState<MetricsData>({
     weight: initialData?.weight || "",
     bodyFat: initialData?.bodyFat || "",
     chest: initialData?.chest || "",
     waist: initialData?.waist || "",
     arm: initialData?.arm || "",
   })
+
+  useEffect(() => { onMetricsChange?.(data) }, [data])
 
   const hasData = data.weight || data.bodyFat
 
