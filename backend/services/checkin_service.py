@@ -21,6 +21,7 @@ from models.checkin import (
 from schemas.checkin import CheckinSubmit
 from schemas.common import AlertBrief
 from utils.calculations import calculate_training_volume
+from services.nutrition_estimator import estimate_meal_nutrition
 
 
 def _now() -> str:
@@ -138,22 +139,29 @@ async def upsert_checkin(
         db.add(nlog)
         await db.flush()
 
-        for meal in data.nutrition.meals:
+        estimated_meals = await estimate_meal_nutrition(db, data.user_id, data.nutrition.meals)
+
+        for idx, meal in enumerate(data.nutrition.meals, start=1):
+            estimated = estimated_meals.get(idx, {})
+            meal_calories = meal.calories if meal.calories is not None else estimated.get("calories")
+            meal_protein = meal.protein if meal.protein is not None else estimated.get("protein")
+            meal_carbs = meal.carbs if meal.carbs is not None else estimated.get("carbs")
+            meal_fat = meal.fat if meal.fat is not None else estimated.get("fat")
             mlog = MealLog(
                 nutrition_log_id=nlog.id,
                 meal_name=meal.meal_name,
                 items=json.dumps(meal.items, ensure_ascii=False),
-                calories=meal.calories,
-                protein=meal.protein,
-                carbs=meal.carbs,
-                fat=meal.fat,
+                calories=meal_calories,
+                protein=meal_protein,
+                carbs=meal_carbs,
+                fat=meal_fat,
                 time=meal.time,
             )
             db.add(mlog)
-            total_cal += meal.calories or 0
-            total_pro += meal.protein or 0
-            total_carb += meal.carbs or 0
-            total_fat += meal.fat or 0
+            total_cal += meal_calories or 0
+            total_pro += meal_protein or 0
+            total_carb += meal_carbs or 0
+            total_fat += meal_fat or 0
 
         nlog.total_calories = total_cal
         nlog.total_protein = total_pro

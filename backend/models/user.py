@@ -50,6 +50,7 @@ class UserAIConfig(Base):
     model = Column(String(100), nullable=False)
     api_key_enc = Column(Text)
     base_url = Column(Text)
+    max_tokens = Column(Integer)
     is_active = Column(Boolean, default=True)
     created_at = Column(Text)
     updated_at = Column(Text)

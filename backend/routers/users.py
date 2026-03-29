@@ -110,6 +110,7 @@ async def upsert_ai_config(user_id: str, body: AIConfigUpdate, db: AsyncSession 
         if body.api_key:
             config.api_key_enc = encrypt_api_key(body.api_key)
         config.base_url = body.base_url
+        config.max_tokens = body.max_tokens
         config.is_active = True
         config.updated_at = now
     else:
@@ -119,6 +120,7 @@ async def upsert_ai_config(user_id: str, body: AIConfigUpdate, db: AsyncSession 
             model=body.model,
             api_key_enc=encrypt_api_key(body.api_key) if body.api_key else None,
             base_url=body.base_url,
+            max_tokens=body.max_tokens,
             is_active=True,
             created_at=now,
             updated_at=now,
@@ -133,6 +135,7 @@ async def upsert_ai_config(user_id: str, body: AIConfigUpdate, db: AsyncSession 
         model=config.model,
         api_key_masked=mask_api_key(config.api_key_enc),
         base_url=config.base_url,
+        max_tokens=config.max_tokens,
         is_active=config.is_active,
     )
 
@@ -150,6 +153,7 @@ async def get_ai_configs(user_id: str, db: AsyncSession = Depends(get_db)):
             model=c.model,
             api_key_masked=mask_api_key(c.api_key_enc),
             base_url=c.base_url,
+            max_tokens=c.max_tokens,
             is_active=c.is_active,
         )
         for c in configs
@@ -171,14 +175,12 @@ async def test_ai_config(user_id: str, db: AsyncSession = Depends(get_db)):
     try:
         from litellm import acompletion
         from utils.crypto import decrypt_api_key
+        from services.ai_integration import PROVIDER_PREFIX, resolve_custom_prefix
 
-        provider_prefix = {
-            "openai": "",
-            "anthropic": "anthropic/",
-            "deepseek": "deepseek/",
-            "custom": "openai/",
-        }
-        prefix = provider_prefix.get(config.provider, "")
+        if config.provider == "custom":
+            prefix = resolve_custom_prefix(config.base_url)
+        else:
+            prefix = PROVIDER_PREFIX.get(config.provider, "")
         model = f"{prefix}{config.model}"
 
         api_key = decrypt_api_key(config.api_key_enc) if config.api_key_enc else None

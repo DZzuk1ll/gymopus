@@ -1,7 +1,6 @@
 """AI multi-signal cross-analysis service."""
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -12,6 +11,7 @@ from models.user import User, UserAIConfig
 from knowledge.retriever import retriever
 from services.ai_integration import ai_client
 from services import suggestion_service
+from utils.llm_json import parse_llm_json
 
 _env = Environment(
     loader=FileSystemLoader(str(Path(__file__).parent.parent / "prompts")),
@@ -97,16 +97,11 @@ async def analyze_signals(
         ],
         response_format={"type": "json_object"},
         temperature=0.2,
-        max_tokens=2048,
+        max_tokens=ai_config.max_tokens,
     )
 
     # Parse response
-    response_text = response_text.strip()
-    if response_text.startswith("```"):
-        lines = response_text.split("\n")
-        response_text = "\n".join(lines[1:-1]) if lines[-1].strip() == "```" else "\n".join(lines[1:])
-
-    result_data = json.loads(response_text)
+    result_data = parse_llm_json(response_text, context="Suggestion analysis response")
 
     # Create suggestion
     references = [

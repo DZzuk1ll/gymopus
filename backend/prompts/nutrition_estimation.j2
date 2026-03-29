@@ -1,0 +1,36 @@
+你需要根据用户记录的每餐自然语言描述，估算每餐总热量与三大营养素。
+
+## 规则
+- 只估算整餐总量，不拆分单个食材明细
+- 使用常见中国家庭/外卖/健身饮食的典型分量做保守估算
+- 如果描述模糊，给中间值，不要输出解释
+- 所有数值必须为非负数
+- `calories` 输出整数，`protein/carbs/fat` 输出数字
+- 必须覆盖输入中的每一餐
+
+## 用户上下文
+- 性别: {{ user_context.gender }}
+- 年龄: {{ user_context.age or '未知' }}
+- 体重: {{ user_context.weight_kg or '未知' }} kg
+- 目标: {{ user_context.training_goal }}
+
+## 待估算餐食
+{% for meal in meals -%}
+- meal_index: {{ meal.meal_index }}, meal_name: {{ meal.meal_name }}, description: {{ meal.description }}
+{% endfor %}
+
+请严格输出以下 JSON，不要输出任何额外文本：
+
+```json
+{
+  "meals": [
+    {
+      "meal_index": 1,
+      "calories": 520,
+      "protein": 28,
+      "carbs": 45,
+      "fat": 18
+    }
+  ]
+}
+```

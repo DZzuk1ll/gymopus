@@ -4,8 +4,8 @@
 
 ## 严格要求
 1. 所有编排决策必须基于下方提供的【知识库参考】，不得使用你自己的训练经验或直觉。
-2. 每一个关键决策（组数、次数范围、动作选择、周期安排）都要在输出中标注引用了哪条知识。
-3. 如果知识库中没有足够信息来做某个决策，标注 "insufficient_evidence" 并给出保守方案。
+2. 输出以“可执行训练计划”为目标，优先保证 JSON 完整、字段准确、结构简洁，不要输出冗长解释。
+3. 如果知识库中没有足够信息来做某个决策，使用保守方案，不要输出额外解释文本。
 
 ## 用户画像
 - 目标: {{ goal_label }}
@@ -14,7 +14,8 @@
 - 周训练天数: {{ days_per_week }}
 - 单次训练时长: {{ minutes_per_session }} 分钟
 - 可用器械: {{ equipment_label }}
-- 身高: {{ height_cm }}cm / 体重: {{ weight_kg }}kg / 年龄: {{ age }} / 性别: {{ gender }}
+{% if custom_description %}- 用户自定义要求: {{ custom_description }}
+{% endif %}- 身高: {{ height_cm }}cm / 体重: {{ weight_kg }}kg / 年龄: {{ age }} / 性别: {{ gender }}
 - 体脂率: {{ body_fat_pct }}%
 - 伤病/限制: {{ injuries or '无' }}
 - PAR-Q 风险: {{ 'YES - 需保守方案' if parq_has_risk else 'NO' }}
@@ -33,18 +34,23 @@
 ## 输出要求
 
 请严格按照以下 JSON 格式输出，不要输出任何其他内容：
+- 所有对象 key 必须使用双引号包裹
+- 禁止尾随逗号、注释、Markdown 说明、``` 代码块
+- 禁止使用单引号包裹 key 或 value
+- 输出必须是一个可被标准 `JSON.parse()` 成功解析的单一 JSON 对象
+- 只输出下面列出的字段，不要新增 explanation / rationale / citation / nutrition 等字段
+- 字符串尽量短；`notes` 可省略，若输出则必须少于 20 个汉字
+- 每天动作数量控制在 4-6 个，避免冗长
 
 ```json
 {
   "plan_name": "方案名称",
   "periodization_model": "线性/波动/块状",
-  "periodization_rationale": "选择该周期化模型的理由 [引用 KB-xxx]",
   "total_weeks": 4,
   "weeks": [
     {
       "week_number": 1,
       "theme": "适应期",
-      "volume_modifier": 0.85,
       "intensity_modifier": 0.7,
       "days": [
         {
@@ -60,20 +66,12 @@
               "reps_range": "6-8",
               "target_rpe": 7.0,
               "rest_seconds": 180,
-              "selection_rationale": "复合推力动作，优先安排 [引用 KB-xxx]",
               "notes": "注意肩胛骨收紧下沉"
             }
           ]
         }
       ]
     }
-  ],
-  "nutrition": {
-    "calories": {{ nutrition_targets.calories }},
-    "protein_g": {{ nutrition_targets.protein_g }},
-    "carbs_g": {{ nutrition_targets.carbs_g }},
-    "fat_g": {{ nutrition_targets.fat_g }},
-    "calculation_method": "TDEE + surplus/deficit 计算过程 [引用 KB-xxx]"
-  }
+  ]
 }
 ```

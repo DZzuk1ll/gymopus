@@ -60,6 +60,7 @@ class AIConfigUpdate(BaseModel):
     model: str
     api_key: str | None = None
     base_url: str | None = None
+    max_tokens: int | None = Field(default=None, ge=1)
 
 
 class AIConfigResponse(BaseModel):
@@ -68,6 +69,7 @@ class AIConfigResponse(BaseModel):
     model: str
     api_key_masked: str | None = None
     base_url: str | None = None
+    max_tokens: int | None = None
     is_active: bool = True
 
     model_config = {"from_attributes": True}

@@ -21,6 +21,7 @@ from schemas.plan import (
 )
 from services.ai_integration import ai_client
 from knowledge.retriever import retriever
+from utils.llm_json import parse_llm_json
 from utils.calculations import calculate_bmr, calculate_nutrition_targets, calculate_tdee
 
 DISCLAIMER = (
@@ -42,6 +43,13 @@ _env = Environment(
 
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _compact_knowledge_text(text: str, max_chars: int = 180) -> str:
+    compact = " ".join((text or "").split())
+    if len(compact) <= max_chars:
+        return compact
+    return compact[: max_chars - 1].rstrip() + "…"
 
 
 async def generate_plan(
@@ -70,7 +78,7 @@ async def generate_plan(
 
     # Step 2: Knowledge retrieval (RAG)
     query = f"{GOAL_LABELS.get(req.goal, req.goal)} {SPLIT_LABELS.get(req.split_type, req.split_type)} 训练计划 周期化 {req.experience}年经验"
-    knowledge_entries = await retriever.search(query, categories=["training", "nutrition"], top_k=8)
+    knowledge_entries = await retriever.search(query, categories=["training"], top_k=4)
 
     knowledge_refs = [
         KnowledgeRefBrief(id=e.id, source=e.source, section=e.section, title=e.title)
@@ -86,6 +94,7 @@ async def generate_plan(
         days_per_week=req.days_per_week,
         minutes_per_session=req.minutes_per_session,
         equipment_label=EQUIPMENT_LABELS.get(req.equipment, req.equipment),
+        custom_description=req.custom_description,
         height_cm=height,
         weight_kg=weight,
         age=age,
@@ -97,7 +106,16 @@ async def generate_plan(
         restrictions=", ".join(req.restrictions) if req.restrictions else None,
         tdee=int(tdee),
         nutrition_targets=nutrition_targets,
-        knowledge_entries=knowledge_entries,
+        knowledge_entries=[
+            {
+                "id": entry.id,
+                "source": entry.source,
+                "section": entry.section,
+                "title": entry.title,
+                "content": _compact_knowledge_text(entry.content),
+            }
+            for entry in knowledge_entries
+        ],
     )
 
     # Step 4: LLM call
@@ -126,17 +144,12 @@ async def generate_plan(
         ],
         response_format={"type": "json_object"},
         temperature=0.3,
-        max_tokens=8192,
+        max_tokens=ai_config.max_tokens,
     )
 
     # Step 5: Parse and persist
     # Extract JSON from response
-    response_text = response_text.strip()
-    if response_text.startswith("```"):
-        lines = response_text.split("\n")
-        response_text = "\n".join(lines[1:-1]) if lines[-1].strip() == "```" else "\n".join(lines[1:])
-
-    plan_data = json.loads(response_text)
+    plan_data = parse_llm_json(response_text, context="Plan generation response")
 
     now = _now()
     plan = Plan(
@@ -174,7 +187,7 @@ async def generate_plan(
             theme=week_data.get("theme"),
             volume_target=None,
             intensity_modifier=week_data.get("intensity_modifier", 1.0),
-            notes=week_data.get("periodization_rationale") if week_data.get("week_number") == 1 else None,
+            notes=None,
         )
         db.add(week)
         await db.flush()
